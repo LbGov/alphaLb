@@ -1,0 +1,35 @@
+@media (max-width: 767px) {
+	.feature-image {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+
+@media (min-width: 1px) {
+	.feature-image {
+		background: url(OTS-991-Treaty.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 768px) {
+	.feature-image {
+		background: url(OTS-991-Treaty.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 992px) {
+	.feature-image {
+		background: url(OTS-1366-Treaty4.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 1367px) {
+	.feature-image {
+		background: url(OTS-19202.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+

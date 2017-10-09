@@ -1,0 +1,35 @@
+@media (max-width: 767px) {
+	.feature-image {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+
+@media (min-width: 1px) {
+	.feature-image {
+		background: url(banner-img-991px-V4.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 768px) {
+	.feature-image {
+		background: url(banner-img-991px-V4.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 992px) {
+	.feature-image {
+		background: url(homepage-1366-V2.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 1367px) {
+	.feature-image {
+		background: url(banner-img-1920px-V6.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+

@@ -1,0 +1,35 @@
+@media (max-width: 767px) {
+	.feature-image {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+
+@media (min-width: 1px) {
+	.feature-image {
+		background: url(Family-and-whanau-991.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 768px) {
+	.feature-image {
+		background: url(Family-and-whanau-991.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 992px) {
+	.feature-image {
+		background: url(Family-and-whanau-1366.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
+
+@media (min-width: 1367px) {
+	.feature-image {
+		background: url(Family-and-whanau-1920-2.jpg) #231f20 no-repeat;
+		background-position:center;	}
+}
+
