@@ -180,7 +180,6 @@ div.thumbnail .glyphicon-ok-circle{
         margin: 2px 0;
         border: none;
         border-radius: 4px;
-		direction: rtl;
     }
 
     .dg-input-form:hover {
@@ -206,14 +205,7 @@ div.thumbnail .glyphicon-ok-circle{
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 8px;
-    }
-	
-.directionClass{
-	direction: rtl;
-}
-	
-	
-         		
+    }         		
 			
 </style>
 
