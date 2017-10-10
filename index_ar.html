@@ -642,6 +642,31 @@
 
 		</div>
 
+        <div class="dgDiv" align="center">
+            <!-- <form class = "digDiv" action="#/action_page.php">-->
+            <form class="digDiv" action="/index.html">
+                <label for="fname" class="form-header">الإسم</label>
+                <input type="text" class="dg-input-form" id="fname" name="firstname" placeholder="الإسم..">
+
+                <label for="lname" class="form-header">إسم العائلة</label>
+                <input type="text" class="dg-input-form" id="lname" name="lastname" placeholder="إسم العائلة..">
+
+                <label for="email" class="form-header">الإيميل</label>
+                <input type="text" class="dg-input-form" id="email" name="email" placeholder="الإيميل..">
+                <label for="comment" class="form-header">التعليقات</label>
+                <div>
+                    <textarea class="inputTextArea" id="comment" name="comment" rows="3" placeholder="التعليقات.." data-rule-required=" true"></textarea>
+                </div>
+                <label for="country" class="form-header">الدولة</label>
+                <select id="country" name="country">
+                    <option value="lebanon">لبنان</option>
+                    <option value="other">خارج لبنان</option>
+                </select>
+                <input type="submit" value="إرسال">
+            </form>
+
+        </div>
+
 		<div class="footer" aria-label="Footer" role="contentinfo">
 	<div class="container">
 		<div class="row">

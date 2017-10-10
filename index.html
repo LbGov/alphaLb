@@ -64,6 +64,7 @@
 <link rel="stylesheet" type="text/css" href="themes/dia-theme/css/printbaab.css?m=1500846094" />
 <link rel="stylesheet" type="text/css" href="themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
 <link rel="stylesheet" href="themes/digital-gov-themes/W3S.css">
+<link rel="stylesheet" href="themes/digital-gov-themes/contactUsFrom.css">
 <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
 <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
 <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
@@ -625,11 +626,30 @@
 
 		</div>
         
-        <div  align="center" >
-		  <a style="font-weight:bold; text-decoration:underline;" href="https://docs.google.com/forms/d/e/1FAIpQLScKgZzK0w6oBP0YJJdXqQiqOrv0qChqCgmr-o-tfkjtl_tmPQ/viewform?usp=sf_link">
-            Your Feedback
-            </a>
-            </div>
+        <div class ="dgDiv" align="center">
+           <!-- <form class = "digDiv" action="#/action_page.php">-->
+            <form class="digDiv" action="/index.html">
+                <label for="fname" class="form-header">First Name</label>
+                <input type="text" class="dg-input-form" id="fname" name="firstname" placeholder="Your Name..">
+
+                <label for="lname" class="form-header">Last Name</label>
+                <input type="text" class="dg-input-form" id="lname" name="lastname" placeholder="Your Last Name..">
+
+                <label for="email" class="form-header">Email</label>
+                <input type="text" class="dg-input-form" id="email" name="email" placeholder="Your Email..">
+                <label for="comment" class="form-header">Comments</label>
+                <div>
+                    <textarea class="inputTextArea" id="comment" name="comment" rows="3" placeholder="Comments.." data-rule-required=" true"></textarea>
+                </div>
+                <label for="country" class="form-header">Country</label>
+                <select id="country" name="country">
+                    <option value="lebanon">Lebanon</option>
+                    <option value="other">Abroad</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        
+       </div>
             
 
 		<div class="footer" aria-label="Footer" role="contentinfo">
@@ -796,5 +816,9 @@
         else {
             window.location.href = "http://portal.gov.lb/dg/index_ar.html";
         }       
+    }
+
+    function sendFeedback() {
+
     }
 </script>
