@@ -172,7 +172,6 @@ div.thumbnail .glyphicon-ok-circle{
 }
 
     .dg-input-form {
-        width: 100%;
         background-color: #d3dbc0;
         color: black;
 		font-family:"Fira-Bold", Helvetica, Arial, sans-serif;
@@ -200,10 +199,12 @@ div.thumbnail .glyphicon-ok-circle{
 }
 
     .dgDiv {
+		margin: auto;
+		display:block;
 		position: center;
-		width: 100%;
+		width: 400px;
         border-radius: 5px;
-        background-color: #f2f2f2;
+        background-color: #ffffff;
         padding: 8px;
     }         		
 			
