@@ -63,7 +63,8 @@
 <link rel="stylesheet" type="text/css" href="themes/dia-theme/css/screenbaab.css?m=1500846094" />
 <link rel="stylesheet" type="text/css" href="themes/dia-theme/css/printbaab.css?m=1500846094" />
 <link rel="stylesheet" type="text/css" href="themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
-<link rel="stylesheet" href="themes/digital-gov-themes/W3S.css">
+<link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/W3S.css">
+<link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/contactUsForm.css">
 
 <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
 <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
@@ -331,14 +332,16 @@
 				
 					<div class="col-md-4">
 					<div class="hub-section info-section">
-							<a href="browse/history-culture-and-heritage/index_ar.html">
-								<div class="inner" align="right">
-									<h3 class="imitate-h4"  style="font-family:tahoma;">السياحة
-</h3>
-									<p  style="font-family:tahoma;">الثقافة والتراث، القدوم إلى لبنان، المعالم السياحية، المهرجانات، شهر التسوق، مؤسسة سياحية
-</p>
-								</div>
-							</a>
+                        <a href="browse/tourism/index_ar.html">
+                            <div class="inner" align="right">
+                                <h3 class="imitate-h4" style="font-family:tahoma;">
+                                    السياحة
+                                </h3>
+                                <p style="font-family:tahoma;">
+                                    الثقافة والتراث، القدوم إلى لبنان، المعالم السياحية، المهرجانات، شهر التسوق، مؤسسة سياحية
+                                </p>
+                            </div>
+                        </a>
 						</div>
 					</div>
 					
@@ -641,6 +644,31 @@
 </div>
 
 		</div>
+
+        <div class="dgDiv" align="center">
+            <!-- <form class = "digDiv" action="#/action_page.php">-->
+            <form action="/index_ar.html">
+                <label for="fname" class="form-header">الإسم</label>
+                <input type="text" dir="rtl"  class="dg-input-form " id="fname" name="firstname" placeholder="الإسم..">
+
+                <label for="lname" class="form-header">إسم العائلة</label>
+                <input type="text" dir="rtl" class="dg-input-form " id="lname" name="lastname" placeholder="إسم العائلة..">
+
+                <label for="email" class="form-header">الإيميل</label>
+                <input type="text" dir="rtl" class="dg-input-form " id="email" name="email" placeholder="الإيميل..">
+                <label for="comment" class="form-header">التعليقات</label>
+                <div>
+                    <textarea dir="rtl" class="inputTextArea" id="comment" name="comment" rows="3" placeholder="التعليقات.." data-rule-required=" true"></textarea>
+                </div>
+                <label for="country" class="form-header">الدولة</label>
+                <select dir="rtl" id="country" name="country">
+                    <option dir="rtl" value="lebanon">لبنان</option>
+                    <option dir="rtl" value="other">خارج لبنان</option>
+                </select>
+                <input type="submit" value="إرسال">
+            </form>
+
+        </div>
 
 		<div class="footer" aria-label="Footer" role="contentinfo">
 	<div class="container">
