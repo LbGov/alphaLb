@@ -74,7 +74,7 @@
 	<body class="pagetype-home" data-pagetype="HomePage" style="background-color:white;">
 
 		<div class="header home-header navbar" style="background-color:#019E45; height:140px;">
-	<div class="container">
+	<div align ="right" class="container">
 		<div class="header-item row">
 			<div class="print-logo col-lg-8 col-xs-7" style="display:none;">
 			</div>
@@ -84,29 +84,40 @@
 			</div>
 			
 		</div>
+
+
+
 		<div id="header-search"
 			 class="header-search row mobile-hide" >
 			<div role="search" class="header-search-form home-page">
-				<form id="search-form" action="https://www.portal.gov.lb/search" class="form-inline pull-right">
-					<div class="form-group" align="right">
-<span  style="color:white; font-size:20px;  font-family:tahoma;"> دليل الخدمات الحكومية Portal.gov.lb</span>
+                <form id="search-form" action="https://www.portal.gov.lb/search" class="form-inline pull-left">
+                    <div class="form-group">
+                        <span style="color:white; font-size:20px;  font-family:tahoma;"> دليل الخدمات الحكومية Portal.gov.lb</span>
 
-						<div class="search-controls" style="padding-top:10px; font-family:tahoma; ">
-							<input name="q" class="form-control square-corners" id="searchterm"
-								   value=""
-								   type="search" autocapitalize="off" autocomplete="off" autocorrect="off" align="right"/>
-                            <label for="searchterm" class="search-label entered" style="float:right;" dir="rtl">
-                             <table  border='0' dir="rtl" align="right">
-                             <tr><td align="right">بحث   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table>
+                        <div class="search-controls" style="padding-top:10px; font-family:tahoma; ">
+                            <input name="q" class="form-control square-corners" id="searchterm"
+                                   value=""
+                                   type="search" autocapitalize="off" autocomplete="off" autocorrect="off" />
+                            <label  for="searchterm" class="search-label entered" style="float:left;" dir="rtl">
+                                <table border='0' dir="rtl">
+                                    <tr><td align="left">بحث   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                                </table>
                             </label>
-							<button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
-									aria-label="Search portal.gov.lb"><span class="glyphicon glyphicon-search"
-																	  aria-hidden="true"></span></button>
-						</div>
-					</div>
-				</form>
+                            <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
+                                    aria-label="Search portal.gov.lb">
+                                <span class="glyphicon glyphicon-search"
+                                      aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
 			</div>
 		</div>
+
+
+
+
+
         <div class="w3-show-inline-block w3-display-bottomright">
             <div class="w3-bar">
                 <button class="w3-button w3-red w3-small w3-ripple w3-border-black w3-padding-small" onclick="setLanguage('en')">EN</button>
