@@ -238,7 +238,10 @@ a{display:block;margin-left:-15px;height:48px;width:293px}.navbar
 .header-item .btn{padding-top:5px;height:34px}.navbar .header-item
 .mobile-search{display:none}.navbar .header-search{margin:18px 0 0
 0;position:relative}.navbar .header-search
-.header-search-form{position:absolute;left=0;top:-60px}.navbar
+.header-search-form{position:absolute;top:-60px}.navbar
+.header-search-form.header-left{left:0;}
+.header-search-form.header-right{right:0;}
+
 .header-search .header-search-form.home-page{top:-85px}.navbar
 .header-search .header-search-form
 .search-controls{margin-top:0px}.navbar .header-search
