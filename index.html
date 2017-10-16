@@ -5,11 +5,15 @@
 <!-- Mirrored from www.portal.gov.lb/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:38:19 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
+    <script type="text/javascript">
+        function copyURL() {   //this function copies the url to know from which page we contact the administrator
+            var varss = window.location.href;
+            document.location.href = "browse/contactUS.html? var="+varss;
+            return true;
+        }
+    </script>
 		<meta charset="utf-8"/>
 		<title>Welcome to portal.gov.lb | Lebanese Government</title>
-		
-		
-		
 		<meta name="google-site-verification" content="BDC1GidWagtZ4CFloZKnpbnGkfer99DVp0vjNbjgRlw"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -627,8 +631,8 @@
 					<h2>About us</h2>
 					<ul>
 
-						<li><a href="browse/contactUS.html">
-							Contact us</a>
+						<li>
+                            <a href="#" onclick="copyURL()">Contact us</a>
 						</li>
 
 					
@@ -774,6 +778,14 @@
             window.location.href = "http://portal.gov.lb/dg/index_ar.html";
         }       
     }
+    function URL() {
+       // alert("hii");
+         var url = window.location.href;
+         document.location.href = "browse/contactUS.html? url=";
+         window.location.href = "http://www.google.com";
+
+    }
+
 
     function sendFeedback() {
 

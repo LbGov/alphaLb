@@ -6,6 +6,16 @@
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
+    <script type="text/javascript">
+        function pasteURL() {   //this function paste the url in the contact page
+            var varss = window.location.href;
+            var page = varss.split("=");
+           // alert(page[1].toString());
+            document.form.SpecificPage.placeholder = page[1].toString(); 
+           
+            return true;
+        }
+    </script>
     <meta charset="utf-8" />
     <title>Contact Us | LB Government</title>
 
@@ -233,7 +243,7 @@
 
 
 
-                        <form id="Form_FeedbackForm" action="/about/feedback/FeedbackForm" method="post" enctype="application/x-www-form-urlencoded">
+                        <form id="Form_FeedbackForm" name="form" action="/about/feedback/FeedbackForm" method="post" enctype="application/x-www-form-urlencoded">
 
 
                             <fieldset class="form-why">
@@ -341,7 +351,8 @@
                                     </li>
 
                                     <li>
-                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
+                                        
+                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
 
                                         <div class="CompositeField selectiongroup_item ">
 
@@ -351,7 +362,7 @@
                                             <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
                                                 <label class="left" for="Form_FeedbackForm_SpecificPage">Enter URL or name of page</label>
                                                 <div class="middleColumn">
-                                                    <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" placeholder="http://portal.gov.lb/dg/" />
+                                                    <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" placeholder="http://portal.gov.lb" />
                                                 </div>
 
 
