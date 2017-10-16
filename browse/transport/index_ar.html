@@ -16,7 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Transport" />
-    <meta property="og:site_name" content="New Zealand Government" />
     <meta property="og:url" content="index.html" />
     <meta property="og:description" content="Car seats for kids, buying and selling a vehicle, registration, WOF, driver licences, traffic information, fines, tickets, losing your licence, public transport" />
     <meta property="og:locale" content="en_GB" />
@@ -455,6 +454,12 @@
                         <h2>حولنا</h2>
                         <ul>
 
+<<<<<<< HEAD
+=======
+						<li><a href="#" onclick="copyURL()">
+							Contact us</a>
+						</li>
+>>>>>>> e9f92ec56b77304325527866aacc7379e8149715
 
 
                             <li>
@@ -621,3 +626,11 @@
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS_ar.html? var=" + varss;
+        return true;
+    }
+</script>

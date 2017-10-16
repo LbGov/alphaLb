@@ -383,11 +383,17 @@
 
 
 
+<<<<<<< HEAD
                             <li>
                                 <a href="#../../about/about-us/about-govt-nz/index.html">
                                     portal.gov.lb حول
                                 </a>
                             </li>
+=======
+						<li><a href="#" onclick="copyURL()">
+							Contact us</a>
+						</li>
+>>>>>>> e9f92ec56b77304325527866aacc7379e8149715
 
 
 
@@ -531,3 +537,11 @@
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS_ar.html? var=" + varss;
+        return true;
+    }
+</script>

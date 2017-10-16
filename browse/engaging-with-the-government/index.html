@@ -5,6 +5,7 @@
 <!-- Mirrored from www.portal.gov.lb/browse/engaging-with-government/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:49 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
+
 		<meta charset="utf-8"/>
 		<title>Engaging with government | LB Government</title>
 		
@@ -393,8 +394,8 @@
 
 					
 
-						<li><a href="#../../about/about-us/contact-us/index.html">
-							Contact us</a>
+						<li><a href="#" onclick="copyURL()">  Contact us
+                            </a>
 						</li>
 
 					
@@ -526,3 +527,10 @@
 
 <!-- Mirrored from www.portal.gov.lb/browse/engaging-with-government/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:50 GMT -->
 </html>
+<script type="text/javascript">
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS.html? var=" + varss;
+        return true;
+    }
+</script>

@@ -684,8 +684,13 @@
 
 
                             <li>
+<<<<<<< HEAD
                                 <a href="#../../about/about-us/contact-us/index.html">
                                     الإتصال بنا
+=======
+                                <a href="#" onclick="copyURL()">
+                                    Contact us
+>>>>>>> e9f92ec56b77304325527866aacc7379e8149715
                                 </a>
                             </li>
 
@@ -850,7 +855,7 @@
 
 
 
-<script>
+<script type="text/javascript">
     function setLanguage(lang) {
         var langOutput = lang.localeCompare('en');
         if (langOutput == 0) {
@@ -859,5 +864,11 @@
         else {
             window.location.href = "http://portal.gov.lb/dg/index_ar.html";
         }
+    }
+
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS.html? var=" + varss;
+        return true;
     }
 </script>

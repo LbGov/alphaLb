@@ -222,6 +222,12 @@
                             </li>
 
 
+<<<<<<< HEAD
+=======
+						<li><a href="#" onclick="copyURL()">
+							Contact us</a>
+						</li>
+>>>>>>> e9f92ec56b77304325527866aacc7379e8149715
 
 
 
@@ -615,3 +621,10 @@
 </body>
 </html>
 
+<script type="text/javascript">
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS.html? var=" + varss;
+        return true;
+    }
+</script>

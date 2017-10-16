@@ -410,7 +410,7 @@
 
 					
 
-						<li><a href="#../../about/about-us/contact-us/index.html">
+						<li><a href="#" onclick="copyURL()">
 							Contact us</a>
 						</li>
 
@@ -543,3 +543,11 @@
 
 <!-- Mirrored from www.portal.gov.lb/browse/health-system/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:40:03 GMT -->
 </html>
+
+<script type="text/javascript">
+    function copyURL() {   //this function copies the url to know from which page we contact the administrator
+        var varss = window.location.href;
+        document.location.href = "../contactUS.html? var=" + varss;
+        return true;
+    }
+</script>
