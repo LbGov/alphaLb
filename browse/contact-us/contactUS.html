@@ -343,18 +343,13 @@
 
                                             <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
 
-                                            <div id ="CompositeField selectiongroup_item " class="CompositeField selectiongroup_item ">
-
-
-
+                                            <div class="CompositeField  ">
 
                                                 <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
                                                     <label id = "Form_FeedbackForm_SpecificPage" class="left" for="Form_FeedbackForm_SpecificPage">Enter URL or name of page</label>
                                                     <div id = "SpecificPage_div"class="middleColumn">
-													<input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" placeholder="http://portal.gov.lb" />
+													<input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" />
                                                     </div>
-
-
 
                                                 </div>
 
@@ -605,7 +600,6 @@
         var varss = window.location.href;
         var page = varss.split("=");
         // alert(page[1].toString());
-		document.feedbackform.SpecificPage.placeholder = page[1].toString();
 		document.feedbackform.SpecificPage.value = page[1].toString();
 		
         return true;

@@ -335,15 +335,13 @@ It's easy to turn JavaScript on -
 <li>
     <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">صفحة محددة</label>
 
-    <div class="CompositeField selectiongroup_item ">
-
-
+    <div class="CompositeField  ">
 
 
         <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
             <label class="left" for="Form_FeedbackForm_SpecificPage">   أدخل الرابط الإلكتروني  </label>
             <div class="middleColumn">
-                <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" placeholder="http://portal.gov.lb" />
+                <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" />
             </div>
 
 
@@ -634,9 +632,7 @@ Commons 4.0 International Licence
         var varss = window.location.href;
         var page = varss.split("=");
         // alert(page[1].toString());
-        document.feedbackform.SpecificPage.placeholder = page[1].toString();
 		document.feedbackform.SpecificPage.value = page[1].toString();
-
         return true;
     }
 </script>
