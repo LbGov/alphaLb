@@ -24,22 +24,26 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$fname=($_POST['fname']);
-$lname=($_POST['lname']);
-$email=($_POST['email']);
-$comment=($_POST['comment']);
-$country=($_POST['country']);
+$whyContactingUs=$_POST['WhyContactingUs'];
+$whyReason=$_POST['WhyReason'];
+$sectionId=$_POST['SpecificSectionID'];
+$specificPage=$_POST['SpecificPage'];
 
-$insertQuery="INSERT INTO ".$tablename." VALUES
-	(0,'".$fname."','".$lname."','".$email."','".$comment."','".$country."')";
-                
-           
+$detailMessage=$_POST['DetailMessage'];
+$name=$_POST['YourName'];
+$email=$_POST['YourEmail'];
+
+
+$insertQuery = "INSERT INTO feedback_table
+          (whyContactingUs, whyReason, sectionId,specificPage,detailMessage,name,email)
+          VALUES
+          ('".$whyContactingUs."', '".$whyReason."', '".$sectionId."', '".$specificPage."', '".$detailMessage."', '".$name."', '".$email."')";
+                          
 if ($conn->query($insertQuery) === TRUE) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 
 ?>
 

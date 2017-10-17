@@ -233,183 +233,182 @@
 
 
 
-                        <form id="Form_FeedbackForm" name="form" action="/about/feedback/FeedbackForm" method="post" enctype="application/x-www-form-urlencoded">
+                            <form name ="feedbackform" action="feedbackFormScript.php" method="POST">
+
+                                <fieldset class="form-why">
+                                    <legend>Why are you contacting us?</legend>
+                                    <ul name="WhyContactingUs" class="optionset" id="Form_FeedbackForm_WhyContactingUs">
+
+                                        <li class="odd valcant-find">
+                                            <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class="radio" name="WhyContactingUs" type="radio" value="cant-find" />
+                                            <label for="Form_FeedbackForm_WhyContactingUs_cantfind">I can't find what I'm looking for</label>
+                                        </li>
+
+                                        <li class="even valreport-problem">
+                                            <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class="radio" name="WhyContactingUs" type="radio" value="report-problem" />
+                                            <label for="Form_FeedbackForm_WhyContactingUs_reportproblem">I want to report a problem</label>
+                                        </li>
+
+                                        <li class="odd valquestion">
+                                            <input id="Form_FeedbackForm_WhyContactingUs_question" class="radio" name="WhyContactingUs" type="radio" value="question" />
+                                            <label for="Form_FeedbackForm_WhyContactingUs_question">I want to ask a question</label>
+                                        </li>
+
+                                        <li class="even valsuggestion">
+                                            <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class="radio" name="WhyContactingUs" type="radio" value="suggestion" />
+                                            <label for="Form_FeedbackForm_WhyContactingUs_suggestion">I want to make a suggestion</label>
+                                        </li>
+
+                                        <li class="odd valcompliment">
+                                            <input id="Form_FeedbackForm_WhyContactingUs_compliment" class="radio" name="WhyContactingUs" type="radio" value="compliment" />
+                                            <label for="Form_FeedbackForm_WhyContactingUs_compliment">I want to give you a compliment</label>
+                                        </li>
+
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset class="form-what" id="location">
+                                    <legend>What's it to do with?</legend>
+
+                                    <ul class="SelectionGroup plainselectiongroup nolabel">
+
+                                        <li>
+                                            <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
+
+                                        </li>
+
+                                        <li>
+                                            <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
+
+                                            <div class="CompositeField selectiongroup_item ">
 
 
-                            <fieldset class="form-why">
-                                <legend>Why are you contacting us?</legend>
-                                <ul name="WhyContactingUs" class="optionset" id="Form_FeedbackForm_WhyContactingUs">
-
-                                    <li class="odd valcant-find">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class="radio" name="WhyContactingUs" type="radio" value="cant-find" />
-                                        <label for="Form_FeedbackForm_WhyContactingUs_cantfind">I can't find what I'm looking for</label>
-                                    </li>
-
-                                    <li class="even valreport-problem">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class="radio" name="WhyContactingUs" type="radio" value="report-problem" />
-                                        <label for="Form_FeedbackForm_WhyContactingUs_reportproblem">I want to report a problem</label>
-                                    </li>
-
-                                    <li class="odd valquestion">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_question" class="radio" name="WhyContactingUs" type="radio" value="question" />
-                                        <label for="Form_FeedbackForm_WhyContactingUs_question">I want to ask a question</label>
-                                    </li>
-
-                                    <li class="even valsuggestion">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class="radio" name="WhyContactingUs" type="radio" value="suggestion" />
-                                        <label for="Form_FeedbackForm_WhyContactingUs_suggestion">I want to make a suggestion</label>
-                                    </li>
-
-                                    <li class="odd valcompliment">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_compliment" class="radio" name="WhyContactingUs" type="radio" value="compliment" />
-                                        <label for="Form_FeedbackForm_WhyContactingUs_compliment">I want to give you a compliment</label>
-                                    </li>
-
-                                </ul>
-                            </fieldset>
-
-                            <fieldset class="form-what" id="location">
-                                <legend>What's it to do with?</legend>
-
-                                <ul class="SelectionGroup plainselectiongroup nolabel">
-
-                                    <li>
-                                        <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
-
-                                    </li>
-
-                                    <li>
-                                        <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
-
-                                        <div class="CompositeField selectiongroup_item ">
 
 
+                                                <div id="Form_FeedbackForm_SpecificSectionID_Holder" class="field dropdown">
+                                                    <label class="left" for="Form_FeedbackForm_SpecificSectionID">Section</label>
+                                                    <div class="middleColumn">
+                                                        <select name="SpecificSectionID" class="dropdown" id="Form_FeedbackForm_SpecificSectionID">
+
+                                                            <option value="" selected="selected">(Choose section)</option>
+
+                                                            <option value="7020">Family</option>
+
+                                                            <option value="7030">Passports, Visas and Travelling</option>
+
+                                                            <option value="7026">Taxes and Fees</option>
+
+                                                            <option value="450">Work</option>
+
+                                                            <option value="379">Energy, Water and Telecommunications</option>
+
+                                                            <option value="371">Housing and Property</option>
+
+                                                            <option value="7032">Transport</option>
+
+                                                            <option value="360">Health</option>
+
+                                                            <option value="412">Education</option>
+
+                                                            <option value="395">Industry, Commerce and Agriculture</option>
+
+                                                            <option value="351">Environment</option>
+
+                                                            <option value="383">Tourism</option>
+
+                                                            <option value="404">Law, Justice and Consumer Rights</option>
+
+                                                            <option value="400">People with Special Needs</option>
+
+                                                            <option value="341">Engaging with the Governments</option>
+
+                                                        </select>
+
+                                                    </div>
 
 
-                                            <div id="Form_FeedbackForm_SpecificSectionID_Holder" class="field dropdown">
-                                                <label class="left" for="Form_FeedbackForm_SpecificSectionID">Section</label>
-                                                <div class="middleColumn">
-                                                    <select name="SpecificSectionID" class="dropdown" id="Form_FeedbackForm_SpecificSectionID">
-
-                                                        <option value="" selected="selected">(Choose section)</option>
-
-                                                        <option value="7020">Family</option>
-
-                                                        <option value="7030">Passports, Visas and Travelling</option>
-
-                                                        <option value="7026">Taxes and Fees</option>
-
-                                                        <option value="450">Work</option>
-
-                                                        <option value="379">Energy, Water and Telecommunications</option>
-
-                                                        <option value="371">Housing and Property</option>
-
-                                                        <option value="7032">Transport</option>
-
-                                                        <option value="360">Health</option>
-
-                                                        <option value="412">Education</option>
-
-                                                        <option value="395">Industry, Commerce and Agriculture</option>
-
-                                                        <option value="351">Environment</option>
-
-                                                        <option value="383">Tourism</option>
-
-                                                        <option value="404">Law, Justice and Consumer Rights</option>
-
-                                                        <option value="400">People with Special Needs</option>
-
-                                                        <option value="341">Engaging with the Governments</option>
-
-                                                    </select>
 
                                                 </div>
+
+
 
 
 
                                             </div>
 
 
+                                        </li>
 
+                                        <li>
 
+                                            <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
 
-                                        </div>
-
-
-                                    </li>
-
-                                    <li>
-                                        
-                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
-
-                                        <div class="CompositeField selectiongroup_item ">
+                                            <div id ="CompositeField selectiongroup_item " class="CompositeField selectiongroup_item ">
 
 
 
 
-                                            <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
-                                                <label class="left" for="Form_FeedbackForm_SpecificPage">Enter URL or name of page</label>
-                                                <div class="middleColumn">
-                                                    <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" placeholder="http://portal.gov.lb" />
+                                                <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
+                                                    <label id = "Form_FeedbackForm_SpecificPage" class="left" for="Form_FeedbackForm_SpecificPage">Enter URL or name of page</label>
+                                                    <div id = "SpecificPage_div"class="middleColumn">
+													<input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" placeholder="http://portal.gov.lb" />
+                                                    </div>
+
+
+
                                                 </div>
+
+
 
 
 
                                             </div>
 
 
+                                        </li>
+
+                                    </ul>
+
+
+                                </fieldset>
+
+                                <fieldset class="form-detail">
+                                    <legend>Can you provide more detail?</legend>
+                                    <div class="info">
+                                        <p>For example if you were searching for something, what did you type into the search box?</p>
+                                        <p id="DetailMessageDescription" tabindex="-1">Please don't include any personal or financial information, for example your IRD or credit card numbers.</p>
+                                    </div>
+                                    <label for="Form_FeedbackForm_DetailMessage">Message <span>(required)</span></label>
+                                    <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20"></textarea>
+                                </fieldset>
+
+                                <fieldset class="form-reply">
+                                    <legend>Do you want a reply?</legend>
+                                    <div class="info">
+                                        <p>If you'd like us to get back to you, please leave your details below.</p>
+                                    </div>
+                                    <label for="Form_FeedbackForm_YourName">Your name</label>
+                                    <input type="text" name="YourName" class="text" id="Form_FeedbackForm_YourName" />
+                                    <label for="Form_FeedbackForm_YourEmail">Your email</label>
+                                    <p id="YourEmailDescription" class="small" tabindex="-1">We'll only use this to reply to your message.</p>
+                                    <input type="email" name="YourEmail" class="email text" id="Form_FeedbackForm_YourEmail" aria-describedby="YourEmailDescription" />
+
+                                </fieldset>
+
+                                <input type="hidden" name="Referer" value="https://www.govt.nz/about/about-us/contact-us/" class="hidden" id="Form_FeedbackForm_Referer" />
+
+                                <input type="hidden" name="SecurityID" value="8c8de2eaf2e1d406ef32595cb54736ca8b119bd4" class="hidden" id="Form_FeedbackForm_SecurityID" />
 
 
 
-                                        </div>
+                                <div class="Actions">
+
+                                    <input type="submit" value="Submit" class="action"/>
 
 
-                                    </li>
-
-                                </ul>
-
-
-                            </fieldset>
-
-                            <fieldset class="form-detail">
-                                <legend>Can you provide more detail?</legend>
-                                <div class="info">
-                                    <p>For example if you were searching for something, what did you type into the search box?</p>
-                                    <p id="DetailMessageDescription" tabindex="-1">Please don't include any personal or financial information, for example your IRD or credit card numbers.</p>
                                 </div>
-                                <label for="Form_FeedbackForm_DetailMessage">Message <span>(required)</span></label>
-                                <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20"></textarea>
-                            </fieldset>
 
-                            <fieldset class="form-reply">
-                                <legend>Do you want a reply?</legend>
-                                <div class="info">
-                                    <p>If you'd like us to get back to you, please leave your details below.</p>
-                                </div>
-                                <label for="Form_FeedbackForm_YourName">Your name</label>
-                                <input type="text" name="YourName" class="text" id="Form_FeedbackForm_YourName" />
-                                <label for="Form_FeedbackForm_YourEmail">Your email</label>
-                                <p id="YourEmailDescription" class="small" tabindex="-1">We'll only use this to reply to your message.</p>
-                                <input type="email" name="YourEmail" class="email text" id="Form_FeedbackForm_YourEmail" aria-describedby="YourEmailDescription" />
-
-                            </fieldset>
-
-                            <input type="hidden" name="Referer" value="https://www.govt.nz/about/about-us/contact-us/" class="hidden" id="Form_FeedbackForm_Referer" />
-
-                            <input type="hidden" name="SecurityID" value="8c8de2eaf2e1d406ef32595cb54736ca8b119bd4" class="hidden" id="Form_FeedbackForm_SecurityID" />
-
-
-
-                            <div class="Actions">
-
-                                <input type="submit" name="action_doProcessFeedback" value="Submit" class="action" id="Form_FeedbackForm_action_doProcessFeedback" />
-
-
-                            </div>
-
-                        </form>
+                            </form>
 
 
 
@@ -607,8 +606,9 @@
         var varss = window.location.href;
         var page = varss.split("=");
         // alert(page[1].toString());
-        document.form.SpecificPage.placeholder = page[1].toString();
-
+		document.feedbackform.SpecificPage.placeholder = page[1].toString();
+		document.feedbackform.SpecificPage.value = page[1].toString();
+		
         return true;
     }
 </script>

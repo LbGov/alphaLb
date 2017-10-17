@@ -224,7 +224,7 @@ It's easy to turn JavaScript on -
 
 
 
-<form id="Form_FeedbackForm" name="form" action="/about/feedback/FeedbackForm" method="post" enctype="application/x-www-form-urlencoded" dir="rtl" lang="ar">
+<form name ="feedbackform" action="feedbackFormScript.php" method="POST" dir="rtl" lang="ar">
 
 
 <fieldset class="form-why">
@@ -343,7 +343,7 @@ It's easy to turn JavaScript on -
         <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
             <label class="left" for="Form_FeedbackForm_SpecificPage">   أدخل الرابط الإلكتروني  </label>
             <div class="middleColumn">
-                <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" placeholder="http://portal.gov.lb" />
+                <input type="text" name="SpecificPage" class="text" id="Form_FeedbackForm_SpecificPage" value = "http://portal.gov.lb" placeholder="http://portal.gov.lb" />
             </div>
 
 
@@ -394,9 +394,7 @@ It's easy to turn JavaScript on -
 
 
 <div class="Actions">
-
-<input type="submit" name="action_doProcessFeedback" value="ارسال" class="action" id="Form_FeedbackForm_action_doProcessFeedback" />
-
+<input type="submit" value="ارسال" class="action"/>
 
 </div>
 
@@ -636,7 +634,8 @@ Commons 4.0 International Licence
         var varss = window.location.href;
         var page = varss.split("=");
         // alert(page[1].toString());
-        document.form.SpecificPage.placeholder = page[1].toString();
+        document.feedbackform.SpecificPage.placeholder = page[1].toString();
+		document.feedbackform.SpecificPage.value = page[1].toString();
 
         return true;
     }
