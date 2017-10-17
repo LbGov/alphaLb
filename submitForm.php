@@ -15,7 +15,7 @@ $username = "root";
 $password = "";
 $dbname = "dgformrequests";
 $tablename="users_contacts";
-
+echo "Ran Script";
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
 
