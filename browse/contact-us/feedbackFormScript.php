@@ -33,6 +33,8 @@ $detailMessage=$_POST['DetailMessage'];
 $name=$_POST['YourName'];
 $email=$_POST['YourEmail'];
 
+$submitButton=$_POST['action_doProcessFeedback'];
+
 
 $insertQuery = "INSERT INTO feedback_table
           (whyContactingUs, whyReason, sectionId,specificPage,detailMessage,name,email)
@@ -40,9 +42,13 @@ $insertQuery = "INSERT INTO feedback_table
           ('".$whyContactingUs."', '".$whyReason."', '".$sectionId."', '".$specificPage."', '".$detailMessage."', '".$name."', '".$email."')";
                           
 if ($conn->query($insertQuery) === TRUE) {
-    echo "New record created successfully";
+	if($submitButton == "Submit"){
+	header( 'Location: http://portal.gov.lb/dg/browse/thank-you/index.html' );
+	}
+	else{
+	header( 'Location: http://portal.gov.lb/dg/browse/thank-you/index_ar.html' );
+	}
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 ?>
