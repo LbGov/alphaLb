@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="col-md-12 callout-alert noscript">
                         Your browser currently has JavaScript turned off,
-                        which means that Govt.nz might not display properly on your device.
+                        which means that Portal.Gov.Lb might not display properly on your device.
                         It's easy to turn JavaScript on -
                         <a href="http://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">find out how to enable JavaScript in your browser</a>.
                     </div>
@@ -233,7 +233,7 @@
 
 
 
-                        <form name="feedbackform" action="feedbackFormScript.php" method="POST">
+                        <form name="feedbackform" action="feedbackFormScript.php" method="POST" onsubmit='return validate ()'>
 
                             <fieldset class="form-why">
                                 <legend>Why are you contacting us?</legend>
@@ -273,14 +273,14 @@
                                 <ul class="SelectionGroup plainselectiongroup nolabel">
 
                                     <li>
-                                        <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" onclick="hideSpecificURLDiv()" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
+                                        <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" onclick="hideAll()" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
 
                                     </li>
 
                                     <li>
-                                        <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" onclick="hideSpecificURLDiv()" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
+                                        <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" onclick="specificIdSection()" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
 
-                                        <div class="CompositeField selectiongroup_item ">
+                                        <div class="CompositeField " id="specificIDSection" style="display:none">
 
 
 
@@ -341,9 +341,9 @@
 
                                     <li>
 
-                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="pasteURL()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
+                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="specificURLSection()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
 
-                                        <div class="CompositeField" id="composite_field" style="display:none">
+                                        <div class="CompositeField" id="specificURLSection" style="display:none">
 
                                             <div id="Form_FeedbackForm_SpecificPage_Holder" class="field text">
                                                 <label id="Form_FeedbackForm_SpecificPage" class="left" for="Form_FeedbackForm_SpecificPage">Enter URL or name of page</label>
@@ -396,10 +396,8 @@
 
 
 
-                            <div class="Actions">
-
-                                <input type="submit" name="action_doProcessFeedback" value="Submit" class="action" id="Form_FeedbackForm_action_doProcessFeedback" />
-
+                            <div>
+                                <input type="submit" name="action_doProcessFeedback" value="Submit" id="Form_FeedbackForm_action_doProcessFeedback" />
                             </div>
 
                         </form>
@@ -582,13 +580,6 @@
         </div>
     </div>
 
-
-    <script type="text/javascript" src="../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
-    <script type="text/javascript" src="../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
 </body>
 
 <!-- Mirrored from www.portal.gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
@@ -596,18 +587,33 @@
 
 
 <script type="text/javascript">
-    function pasteURL() {   //this function paste the url in the contact page
+    function specificURLSection() {   //this function paste the url in the contact page
         var varss = window.location.href;
         var page = varss.split("=");
         // alert(page[1].toString());
-        document.getElementById("composite_field").style.display = "block";       
+        document.getElementById("specificURLSection").style.display = "block";
+        document.getElementById("specificIDSection").style.display = "none";
         document.feedbackform.SpecificPage.value = page[1].toString();
-
         return true;
     }
 
-    function hideSpecificURLDiv() {
-        var linkDiv = document.getElementById("showCompositeField");
-        linkDiv.style.display = "none";
+    function specificIdSection() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "block";
     }
+
+    function hideAll() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "none";
+    }
+
+    function validate() {
+        if (document.feedbackform.DetailMessage.value == "") {
+            alert("The Message field cannot be empty");
+            return false;
+        }
+        return true;
+    }
+
+
 </script>
