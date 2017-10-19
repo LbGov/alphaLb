@@ -69,9 +69,15 @@ sans-serif;font-weight:normal;color:#4C4C4C;font-size:0.78em}.callout-note,.call
 0 1.5em;padding:1.17em 1.25em 1em;clear:both}.callout-note
 p,.callout-alert p,.callout-warning p{margin:0}.callout-note
 a,.callout-warning
-a{color:#B73A1E}.callout-warning{border-left:10px solid
-#ED1C24;font-family:"Fira-Bold", Helvetica, Arial,
-sans-serif;font-weight:bold}.callout-warning.noscript{max-width:1170px;margin:25px
+a{color:#B73A1E}.callout-warning{font-family:"Fira-Bold", Helvetica, Arial,
+sans-serif;font-weight:bold}
+
+.callout-warning.left-stripe{border-left:10px solid
+#ED1C24;}
+.callout-warning.right-stripe{border-right:10px solid
+#ED1C24;}
+
+.callout-warning.noscript{max-width:1170px;margin:25px
 15px 0px 15px}.callout-note{border-left:10px solid
 #4C4C4C}.callout-note h2,.callout-note h3{padding:0 0 6px
 0}.callout-alert{border-left:10px solid #369}.callout-alert
@@ -329,9 +335,14 @@ sans-serif;font-weight:normal;color:#4C4C4C;font-size:0.78em}.callout-note,.call
 0 1.5em;padding:1.17em 1.25em 1em;clear:both}.callout-note
 p,.callout-alert p,.callout-warning p{margin:0}.callout-note
 a,.callout-warning
-a{color:#B73A1E}.callout-warning{border-left:10px solid
-#ED1C24;font-family:"Fira-Bold", Helvetica, Arial,
-sans-serif;font-weight:bold}.callout-warning.noscript{max-width:1170px;margin:25px
+a{color:#B73A1E}.callout-warning{font-family:"Fira-Bold", Helvetica, Arial,
+sans-serif;font-weight:bold}
+.callout-warning.left-stripe{border-left:10px solid
+#ED1C24;}
+.callout-warning.right-stripe{border-right:10px solid
+#ED1C24;}
+
+.callout-warning.noscript{max-width:1170px;margin:25px
 15px 0px 15px}.callout-note{border-left:10px solid
 #4C4C4C}.callout-note h2,.callout-note h3{padding:0 0 6px
 0}.callout-alert{border-left:10px solid #369}.callout-alert
@@ -3632,5 +3643,9 @@ h2{font-size:16px}.mp-container .title-row h2{margin:36px 0 0
 0}.mp-container .toc-wrapper{margin-top:-10px}.mp-container
 .toc-wrapper .guide-parts{padding-top:18px}ul.pagination
 li.desktop{display:none}ul.pagination li.mobile{display:inline}}
+.navigation{
+    
+  float:right;
+}
 </body>
 </html>
