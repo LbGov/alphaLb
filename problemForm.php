@@ -37,10 +37,10 @@ $insertQuery = "INSERT INTO problem_table
                           
 if ($conn->query($insertQuery) === TRUE) {
 	if($submitButton == "Submit"){
-	header( 'Location: http://portal.gov.lb/dg/browse/thank-you/index.html' );
+	header( 'Location: http://portal.gov.lb/dg/browse/thank-you-problem/index.html' );
 	}
 	else{
-	header( 'Location: http://portal.gov.lb/dg/browse/thank-you/index_ar.html' );
+	header( 'Location: http://portal.gov.lb/dg/browse/thank-you-problem/index_ar.html' );
 	}
 } else {
 }
