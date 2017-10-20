@@ -234,53 +234,53 @@
 
 
                         <form name="feedbackform" action="feedbackFormScript.php" method="POST" onsubmit='return validate ()'>
-
+                            &nbsp;
                             <fieldset class="form-why">
                                 <legend>Why are you contacting us?</legend>
                                 <ul name="WhyContactingUs" class="optionset" id="Form_FeedbackForm_WhyContactingUs">
 
-                                    <li class="odd valcant-find">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class="radio" name="WhyContactingUs" type="radio" value="cant-find" />
+                                    <li class="odd valcant-find" style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class=".english_version" name="WhyContactingUs" type="radio" value="cant-find" />
                                         <label for="Form_FeedbackForm_WhyContactingUs_cantfind">I can't find what I'm looking for</label>
                                     </li>
 
-                                    <li class="even valreport-problem">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class="radio" name="WhyContactingUs" type="radio" value="report-problem" />
+                                    <li class="even valreport-problem" style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class=".english_version" name="WhyContactingUs" type="radio" value="report-problem" />
                                         <label for="Form_FeedbackForm_WhyContactingUs_reportproblem">I want to report a problem</label>
                                     </li>
 
-                                    <li class="odd valquestion">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_question" class="radio" name="WhyContactingUs" type="radio" value="question" />
+                                    <li class="odd valquestion" style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyContactingUs_question" class=".english_version" name="WhyContactingUs" type="radio" value="question" />
                                         <label for="Form_FeedbackForm_WhyContactingUs_question">I want to ask a question</label>
                                     </li>
 
-                                    <li class="even valsuggestion">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class="radio" name="WhyContactingUs" type="radio" value="suggestion" />
+                                    <li class="even valsuggestion" style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class=".english_version" name="WhyContactingUs" type="radio" value="suggestion" />
                                         <label for="Form_FeedbackForm_WhyContactingUs_suggestion">I want to make a suggestion</label>
                                     </li>
 
-                                    <li class="odd valcompliment">
-                                        <input id="Form_FeedbackForm_WhyContactingUs_compliment" class="radio" name="WhyContactingUs" type="radio" value="compliment" />
+                                    <li class="odd valcompliment" style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyContactingUs_compliment" class=".english_version" name="WhyContactingUs" type="radio" value="compliment" />
                                         <label for="Form_FeedbackForm_WhyContactingUs_compliment">I want to give you a compliment</label>
                                     </li>
 
                                 </ul>
                             </fieldset>
-
+                            &nbsp;
                             <fieldset class="form-what" id="location">
                                 <legend>What's it to do with?</legend>
 
                                 <ul class="SelectionGroup plainselectiongroup nolabel">
 
-                                    <li>
-                                        <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" onclick="hideAll()" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
+                                    <li style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyReason_1" class=".english_version" name="WhyReason" type="radio" value="site" onclick="hideAll()" /><label for="Form_FeedbackForm_WhyReason_1">The whole site</label>
 
                                     </li>
 
-                                    <li>
-                                        <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" onclick="specificIdSection()" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
+                                    <li style="background-color:#ddd; padding: 12px">
+                                        <input id="Form_FeedbackForm_WhyReason_2" class=".english_version" name="WhyReason" type="radio" value="section" onclick="specificIdSection()" /><label for="Form_FeedbackForm_WhyReason_2">A specific section</label>
 
-                                        <div class="CompositeField " id="specificIDSection" style="display:none">
+                                        <div class="CompositeField" id="specificIDSection" style="display:none">
 
 
 
@@ -339,9 +339,9 @@
 
                                     </li>
 
-                                    <li>
+                                    <li style="background-color:#ddd; padding: 12px">
 
-                                        <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="specificURLSection()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
+                                        <input id="Form_FeedbackForm_WhyReason_3" class=".english_version" name="WhyReason" type="radio" value="page" onclick="specificURLSection()" /><label for="Form_FeedbackForm_WhyReason_3">A specific page</label>
 
                                         <div class="CompositeField" id="specificURLSection" style="display:none">
 
@@ -374,7 +374,7 @@
                                     <p id="DetailMessageDescription" tabindex="-1">Please don't include any personal or financial information, for example your IRD or credit card numbers.</p>
                                 </div>
                                 <label for="Form_FeedbackForm_DetailMessage">Message <span>(required)</span></label>
-                                <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20"></textarea>
+                                <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20" style="resize: none;"></textarea>
                             </fieldset>
 
                             <fieldset class="form-reply">
@@ -394,8 +394,8 @@
 
                             <input type="hidden" name="SecurityID" value="8c8de2eaf2e1d406ef32595cb54736ca8b119bd4" class="hidden" id="Form_FeedbackForm_SecurityID" />
 
-
-
+                            &nbsp;
+                            &nbsp;
                             <div>
                                 <input type="submit" name="action_doProcessFeedback" value="Submit" id="Form_FeedbackForm_action_doProcessFeedback" />
                             </div>

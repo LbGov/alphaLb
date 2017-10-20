@@ -222,59 +222,63 @@
                 </div>
 
 
-                <div class="summary main-content ga-content-container" align="right">
+                <div class="summary main-content ga-content-container"  >
 
 
 
 
                     <form name="feedbackform" action="feedbackFormScript.php" method="POST" dir="rtl" lang="ar" onsubmit='return validate ()'>
 
-
+                        &nbsp;
                         <fieldset class="form-why">
                             <legend>لماذا تتصل بنا ؟</legend>
-                            <ul name="WhyContactingUs" class="optionset" id="Form_FeedbackForm_WhyContactingUs">
+                            <ul name="WhyContactingUs" class="optionset" id="Form_FeedbackForm_WhyContactingUs" >
 
-                                <li class="odd valcant-find">
+                                <li class="oddvalcant-find" style="background-color:#ddd; padding: 12px">
 
-                                    <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class="radio" name="WhyContactingUs" type="radio" value="cant-find" />
-                                    <label for="Form_FeedbackForm_WhyContactingUs_cantfind">لا يمكنني أن أجد ما أبحث عنه</label>
+                                    <input id="Form_FeedbackForm_WhyContactingUs_cantfind" class="arabic_version" name="WhyContactingUs" type="radio" value="cant-find"/>
+                                    <label for="Form_FeedbackForm_WhyContactingUs_cantfind" style="margin-right:50px;">لا يمكنني أن أجد ما أبحث عنه</label>
                                 </li>
 
-                                <li class="even valreport-problem">
-                                    <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class="radio" name="WhyContactingUs" type="radio" value="report-problem" />
-                                    <label for="Form_FeedbackForm_WhyContactingUs_reportproblem">أريد أن أبلغ عن خطأ</label>
+                                <li class="even valreport-problem" style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyContactingUs_reportproblem" class="arabic_version" name="WhyContactingUs" type="radio" value="report-problem" />
+                                    <label for="Form_FeedbackForm_WhyContactingUs_reportproblem" style="margin-right:50px;">أريد أن أبلغ عن خطأ</label>
                                 </li>
 
-                                <li class="odd valquestion">
-                                    <input id="Form_FeedbackForm_WhyContactingUs_question" class="radio" name="WhyContactingUs" type="radio" value="question" />
-                                    <label for="Form_FeedbackForm_WhyContactingUs_question">أريد أن أطرح سؤال</label>
+                                <li class="odd valquestion" style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyContactingUs_question" class="arabic_version" name="WhyContactingUs" type="radio" value="question" />
+                                    <label for="Form_FeedbackForm_WhyContactingUs_question" style="margin-right:50px;">أريد أن أطرح سؤال</label>
                                 </li>
 
-                                <li class="even valsuggestion">
-                                    <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class="radio" name="WhyContactingUs" type="radio" value="suggestion" />
-                                    <label for="Form_FeedbackForm_WhyContactingUs_suggestion">أريد تقديم اقتراح</label>
+                                <li class="even valsuggestion" style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyContactingUs_suggestion" class="arabic_version" name="WhyContactingUs" type="radio" value="suggestion" />
+                                    <label for="Form_FeedbackForm_WhyContactingUs_suggestion" style="margin-right:50px;">  أريد تقديم اقتراح</label>
                                 </li>
 
-                                <li class="odd valcompliment">
-                                    <input id="Form_FeedbackForm_WhyContactingUs_compliment" class="radio" name="WhyContactingUs" type="radio" value="compliment" />
-                                    <label for="Form_FeedbackForm_WhyContactingUs_compliment">أريد أن أعطي مجاملة</label>
+                                <li class="odd valcompliment" style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyContactingUs_compliment" class="arabic_version" name="WhyContactingUs" type="radio" value="compliment" />
+                                    <label for="Form_FeedbackForm_WhyContactingUs_compliment" style="margin-right:50px;">أريد أن أعطي مجاملة</label>
                                 </li>
 
                             </ul>
                         </fieldset>
 
-                        <fieldset class="form-what">
-                            <legend>ماذا تفعل؟</legend>
+                       &nbsp;
+                         <fieldset class="form-what">
+                           
+                             <legend>ماذا تفعل؟</legend>
 
                             <ul class="SelectionGroup plainselectiongroup nolabel">
 
-                                <li>
-                                    <input id="Form_FeedbackForm_WhyReason_1" class="selector" name="WhyReason" type="radio" value="site" onclick="hideAll()" /><label for="Form_FeedbackForm_WhyReason_1">الموقع بأكمله</label>
+                                <li style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyReason_1" class="arabic_version" name="WhyReason" type="radio" value="site" onclick="hideAll()" />
+                                    <label for="Form_FeedbackForm_WhyReason_1" style="margin-right:50px;"> الموقع بأكمله </label>
 
                                 </li>
 
-                                <li>
-                                    <input id="Form_FeedbackForm_WhyReason_2" class="selector" name="WhyReason" type="radio" value="section" onclick="specificIdSection()" /><label for="Form_FeedbackForm_WhyReason_2">قسم محدد</label>
+                                <li style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyReason_2" class="arabic_version" name="WhyReason" type="radio" value="section" onclick="specificIdSection()" />
+                                    <label for="Form_FeedbackForm_WhyReason_2" style="margin-right:50px;"> قسم محدد </label>
 
                                     <div class="CompositeField" id="specificIDSection" style="display:none">
 
@@ -332,8 +336,9 @@
 
                                 </li>
 
-                                <li>
-                                    <input id="Form_FeedbackForm_WhyReason_3" class="selector" name="WhyReason" type="radio" value="page" onclick="specificURLSection()" /><label for="Form_FeedbackForm_WhyReason_3">صفحة محددة</label>
+                                <li style="background-color:#ddd; padding: 12px">
+                                    <input id="Form_FeedbackForm_WhyReason_3" class="arabic_version" name="WhyReason" type="radio" value="page" onclick="specificURLSection()" />
+                                    <label for="Form_FeedbackForm_WhyReason_3" style="margin-right:50px;"> صفحة محددة </label>
 
                                     <div class="CompositeField" id="specificURLSection" style="display:none">
 
@@ -367,8 +372,8 @@
                                 <p>على سبيل المثال إذا كنت تبحث عن شيء ما، ما الذي كتبته في مربع البحث؟</p>
                                 <p id="DetailMessageDescription" tabindex="-1">يرجى عدم تضمين أي معلومات شخصية أو مالية، على سبيل المثال أرقام إيرد أو بطاقات الائتمان الخاصة بك.</p>
                             </div>
-                            <label for="Form_FeedbackForm_DetailMessage">الرسالة<span> (مطلوب)</span></label>
-                            <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20"></textarea>
+                            <label for="Form_FeedbackForm_DetailMessage" >الرسالة<span> (مطلوب)</span></label>
+                            <textarea name="DetailMessage" class="textarea nolabel" id="Form_FeedbackForm_DetailMessage" required="required" aria-required="true" aria-describedby="DetailMessageDescription" rows="5" cols="20" style="resize: none;"></textarea>
                         </fieldset>
 
                         <fieldset class="form-reply">
@@ -388,8 +393,8 @@
 
                         <input type="hidden" name="SecurityID" value="ded099368f1b9674abe8994fd8fbf1b6ed68fc92" class="hidden" id="Form_FeedbackForm_SecurityID" />
 
-
-
+                        &nbsp;
+                        &nbsp;
                         <div>
                             <input type="submit" name="action_doProcessFeedback" value="ارسال" id="Form_FeedbackForm_action_doProcessFeedback" />
 
