@@ -89,13 +89,13 @@
             <div id="header-search"
                  class="header-search row mobile-hide">
                 <div role="search" class="header-search-form header-right ">
-                    <form id="search-form" action="https://www.portal.gov.lb/search" class="form-inline pull-right">
+                    <form name="searchform "id="search-form" action="https://www.portal.gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
-                                       value=""
-                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" />
+                                       value=" Search portal.gov.lb"
+                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" onclick="this.form.q.value=''"/>
                                 <label for="searchterm" class="search-label entered">
                                     Search
                                     portal.gov.lb
@@ -579,7 +579,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 <!-- Mirrored from www.portal.gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
