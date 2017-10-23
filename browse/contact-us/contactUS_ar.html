@@ -96,12 +96,17 @@
 
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
-                                       value=""
-                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" />
+                                       value=" بحث"
+                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" onclick="this.form.q.value=''" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;" dir="rtl">
-                                    <table border='0' dir="rtl" align="right">
-                                        <tr><td align="right">بحث   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                    <table border='0' dir=" rtl" align="right">
+                                        <tr>
+                                            <td align="right">
+                                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                                بحث
+                                            </td>
+                                        </tr>
                                     </table>
                                 </label>
                                 <button type="submit" style="color:#ffffff;" class="submit btn btn-orange square-corners"
@@ -116,7 +121,8 @@
             </div>
         </div>
     </div>
-
+   
+   
     <div class="content " role="main">
 
 
@@ -286,7 +292,7 @@
                                             <label class="left" for="Form_FeedbackForm_SpecificSectionID">القسم</label>
                                             <div class="middleColumn">
                                                 <select name="SpecificSectionID" class="dropdown" id="Form_FeedbackForm_SpecificSectionID">
-
+                                                    
                                                     <option value="" selected="selected">(إختر قسم)</option>
 
                                                     <option value="7020">العائلة</option>
@@ -627,6 +633,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
 
