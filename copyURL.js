@@ -1,20 +1,17 @@
-var varss = window.location.href;
-var tab=varss.split("/");
+var currentURL = window.location.href;
+var processedURl=varss.split("/");
 var i=0;
 
 while(1)
 { 
-   if(tab[i]=="index_ar.html#")
+   if(processedURl[i]=="index_ar.html#")
    {  
-	document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS_ar.html? var=" + varss;
+	document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS_ar.html? var=" + currentURL;
 	break;
    }
-    if(tab[i]=="index.html#")
-   {  
-	document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS.html? var=" + varss;
+    else{ 
+	document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS.html? var=" + currentURL;
 	break;
     }
-   
-  
 	i=i+1;
 }
