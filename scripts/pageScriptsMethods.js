@@ -8,11 +8,11 @@ function copyURL(){
 	{ 
 	   if(processedURl[i]=="index_ar.html#")
 	   {  
-		document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS_ar.html? var=" + currentURL;
+		document.location.href = "http://portal.gov.lb/dg/about/feedback/feedback_ar.html? var=" + currentURL;
 		break;
 	   }
 		else{ 
-		document.location.href = "http://portal.gov.lb/dg/browse/contact-us/contactUS.html? var=" + currentURL;
+		document.location.href = "http://portal.gov.lb/dg/about/feedback/feedback.html? var=" + currentURL;
 		break;
 		}
 		i=i+1;
@@ -49,4 +49,32 @@ function copyURL(){
             document.problemForm.Referer.value=document.URL;            
             return true;
         }        
+    }
+
+    function specificURLSection() {   //this function paste the url in the contact page
+        var varss = window.location.href;
+        var page = varss.split("=");
+        // alert(page[1].toString());
+        document.getElementById("specificURLSection").style.display = "block";
+        document.getElementById("specificIDSection").style.display = "none";
+        document.feedbackform.SpecificPage.value = page[1].toString();
+        return true;
+    }
+
+    function specificIdSection() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "block";
+    }
+
+    function hideAll() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "none";
+    }
+
+    function validateFeedbackForm() {
+        if (document.feedbackform.DetailMessage.value == "") {
+            alert("The Message field cannot be empty");
+            return false;
+        }
+        return true;
     }
