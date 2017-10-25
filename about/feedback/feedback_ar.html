@@ -233,7 +233,7 @@
 
 
 
-                    <form name="feedbackform" action="feedbackFormScript.php" method="POST" dir="rtl" lang="ar" onsubmit='return validate ()'>
+                    <form name="feedbackform" action="feedbackFormScript.php" method="POST" dir="rtl" lang="ar" onsubmit='return validateFeedbackForm()'>
 
                         &nbsp;
                         <fieldset class="form-why">
@@ -633,40 +633,8 @@
             </div>
         </div>
     </div>
-    
+    <script type="text/javascript" src="../../scripts/pageScriptsMethods.js"></script>
+
 </body>
 </html>
-
-
-<script type="text/javascript">
-    function specificURLSection() {   //this function paste the url in the contact page
-        var varss = window.location.href;
-        var page = varss.split("=");
-        // alert(page[1].toString());               
-        document.getElementById("specificURLSection").style.display = "block";
-        document.getElementById("specificIDSection").style.display = "none";
-        document.feedbackform.SpecificPage.value = page[1].toString();
-        return true;
-    }
-
-    function specificIdSection() {
-        document.getElementById("specificURLSection").style.display = "none";
-        document.getElementById("specificIDSection").style.display = "block";
-    }
-
-    function hideAll() {
-        document.getElementById("specificURLSection").style.display = "none";
-        document.getElementById("specificIDSection").style.display = "none";
-    }
-
-    function validate() {
-        if (document.feedbackform.DetailMessage.value == "") {
-            alert("The Message field cannot be empty");
-            return false;
-        }
-        return true;
-    }
-
-
-</script>
 

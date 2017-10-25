@@ -50,3 +50,31 @@ function copyURL(){
             return true;
         }        
     }
+
+    function specificURLSection() {   //this function paste the url in the contact page
+        var varss = window.location.href;
+        var page = varss.split("=");
+        // alert(page[1].toString());
+        document.getElementById("specificURLSection").style.display = "block";
+        document.getElementById("specificIDSection").style.display = "none";
+        document.feedbackform.SpecificPage.value = page[1].toString();
+        return true;
+    }
+
+    function specificIdSection() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "block";
+    }
+
+    function hideAll() {
+        document.getElementById("specificURLSection").style.display = "none";
+        document.getElementById("specificIDSection").style.display = "none";
+    }
+
+    function validateFeedbackForm() {
+        if (document.feedbackform.DetailMessage.value == "") {
+            alert("The Message field cannot be empty");
+            return false;
+        }
+        return true;
+    }
