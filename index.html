@@ -476,7 +476,7 @@
             <div class="dgDiv">
                 <a href="javascript:void(0)" onclick="showProblemForm()" style="color:darkslateblue"><b>Is There Something Wrong With This Page?</b></a>
                 <div>
-                    <form name="problemForm" action="problemForm.php" method="POST" onsubmit='return validate ()'>
+                    <form name="problemForm" action="problemForm.php" method="POST" onsubmit='return validateProblemForm()'>
                         <div id="problemFormFields" style="display:none;">
                             <h2>Help us improve GOV.LB</h2>
 
@@ -485,7 +485,7 @@
                             <label for="Form_FeedbackForm_Wrong">What went wrong</label>
                             <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
 
-                            <input type="hidden" name="Referer" value="http://portal.gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
+                            <input type="hidden" name="Referer" value="http://portal.gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />
                             <div>
                                 <input type="submit" name="action_doProcessProblem" value="Submit" />
                             </div>
@@ -506,8 +506,6 @@
             <div class="row">
 
 
-
-
                 <div class="col-md-4">
                     <div class="info-section">
                         <h2><b>About us</b></h2>
@@ -516,15 +514,13 @@
 
 
                             <li>
-                                <a href="#" onclick="copyURL()">
-                                    Contact us
-                                </a>
+                                <a href="javascript:void(0)" >Contact us</a>
                             </li>
 
 
 
                             <li>
-                                <a href="#../../about/feedback/index.html">
+                                <a href="browse/contact-us/contactUS.html" onclick="copyURL()">
                                     Give feedback on this website
                                 </a>
                             </li>
@@ -532,8 +528,8 @@
 
 
                             <li>
-                                <a href="#../../about/about-us/about-govt-nz/index.html">
-                                    About portal.gov.lb
+                       <a href="about/about-us/about-govt-lb/index.html">
+                                    About Portal.gov.lb
                                 </a>
                             </li>
 
@@ -604,7 +600,6 @@
                         <ul>
 
 
-
                             <li>
                                 <a href="#../../about/using-this-website/terms-of-use/index.html">
                                     Terms of use
@@ -672,51 +667,15 @@
     </div>
 
 
-    <script type="text/javascript" src="../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
-    <script type="text/javascript" src="../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
+
+    <script type="text/javascript" src="assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
+    <script type="text/javascript" src="mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
+    <script type="text/javascript" src="mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
+    <script type="text/javascript" src="googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
+    <script type="text/javascript" src="googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
+    <script type="text/javascript" src="flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
+    <script type="text/javascript" src="scripts/pageScriptsMethods.js"></script>  
 </body>
 
 <!-- Mirrored from www.portal.gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
 </html>
-<script type="text/javascript">
-    function setLanguage(lang) {
-        var langOutput = lang.localeCompare('en');
-        if (langOutput == 0) {
-            window.location.href = "http://portal.gov.lb/dg/index.html";
-        }
-        else {
-            window.location.href = "http://portal.gov.lb/dg/index_ar.html";
-        }
-    }
-
-    function copyURL() {   //this function copies the url to know from which page we contact the administrator
-        document.write("<script src='copyURL.js' type='text/javascript'><\/script>");
-        return true;
-    }
-
-    function showProblemForm() {
-        var problemForm = document.getElementById("problemFormFields");
-        if (problemForm.style.display == "none") {
-            problemForm.style.display = "block";
-        }
-        else {
-            problemForm.style.display = "none";
-        }
-        return true;
-    }
-
-    function validate() {
-        if ((document.problemForm.doingAction.value == "") || (document.problemForm.wrongAction.value == "")) {
-            alert("The Form fields cannot be empty");
-            return false;
-        }
-        else {
-            document.problemForm.Referer.value = document.URL;
-            return true;
-        }
-    }
-</script>
