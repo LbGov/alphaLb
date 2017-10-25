@@ -17,7 +17,7 @@ function copyURL(){
 		}
 		i=i+1;
 	}
-}
+} 
 
     function setLanguage(lang) {
         var langOutput = lang.localeCompare('en');
@@ -78,3 +78,4 @@ function copyURL(){
         }
         return true;
     }
+
