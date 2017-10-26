@@ -487,36 +487,35 @@
 
                             </div>
 
-                            &nbsp;
                             <div>
-                                <div>
-                                    <div class="dgDiv page-feature">
-                                        <a href="javascript:void(0)" onclick="showProblemForm()" style="color:darkslateblue"><b>Is There Something Wrong With This Page?</b></a>
-                                        <div>
-                                            <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
-                                                <div id="problemFormFields" style="display:none;">
-                                                    <h2>Help us improve GOV.LB</h2>
+                                <div class="dgDiv page-feature">
+                                    <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
 
-                                                    <label for="Form_FeedbackForm_Doing">What you were doing</label>
-                                                    <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
-                                                    <label for="Form_FeedbackForm_Wrong">What went wrong</label>
-                                                    <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
+                                    <div>
+                                        <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validateProblemForm ()'>
+                                            <div id="problemFormFields" style="display:none;">
+                                                &nbsp;
+                                                <h2>Help us improve GOV.LB</h2>
 
-                                                    <input type="hidden" name="Referer" value="http://portal.gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />
-                                                    <div>
-                                                        <input type="submit" name="action_doProcessProblem" value="Submit" />
-                                                    </div>
+                                                <label for="Form_FeedbackForm_Doing">What you were doing</label>
+                                                <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
+                                                <label for="Form_FeedbackForm_Wrong">What went wrong</label>
+                                                <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
 
-
+                                                <input type="hidden" name="Referer" value="http://portal.gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
+                                                <div>
+                                                    <input type="submit" name="action_doProcessProblem" value="Submit" />
                                                 </div>
 
-                                            </form>
-                                        </div>
+
+                                            </div>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-
-                            &nbsp;
+                        </div>
+                        &nbsp;
 
                             <div class="PageLastUpdatedPageFeature page-feature">
                                 <h2 class="sr-only">Last Updated</h2>
@@ -708,7 +707,7 @@
     </div>
 
 
-    <!--<script type="text/javascript" src="../../../assets/_combinedfiles/requirementsd279.js"></script>-->
+    <script type="text/javascript" src="../../../assets/_combinedfiles/requirementsd279.js"></script>
     <script type="text/javascript" src="../../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
     <script type="text/javascript" src="../../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
     <script type="text/javascript" src="../../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
