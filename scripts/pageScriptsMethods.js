@@ -79,3 +79,17 @@ function copyURL(){
         return true;
     }
 
+    function sectionSwitch(firstSection, secondSection, thirdSection, radioId) {
+
+        var answerOutput = document.getElementById(radioId);
+        if (answerOutput.checked) {
+            document.getElementById(firstSection).style.display = "none";
+            document.getElementById(secondSection).style.display = "block";
+        }
+        else {
+            document.getElementById(firstSection).style.display = "none";
+            document.getElementById(thirdSection).style.display = "block";
+        }
+        
+    }
+
