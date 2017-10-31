@@ -89,7 +89,27 @@ function copyURL(){
         else {
             document.getElementById(firstSection).style.display = "none";
             document.getElementById(thirdSection).style.display = "block";
+
         }
         
     }
 
+    function displaySection(sectionId) {
+        document.getElementById(sectionId).style.display = "block";     
+    }
+
+    function hideSection(sectionId) {
+        document.getElementById(sectionId).style.display = "none";
+
+    }
+
+    function uncheckRadioButton(radioId, buttonId, buttonState) {
+        var radioButton = document.getElementById(radioId);
+        radioButton.checked = false;
+        if (buttonState) {
+            document.getElementById(buttonId).disabled = true;
+        }
+        else {
+            document.getElementById(buttonId).disabled = false;
+        }
+    }
