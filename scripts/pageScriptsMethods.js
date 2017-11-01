@@ -113,3 +113,9 @@ function copyURL(){
             document.getElementById(buttonId).disabled = false;
         }
     }
+
+    function attachFiles() {
+        var attachId = document.createElement("INPUT");
+        attachId.setAttribute("type", "file");
+        document.body.appendChild(x);
+    }
