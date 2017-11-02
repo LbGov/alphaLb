@@ -138,12 +138,14 @@
                             <span aria-hidden="true">/</span>
                         </li>
                         <li>
-                            Get a Passport
-                            <span aria-hidden="true">/</span>
+                            <a href="../../get-a-passport/index.html" class="ga-track-nav-breadcrumbs">
+                                Get a Passport
+                                <span aria-hidden="true">/</span>
+                            </a>
                         </li>
 
                         <li>
-                            <a href="#/browse/passports-visas-and-travelling/" class="ga-track-nav-breadcrumbs"> Apply online for a Passport</a>
+                            <a href="../apply-online/applyOnline.html" class="ga-track-nav-breadcrumbs"> Apply online for a Passport</a>
                             <span aria-hidden="true"></span>
                         </li>
 
@@ -175,17 +177,17 @@
                         <h1>Apply Online for a Passport</h1>
                         &nbsp;
                         <div id="Applying_From_Lebanon">
-                            <h2>What is your Passport issuance date?</h2>
+                            <h3 style="background-color:lightgrey; padding:12px;">What is your Passport issuance date?</h3>
 
                             <br />
                             <p>
-                                <input id="Issue_Date" type="number" style="padding-bottom: 12px; border-color: darkseagreen; padding-right:100px;" required="required" aria-required="true">
+                                <input id="Issue_Date" type="date" required="required" aria-required="true">
                             </p>
                             <br />
                             <br />
 
 
-                            <button class="w3-button w3-green w3-large w3-ripple w3-border-black w3-padding-large" id="Issue_Date_Continue_Button" onclick="">Continue</button>
+                            <button class="w3-button w3-green w3-large w3-ripple w3-border-black w3-padding-large" id="Issue_Date_Continue_Button" onclick="openNewPageWithValidation('recentPhoto.html', 'Issue_Date')">Continue</button>
                         </div>
 
 
@@ -240,7 +242,7 @@
                             <div class="PageLastUpdatedPageFeature page-feature">
                                 <h2 class="sr-only">Last Updated</h2>
                                 <p>
-                                    Page last updated: <time datetime="2017-10-30"> October 31 2017</time>
+                                    Page last updated: <time datetime="2017-11-02"> November 02 2017</time>
                                 </p>
 
                             </div>
@@ -396,7 +398,7 @@
                 <div class="col-md-4">
                     <div class="to-top-link">
                         <p>
-                            <a href="nameChange.html#toplink">
+                            <a href="issueDate.html#toplink">
                                 <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Back
                                 to top
                             </a>

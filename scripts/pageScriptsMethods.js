@@ -114,8 +114,33 @@ function copyURL(){
         }
     }
 
-    function attachFiles() {
-        var attachId = document.createElement("INPUT");
-        attachId.setAttribute("type", "file");
-        document.body.appendChild(x);
+    function openNewPageOnRadioButtonClick(firstPageID, secondPageID, noRadioId) {
+        if (noRadioId == null) {
+            location.href = firstPageID;
+            }
+        else {
+            var radioButton = document.getElementById(noRadioId);
+            if (radioButton.checked == true) {
+                location.href = secondPageID;
+            }
+            else {
+                location.href = firstPageID;
+            }
+        }
     }
+   
+    function openNewPage(pageID) {
+        location.href = pageID;
+        }
+
+    function openNewPageWithValidation(pageID, validatedField) {
+        var validatedField = document.getElementById(validatedField);
+
+                if (validatedField.value) {
+                    openNewPage(pageID);
+                }
+
+                else {
+                    alert("This page fields cannot be empty");
+                }
+            }
