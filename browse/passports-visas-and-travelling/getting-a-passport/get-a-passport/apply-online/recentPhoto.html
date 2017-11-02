@@ -88,8 +88,6 @@
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-
-
     <div class="header navbar" role="banner" style="background-color:#019E45;">
         <div class="container">
             <div class="header-item row">
@@ -180,6 +178,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 callout-alert noscript">
+
                         Your browser currently has JavaScript turned off,
                         which means that Govt.nz might not display properly on your device.
                         It's easy to turn JavaScript on -
@@ -188,6 +187,7 @@
                 </div>
             </div>
         </noscript>
+
         <div class="container page-content" id="toplink">
             <div class="row">
 
@@ -195,86 +195,115 @@
                     <div class="title-row">
                         <h1>Apply Online for a Passport</h1>
                         &nbsp;
-                        <div id="Applying_From_Lebanon">
-                            <h3 style="background-color:lightgrey; padding:12px;"> What is your Passport number? </h3>
-                            <br />
-                            <p>
-                                <input id="Number_Pass" type="number" style="padding-bottom: 12px; border-color: darkseagreen; padding-right:100px;" aria-required="true">
-                            </p>
-                            <br />
-                            <button class="w3-button w3-green w3-large w3-ripple w3-border-black w3-padding-large" id="Number_Pass_Continue_Button" onclick="openNewPageWithValidation('issueDate.html', 'Number_Pass')">Continue</button>
+                        <br />
+                        <div id="Applying_From_Lebanon ">
+                            <h4><b>Recent Photo</b></h4>
+                            <form action="/action_page.php">
+                                <p style="background-color:lightgrey; padding: 12px"> <b> Please attach a recent photo of you</b></p>
+                                <br />
+                                <input type="file" name="App_Pass_File" id="File_Recent_Photo" accept="file_extension">
+
+                            </form>
+                            <br />                           
                         </div>
-                        <br />              
-                        <div class="block-bottom ">
+                    </div>
+                    <div>
+                        <h3 style="background-color:lightgrey; padding:12px;">Proceed to Online Payment</h3>
+                        <br />
+                        <table>
+                            <tr>
+                                <th>Document requested</th>
+                                <th>Fees</th>
+                            </tr>
+                            <tr>
+                                <td>Passport valid for a year</td>
+                                <td>60,000 L.L</td>
+                            </tr>
+                            <tr>
+                                <td>Passport valid for 5 years</td>
+                                <td>300,000 L.L</td>
+                            </tr>
+                            <tr>
+                                <td>Passport – first class</td>
+                                <td>1,000,000 L.L</td>
+                            </tr>
+                            <tr>
+                                <td>Passport – second class</td>
+                                <td>750,000 L.L</td>
+                            </tr>
+                        </table>
+                        <br />
+                        <button class="w3-button w3-blue w3-large w3-ripple w3-border-black w3-padding-large" id="Recent_Photo_Pay_Button" onclick="openNewPageWithValidation('pay.html', 'File_Recent_Photo')">Pay</button>
 
-                            <div class="PrintPageFeature page-feature">
+                    </div>
+                    <div class="block-bottom ">
 
-                                <div class="print-container">
+                        <div class="PrintPageFeature page-feature">
 
-                                    <h2 class="sr-only">Print</h2>
+                            <div class="print-container">
 
-                                    <button type="button" class="btn-link" id="print-page-button">
-                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                <h2 class="sr-only">Print</h2>
 
-                                        <span>Print</span>
+                                <button type="button" class="btn-link" id="print-page-button">
+                                    <i class="fa fa-print" aria-hidden="true"></i>
 
-                                    </button>
-                                    <noscript><div class="callout-alert">Sorry, this button doesn't work without Javascript. Try pressing Control + P on your keyboard to print, or use your browser's print option.</div></noscript>
-                                </div>
-                                &nbsp;
-                                <div>
-                                    <div class="dgDiv page-feature">
-                                        <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
+                                    <span>Print</span>
 
-                                        <div>
-                                            <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
-                                                <div id="problemFormFields" style="display:none;">
-                                                    &nbsp;
-                                                    <h2>Help us improve GOV.LB</h2>
+                                </button>
+                                <noscript><div class="callout-alert">Sorry, this button doesn't work without Javascript. Try pressing Control + P on your keyboard to print, or use your browser's print option.</div></noscript>
+                            </div>
+                            &nbsp;
+                            <div>
+                                <div class="dgDiv page-feature">
+                                    <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
 
-                                                    <label for="Form_FeedbackForm_Doing">What you were doing</label>
-                                                    <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
-                                                    <label for="Form_FeedbackForm_Wrong">What went wrong</label>
-                                                    <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
+                                    <div>
+                                        <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
+                                            <div id="problemFormFields" style="display:none;">
+                                                &nbsp;
+                                                <h2>Help us improve GOV.LB</h2>
 
-                                                    <input type="hidden" name="Referer" value="http://portal.gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
-                                                    &nbsp;
-                                                    <div>
-                                                        <input type="submit" name="action_doProcessProblem" value="Submit" />
-                                                    </div>
+                                                <label for="Form_FeedbackForm_Doing">What you were doing</label>
+                                                <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
+                                                <label for="Form_FeedbackForm_Wrong">What went wrong</label>
+                                                <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
 
-
+                                                <input type="hidden" name="Referer" value="http://portal.gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
+                                                &nbsp;
+                                                <div>
+                                                    <input type="submit" name="action_doProcessProblem" value="Submit" />
                                                 </div>
 
-                                            </form>
-                                        </div>
+
+                                            </div>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            &nbsp;
+                        </div>
+                        &nbsp;
 
-                            <div class="PageLastUpdatedPageFeature page-feature">
-                                <h2 class="sr-only">Last Updated</h2>
-                                <p>
-                                    Page last updated: <time datetime="2017-11-01"> November 01 2017</time>
-                                </p>
-
-                            </div>
+                        <div class="PageLastUpdatedPageFeature page-feature">
+                            <h2 class="sr-only">Last Updated</h2>
+                            <p>
+                                Page last updated: <time datetime="2017-11-01"> November 01 2017</time>
+                            </p>
 
                         </div>
+
                     </div>
                 </div>
+            </div>
 
 
 
-                <div class="block-hidden hidden ">
-
-                </div>
+            <div class="block-hidden hidden ">
 
             </div>
+
         </div>
     </div>
-
     <div class="footer" aria-label="Footer" role="contentinfo">
         <div class="container">
             <div class="row">
@@ -290,13 +319,13 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-us/contact-us/index.html">Contact us</a>
+                                <a href="../../../../../about/about-us/contact-us/index.html">Contact us</a>
                             </li>
 
 
 
                             <li>
-                                <a href="../../../../../../about/feedback/feedback.html" onclick="copyURL()">
+                                <a href="../../../../../about/feedback/feedback.html" onclick="copyURL()">
                                     Give feedback on this website
                                 </a>
                             </li>
@@ -305,7 +334,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-us/about-govt-lb/index.html">
+                                <a href="../../../../../about/about-us/about-govt-lb/index.html">
                                     About portal.gov.lb
                                 </a>
                             </li>
@@ -334,7 +363,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-this-website/portal.gov.lb-scope/index.html">
+                                <a href="../../../../../about/about-this-website/portal.gov.lb-scope/index.html">
                                     The scope of portal.gov.lb
                                 </a>
                             </li>
@@ -342,7 +371,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-this-website/style-and-design/index.html">
+                                <a href="../../../../../about/about-this-website/style-and-design/index.html">
                                     portal.gov.lb's style and design guide
                                 </a>
                             </li>
@@ -350,7 +379,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-this-website/our-current-and-recent-work/index.html">
+                                <a href="../../../../../about/about-this-website/our-current-and-recent-work/index.html">
                                     Current and recent work
                                 </a>
                             </li>
@@ -358,7 +387,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/about-this-website/analytics-for-govt-lb/index.html">
+                                <a href="../../../../../about/about-this-website/analytics-for-govt-lb/index.html">
                                     portal.gov.lb analytics
                                 </a>
                             </li>
@@ -379,7 +408,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/using-this-website/terms-of-use/index.html">
+                                <a href="../../../../../about/using-this-website/terms-of-use/index.html">
                                     Terms of use
                                 </a>
                             </li>
@@ -387,7 +416,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/using-this-website/privacy/index.html">
+                                <a href="../../../../../about/using-this-website/privacy/index.html">
                                     Privacy
                                 </a>
                             </li>
@@ -395,7 +424,7 @@
 
 
                             <li>
-                                <a href="../../../../../../about/using-this-website/copyright-and-attribution/index.html">
+                                <a href="../../../../../about/using-this-website/copyright-and-attribution/index.html">
                                     Copyright
                                 </a>
                             </li>
@@ -412,7 +441,7 @@
                 <div class="col-md-4">
                     <div class="to-top-link">
                         <p>
-                            <a href="numberPass.html#toplink">
+                            <a href="recentPhoto.html#toplink">
                                 <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Back
                                 to top
                             </a>
@@ -445,13 +474,13 @@
     </div>
 
 
-    <script type="text/javascript" src="../../../../../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
-    <script type="text/javascript" src="../../../../../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../../../../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../../../../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../../../../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../../../../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
-    <script type="text/javascript" src="../../../../../../scripts/pageScriptsMethods.js?v=<?php echo filemtime('pageScriptsMethods.css') ?>"></script>
+    <script type="text/javascript" src="../../../../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
+    <script type="text/javascript" src="../../../../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
+    <script type="text/javascript" src="../../../../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
+    <script type="text/javascript" src="../../../../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
+    <script type="text/javascript" src="../../../../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
+    <script type="text/javascript" src="../../../../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
+    <script type="text/javascript" src="../../../../../scripts/pageScriptsMethods.js?v=<?php echo filemtime('pageScriptsMethods.css') ?>"></script>
 </body>
 
 <!-- Mirrored from www.portal.gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
