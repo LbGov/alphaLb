@@ -1,4 +1,6 @@
-function copyURL(){
+
+
+function copyURL() {
 
 	var currentURL = window.location.href;
 	var processedURl = currentURL.split("/");
@@ -119,3 +121,4 @@ function copyURL(){
         attachId.setAttribute("type", "file");
         document.body.appendChild(x);
     }
+   
