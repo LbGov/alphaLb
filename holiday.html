@@ -64,13 +64,14 @@
     <link rel="stylesheet" type="text/css" href="themes/dia-theme/css/printbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/contactUsForm.css"/>
+    <link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/holiday.css" />
     <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
     <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
     <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
 
 
 </head>
-<body class="pagetype-hub" data-pagetype="HubPage" onload="calendar()">
+<body class="pagetype-hub" data-pagetype="HubPage" onload="calendar('Today')" >
 
 
     <div class="header navbar" role="banner" style="background-color:#019E45;">
@@ -245,7 +246,7 @@
         </div>
         <button class="test btn-cal"  id="cal" style="position: absolute; top: 230px; left: 370px; " onclick="test()">Calendar</button>
 
-        <div id="calendar" class="call" style="position: absolute; left: -390px; top: 160px; margin-bottom : 700px;">
+        <div id="calendar" class="call" style="position: absolute; left: -390px; top: 160px; ">
             <div class="calendar-wrapper" style="background-color: #ebebeb; ">
                 <button id="btnPrev" type="button" onclick="prev()">Prev</button>
                 <button id="btnNext" type="button" onclick="next()">Next</button>
@@ -276,81 +277,81 @@
                     </tr>
                 </thead>
                 <tbody class="table-hover">
-                    <tr class="style1 " onclick="showDay(1,1)">
+                    <tr class="style1 " onclick="showDay(1, 1, 'new year');popup('New year')">
                         <td class="style1 text-left">01/01/2017</td>
                         <td class="style1 text-left">New Year</td>
                     </tr>
 
-                    <tr class="style1" onclick="showDay(6,1)">
+                    <tr class="style1" onclick="showDay(6, 1, 'Chrismtas'); popup('Christmas')">
                         <td class="style1 text-left">06/01/2017</td>
                         <td class="style1 text-left">Christmas - Armenian Orthodox</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(9,2)">
+                    <tr class="style1" onclick="showDay(9, 2, 'Saint Maron'); popup('Saint Maron')">
                         <td class="style1 text-left">09/02/2017</td>
                         <td class="style1 text-left">Saint Maron's</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(25,3)">
+                    <tr class="style1" onclick="showDay(25, 3, 'Annunciation'); popup('Annunciation')">
                         <td class="style1 text-left">25/03/2017</td>
                         <td class="style1 text-left">Annunciation</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(14,4)">
+                    <tr class="style1" onclick="showDay(14, 4, 'Good Friday'); popup('Good Friday')">
                         <td class="style1 text-left">14/04/2017</td>
                         <td class="style1 text-left">Good Friday - Western Calendar</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(16,4)">
+                    <tr class="style1" onclick="showDay(16, 4, 'Easter'); popup('Easter')">
                         <td class="style1 text-left">16/04/2017</td>
                         <td class="style1 text-left">Easter- Western Calendar</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(14,4)">
+                    <tr class="style1" onclick="showDay(14, 4, 'Good Friday'); popup('Good Friday')">
                         <td class="style1 text-left">14/04/2017</td>
                         <td class="style1 text-left">Good Friday - Oriental Calendar</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(16,4)">
+                    <tr class="style1" onclick="showDay(16, 4, 'Easter'); popup('Easter')">
                         <td class="style1 text-left">16/04/2017</td>
                         <td class="style1 text-left">Easter - Oriental Calendar</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(1,5)">
+                    <tr class="style1" onclick="showDay(1, 5, 'Worker Day'); popup('Worker Day')">
                         <td class="style1 text-left">01/05/2017</td>
                         <td class="style1 text-left">Worker's Day</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(7,5)">
+                    <tr class="style1" onclick="showDay(7, 5, 'Martyrs Day'); popup('Martyrs Day')">
                         <td class="style1 text-left">07/05/2017</td>
-                        <td class="style1 text-left">Martyrs' Day</td>
+                        <td class="style1 text-left">Martyr's Day</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(14,5)">
+                    <tr class="style1" onclick="showDay(14, 5, 'Resistance and Liberation Day'); popup('Resistance and Liberation Day')">
                         <td class="style1 text-left">14/05/2017</td>
                         <td class="style1 text-left">Resistance and Liberation Day</td>
                     </tr>
-                    <tr class="style1" >
+                    <tr class="style1" onclick="showDay(25, 6, 'Eid Al Fitr'); popup('Eid Al Fitr')">
                         <td class="style1 text-left">25/06/2017</td>
                         <td class="style1 text-left">Eid Al Fitr</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(15,8)">
+                    <tr class="style1" onclick="showDay(15, 8, 'Assumption'); popup('Assumption')">
                         <td class="style1 text-left">15/08/2017</td>
                         <td class="style1 text-left">Feast of the Assumption</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(1,9)">
+                    <tr class="style1" onclick="showDay(1, 9, 'al-Adha'); popup('al-Adha')">
                         <td class="style1 text-left">01/09/2017</td>
                         <td class="style1 text-left">Eid al-Adha</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(21,9)">
+                    <tr class="style1" onclick="showDay(21, 9, 'Islamic New Year'); popup('Islamic New Year')">
                         <td class="style1 text-left">21/09/2017</td>
                         <td class="style1 text-left">Islamic New Year</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(1,10)">
+                    <tr class="style1" onclick="showDay(1, 10, 'Ashura'); popup('Ashura')">
                         <td class="style1 text-left">01/10/2017</td>
                         <td class="style1 text-left">Ashura</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(22,11)">
+                    <tr class="style1" onclick="showDay(22, 11, 'Independence'); popup('Independence')">
                         <td class="style1 text-left">22/11/2017</td>
                         <td class="style1 text-left">Independence Day</td>
                     </tr>
-                    <tr class="style1" onclick="showDay(30,11)">
+                    <tr class="style1" onclick="showDay(30, 11, 'The Prophet Birthday'); popup('The Prophet Birthday')">
                         <td class="style1 text-left">30/11/2017</td>
                         <td class="style1 text-left">The Prophet's Birthday</td>
                     </tr>
 
-                    <tr class="style1" onclick="showDay(25,12)">
+                    <tr class="style1" onclick="showDay(25, 12, 'Christmas'); popup('Christmas')">
                         <td class="style1 text-left">25/12/2017</td>
                         <td class="style1 text-left">Christmas</td>
                     </tr>
@@ -543,152 +544,7 @@
 <!-- Mirrored from www.portal.gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
 </html>
 <style>
-    *, *:before, *:after {
-        box-sizing: border-box;
-    }
+    
 
-    .group {
-        &:after;
-
-    {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        vertical-align: baseline;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .max(@maxWidth; @rules) {
-        @media only screen and (max-width: @maxWidth) {
-            @rules();
-        }
-    }
-
-    .min(@minWidth; @rules) {
-        @media only screen and (min-width: @minWidth) {
-            @rules();
-        }
-    }
-
-
-    .calendar-wrapper {
-        width: 360px;
-        margin: 3em auto;
-        padding: 2em;
-        border: 1px solid @calendar-border;
-        border-radius: 5px;
-        background: @calendar-bg;
-    }
-
-    table.tbl {
-        clear: both;
-        width: 100%;
-        border: 1px solid @calendar-border;
-        border-radius: 3px;
-        border-collapse: collapse;
-        color: @calendar-color;
-    }
-
-        td.style2 {
-            height: 48px;
-            text-align: center;
-            vertical-align: middle;
-            border-right: 1px solid @calendar-border;
-            border-top: 1px solid @calendar-border;
-            width: 100% / 7;
-           
-        }
-
-
-    .today {
-        font-weight: 700;
-        color: @calendar-standout;
-        font-size: 1.5em;
-    }
-
-    thead td.style2 {
-        border: none;
-        color: @calendar-standout;
-        text-transform: uppercase;
-        font-size: 1.5em;
-    }
-
-    #btnPrev {
-        float: left;
-        margin-bottom: 20px;
-        &:before;
-
-    {
-        content: '\f104';
-        font-family: FontAwesome;
-        padding-right: 4px;
-    }
-
-    }
-
-    #btnNext {
-        float: right;
-        margin-bottom: 20px;
-        &:after;
-
-    {
-        content: '\f105';
-        font-family: FontAwesome;
-        padding-left: 4px;
-    }
-
-    }
-
-    #btnPrev, #btnNext {
-        background: transparent;
-        border: none;
-        outline: none;
-        font-size: 1em;
-        color: @calendar-fade-color;
-        cursor: pointer;
-        font-family: "Roboto Condensed", sans-serif;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-        &:hover;
-
-    {
-        color: @calendar-standout;
-        font-weight: bold;
-    }
-
-    }
-    .call {
-        transition: all 1s;
-      
-    }
-    .move-cal {
-        transform: translate(+450px, 0);
-    }
-    .table-move2 {
-        transform: translate(200px, 0);
-    }
-    .btn-cal {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 12px;
-        text-align: center;
-        text-decoration: none;
-        display:block;
-        font-size: 16px;
-        margin: 4px 12px;
-        cursor: pointer;
-        border-radius: 12px;
-    }
    
 </style>

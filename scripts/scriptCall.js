@@ -48,20 +48,26 @@
         function test() {
             if (i == 1) {
                 i = 0;
+                popup('Today');
                 var box = document.getElementById('calendar');
                 box.classList.add("move-cal");
-               // box.style.position = " fixed";
-
                 $(document).scroll(function () {
                     checkOffset();
                 });
                 function checkOffset() {
-                    if ($('#calendar').offset().top + $('#calendar').height() >= $('#footer').offset().top)
+                    if ($('#calendar').offset().top + $('#calendar').height() > $('#footer').offset().top)
+                    {
+
+                        document.getElementById('calendar').classList.remove('call');
+                        document.getElementById('calendar').style.top = "1200px";
                         $('#calendar').css('position', 'absolute');
+                       
+                      } 
                     if ($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
-                        $('#calendar').css('position', 'fixed'); // restore when you scroll up
+                    { $('#calendar').css('position', 'fixed'); document.getElementById('calendar').style.top = "160px"; }// restore when you scroll up
                 }
-             
+                document.getElementById('calendar').classList.add('call');
+               
                 var table = document.getElementById('tbl');
                 table.classList.add("table-move2");
                 var title = document.getElementById('title');
@@ -85,7 +91,7 @@
                 button.style.display = "block";
                 var cal = document.getElementById('cal');
                 cal.classList.remove("table-move2");
-                calendar();
+                calendar('Today');
 
             }
         }
@@ -114,7 +120,7 @@
                 currMonth = currMonth - 1;
                 m = m - 1;
             }
-            calendar();
+            calendar('');
              
         }
 
@@ -130,29 +136,31 @@
                 currMonth = currMonth + 1;
                 m = m + 1
             }
+            calendar('');
  
         }
 
-        function showDay(day,month)
+        function showDay(day,month,i)
         {
             currMonth = month-1;
             m = month-1;
             chkM = month-1 ;
             currDay = day;
-            calendar();
+            calendar(i);
             currMonth = d.getMonth();
             currDay = d.getDate();
             m = currMonth;
             y = currYear;
             chkM = chk.getMonth();
+            
 
         }
 
-        function calendar() {
+        function calendar(w) {
 
             // Start calendar
 
-
+           
             // Set the current month, year
 
 
@@ -203,7 +211,7 @@
                 // Write the current day in the loop
                
                 if (chkY == currYear && chkM == currMonth && i == currDay) {
-                    html += '<td class="style2 today">' + i + '</td>';
+                    html += "<td class='style2 today popup' onclick='popup(" + '"' + w + '"' + ")'>" + i + '   <span class="popuptext" id="myPopup"></span> </td>';
                 } else {
                     html += '<td class="style2 normal">' + i + '</td>';
                 }
@@ -229,4 +237,11 @@
 
             // Write HTML to the div
             document.getElementById("divCal").innerHTML = html;
+        }
+        function popup(j) {
+         
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+                popup.innerHTML = j;
+            
         }
