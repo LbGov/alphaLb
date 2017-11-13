@@ -79,7 +79,7 @@
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
                 <div style="height:70px; ">
-                    <img src="themes/tree.png" /><span style="color:white; font-size:20px;"> Lebanese Government </span>
+                    <img src="../themes/tree.png" /><span style="color:white; font-size:20px;"> Lebanese Government </span>
                 </div>
                 <div class="mobile-search">
                     <button type="button"
@@ -148,7 +148,7 @@
                 </nav>
             </div>
         </div>
-
+      
 
         <noscript>
             <div class="container">
@@ -244,10 +244,15 @@
                 </tbody>
             </table>
         </div>
-        <button class="transition btn-cal" id="cal" style="position: absolute; top: 230px; left: 370px; " value="1" onclick="showCall()">Calendar</button>
-
+        <button class="transition btn-cal" id="cal" style="position: absolute; top: 230px; left: 370px; " value="1" onclick="showCall('1')">Calendar</button>
+    
         <div id="calendar" class="call" style="position: absolute; left: -390px; top: 160px; ">
             <div class="calendar-wrapper" style="background-color: #ebebeb; ">
+                <div id="x" class="transition floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" value="1"
+                      onclick="showCall('2')" style="top: 60px; left: 330px; width: 25px; height: 25px; transform:rotate(45deg);">
+                    <p class="plus" style="font-size:25px;top:-15px">+</p>
+                    <img class="edit">
+                </div>
                 <button id="btnPrev" type="button" value="1" onclick="prev()">Prev</button>
                 <button id="btnNext" type="button" value="1" onclick="next()">Next</button>
                 <div id="divCal"></div>
@@ -269,7 +274,7 @@
                     </th>
                     <th class="style1 text-left">
                         Feast or anniversary
-                        <div id="floating-button" class="transition" data-toggle="tooltip" data-placement="left" data-original-title="Create" value="1" onclick="showDesc()" style="top:14.5px;left:575px">
+                        <div id="floating-button" class="transition floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" value="1" onclick="showDesc()" style="top:14.5px;left:575px">
                             <p class="plus">+</p>
                             <img class="edit">
                         </div>
@@ -513,7 +518,7 @@
                 </div>
                 <div class="col-md-1 copyright-icons">
                     <a href="https://creativecommons.org/licenses/by/4.0/">
-                        <img src="themes/dia-theme/images/cc_icons.png"
+                        <img src="../themes/dia-theme/images/cc_icons.png"
                              alt="Creative Commons 4.0 International Licence" height="40" width="85" />
                     </a>
                 </div>

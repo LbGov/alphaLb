@@ -32,7 +32,7 @@
 
         }
 /*-------------------------------------------------------------------function to show the Calendar-------------------------------------------------------------------------*/
-        function showCall() {
+        function showCall(status) {
 
             var box = document.getElementById('calendar');
             var table = document.getElementById('tbl');
@@ -40,8 +40,8 @@
             var button = document.getElementById('floating-button');
             var cal = document.getElementById('cal');
 
-            if (cal.value == "1") {
-                cal.value = "0";
+            if (status == "1") {
+               
                 popup('Today');
                 box.classList.add("move-cal");
       //-------to scroll the calendar while we scrolling up and down
@@ -70,7 +70,7 @@
             }
 
             else {
-                cal.value = "1";
+               
                box.classList.remove("move-cal");
                 table.classList.remove("table-move2");
                 title.classList.remove("table-move2");
