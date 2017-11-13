@@ -1,0 +1,380 @@
+<style type="text/css">
+    .max(@maxWidth; @rules) {
+        @media only screen and (max-width: @maxWidth) {
+            @rules();
+        }
+    }
+
+    .min(@minWidth; @rules) {
+        @media only screen and (min-width: @minWidth) {
+            @rules();
+        }
+    }
+
+
+    .calendar-wrapper {
+        width: 360px;
+        margin: 3em auto;
+        padding: 2em;
+        border: 1px solid @calendar-border;
+        border-radius: 5px;
+        background: @calendar-bg;
+    }
+
+    table.tbl {
+        clear: both;
+        width: 100%;
+        border: 1px solid @calendar-border;
+        border-radius: 3px;
+        border-collapse: collapse;
+        color: @calendar-color;
+    }
+
+        td.style2 {
+            height: 48px;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid @calendar-border;
+            border-top: 1px solid @calendar-border;
+            width: 100% / 7;
+           
+        }
+
+
+    .today {
+        font-weight: 700;
+        color: @calendar-standout;
+        font-size: 1.5em;
+    }
+
+    thead td.style2 {
+        border: none;
+        color: @calendar-standout;
+        text-transform: uppercase;
+        font-size: 1.5em;
+    }
+
+    #btnPrev {
+        float: left;
+        margin-bottom: 20px;
+        &:before;
+
+    {
+        content: '\f104';
+        font-family: FontAwesome;
+        padding-right: 4px;
+    }
+
+    }
+
+    #btnNext {
+        float: right;
+        margin-bottom: 20px;
+        &:after;
+
+    {
+        content: '\f105';
+        font-family: FontAwesome;
+        padding-left: 4px;
+    }
+
+    }
+
+    #btnPrev, #btnNext {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: @calendar-fade-color;
+        cursor: pointer;
+        font-family: "Roboto Condensed", sans-serif;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        &:hover;
+
+    {
+        color: @calendar-standout;
+        font-weight: bold;
+    }
+
+    }
+
+    .call {
+        transition: all 1s;
+    }
+    .move-cal {
+        transform: translate(+450px, 0);
+    }
+    .table-move2 {
+        transform: translate(200px, 0);
+    }
+    .btn-cal {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
+        display:block;
+        font-size: 16px;
+        margin: 4px 12px;
+        cursor: pointer;
+        border-radius: 2px;
+
+    }
+
+    .popup {
+        position: relative;
+ 
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width:180px;
+            background-color: grey;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+   
+    /* Popup arrow */
+            .popup .popuptext::after {
+                
+                content: "";
+                position: absolute;
+                top: 100%;
+                left:70px;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+     .transition {
+        left: 1200px;
+        transition: all 1s;
+    }
+
+    .table-move {
+        transform: translate(-250px, 0);
+    }
+
+    .move-description {
+        transform: translate(-655px, 0);
+    }
+    .float {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: #EBEBEB;
+        color: #EBEBEB;
+        border-radius: 50px;
+        text-align: center;
+    }
+
+    .my-float {
+        margin-top: 22px;
+    }
+
+    #floating-button {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #db4437;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .plus {
+        color: white;
+        position: absolute;
+        top: -5px;
+        display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        line-height: 55px;
+        font-size: 38px;
+        font-family: 'Roboto';
+        font-weight: 300;
+        animation: plus-out 0.3s;
+        transition: all 0.3s;
+    }
+
+ /*** Table holiday **/
+
+ div.table-title {
+        display: block;
+        margin: auto;
+        max-width: 600px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .table-title h3 {
+        color: black;
+        font-size: 30px;
+        font-weight: 400;
+        font-style: normal;
+        font-family: "Roboto", helvetica, arial, sans-serif;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+    }
+    .table-fill {
+        background: white;
+        border-radius: 3px;
+        border-collapse: collapse;
+        height: 320px;
+        margin: auto;
+        max-width: 600px;
+        padding: 5px;
+        width: 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        animation: float 5s infinite;
+    }
+
+    th.style1 {
+        color: #D5DDE5;
+        background: #1b1e24;
+        border-bottom: 4px solid #9ea7af;
+        border-right: 1px solid #343a45;
+        font-size: 23px;
+        font-weight: 100;
+        padding: 24px;
+        text-align: left;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+    }
+
+        th.style1:first-child {
+            border-top-left-radius: 3px;
+        }
+
+        th.style1:last-child {
+            border-top-right-radius: 3px;
+            border-right: none;
+        }
+
+    tr.style1 {
+        border-top: 1px solid #C1C3D1;
+        border-bottom-: 1px solid #C1C3D1;
+        color: #666B85;
+        font-size: 16px;
+        font-weight: normal;
+        text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    }
+
+        tr.style1:hover td {
+            background: #4E5066;
+            color: #FFFFFF;
+            border-top: 1px solid #22262e;
+        }
+
+        tr.style1:first-child {
+            border-top: none;
+        }
+
+        tr.style1:last-child {
+            border-bottom: none;
+        }
+
+        tr.style1:nth-child(odd) td {
+            background: #EBEBEB;
+        }
+
+        tr.style1:nth-child(odd):hover td {
+            background: #4E5066;
+        }
+
+        tr.style1:last-child td:first-child {
+            border-bottom-left-radius: 3px;
+        }
+
+        tr.style1:last-child td:last-child {
+            border-bottom-right-radius: 3px;
+        }
+
+    td.style1 {
+        background: #FFFFFF;
+        padding: 20px;
+        text-align: left;
+        vertical-align: middle;
+        font-weight: 300;
+        font-size: 18px;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        border-right: 1px solid #C1C3D1;
+    }
+
+        td:last-child {
+            border-right: 0px;
+        }
+
+    th.style1.text-left {
+        text-align: left;
+    }
+
+    th.style1.text-center {
+        text-align: center;
+    }
+
+    th.style1.text-right {
+        text-align: right;
+    }
+
+    td.text-left {
+        text-align: left;
+    }
+
+    td.text-center {
+        text-align: center;
+    }
+
+    td.text-right {
+        text-align: right;
+    }
+
+	</style>
