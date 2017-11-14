@@ -1,4 +1,6 @@
-function copyURL(){
+
+
+function copyURL() {
 
 	var currentURL = window.location.href;
 	var processedURl = currentURL.split("/");
@@ -144,3 +146,10 @@ function copyURL(){
                     alert("This page fields cannot be empty");
                 }
             }
+
+    function attachFiles() {
+        var attachId = document.createElement("INPUT");
+        attachId.setAttribute("type", "file");
+        document.body.appendChild(x);
+    }
+   
