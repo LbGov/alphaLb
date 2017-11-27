@@ -60,6 +60,8 @@
     <link rel="stylesheet" type="text/css" href="../../../themes/dia-theme/css/screenbaab.css?v=<?php echo filemtime('screenbaab.css') ?>" />
     <link rel="stylesheet" type="text/css" href="../../../themes/dia-theme/css/printbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="../../../themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
+    <link rel="stylesheet" type="text/css" href="../../../themes/digital-gov-themes/contactUsForm.css?v=<?php echo filemtime('contactUsForm.css') ?>" />
+
     <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
     <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
     <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
@@ -352,18 +354,27 @@
 
                 </div>
 
-                <div class="col-md-7 col-md-offset-1 ga-content-container main-content" tabindex="-1">
+                <div class="col-md-8 col-md-offset-1 ga-content-container main-content" tabindex="-1">
                     <div class="title-row">
                         <h1>Analytics for Portal.Gov.lb</h1>
 
                         <p class="page-description">
-                            Find live data from Google Analytics about our site visits over the last 6 months, including how often people visit Portal.Gov.lb, the most popular pages and searches, and visitor percentages by country and browser type.
+                            Find live data from Google Analytics about our site visits over the last 30 days, including how often people visit Portal.Gov.lb, the most popular pages and searches, and visitor percentages by country and browser type.
                         </p>
 
                     </div>
 
-                    <div id="chart-1-container"></div>
-                    <div id="chart-2-container"></div>
+                    <div id="chart-1-container" class="divBorder_ga"></div>
+                    <h6>Showing sessions over the past 30 days</h6>
+
+                    <div id="chart-2-container" class="divBorder_ga"></div>
+                    <h6>Showing pageviews over the past 30 days</h6>
+
+
+                    <div id="main-chart-container" class="divBorder_ga"></div>
+                    <h6>Showing browser usage table over the past 30 days</h6>
+                    <div id="breakdown-chart-container" class="divBorder_ga"></div>
+                    <h6>Showing selected browser usage graph over the past 30 days</h6>
 
                     <script>
                         var pHeader = { "alg": "RS256", "typ": "JWT" }
@@ -423,7 +434,7 @@
                                 query: {
                                     'ids': 'ga:164639676', // <-- Replace with the ids value for your view.
                                     'start-date': '30daysAgo',
-                                    'end-date': 'yesterday',
+                                    'end-date': 'today',
                                     'metrics': 'ga:sessions,ga:users',
                                     'dimensions': 'ga:date'
                                 },
@@ -447,7 +458,7 @@
                                 query: {
                                     'ids': 'ga:164639676', // <-- Replace with the ids value for your view.
                                     'start-date': '30daysAgo',
-                                    'end-date': 'yesterday',
+                                    'end-date': 'today',
                                     'metrics': 'ga:pageviews',
                                     'dimensions': 'ga:pagePathLevel1',
                                     'sort': '-ga:pageviews',
@@ -459,11 +470,98 @@
                                     'type': 'PIE',
                                     'options': {
                                         'width': '100%',
-                                        'pieHole': 3 / 12,
+                                        'pieHole': 4 / 9,
                                     }
                                 }
                             });
                             dataChart2.execute();
+
+                            /**
+                            * Create a table chart showing top browsers for users to interact with.
+                             * Clicking on a row in the table will update a second timeline chart with
+                             * data from the selected browser.
+                             */
+                            var mainChart = new gapi.analytics.googleCharts.DataChart({
+                                query: {
+                                    'ids': 'ga:164639676', // <-- Replace with the ids value for your view.
+                                    'start-date': '30daysAgo',
+                                    'end-date': 'today',
+                                    'dimensions': 'ga:browser',
+                                    'metrics': 'ga:sessions',
+                                    'sort': '-ga:sessions',
+                                    'max-results': '6'
+                                },
+                                chart: {
+                                    type: 'TABLE',
+                                    container: 'main-chart-container',
+                                    options: {
+                                        width: '100%'
+                                    }
+                                }
+                            });
+
+
+                            /**
+                             * Create a timeline chart showing sessions over time for the browser the
+                             * user selected in the main chart.
+                             */
+                            var breakdownChart = new gapi.analytics.googleCharts.DataChart({
+                                query: {
+                                    'ids': 'ga:164639676', // <-- Replace with the ids value for your view.
+                                    'start-date': '30daysAgo',
+                                    'end-date': 'today',
+                                    'dimensions': 'ga:date',
+                                    'metrics': 'ga:sessions',
+                                },
+                                chart: {
+                                    type: 'LINE',
+                                    container: 'breakdown-chart-container',
+                                    options: {
+                                        width: '100%'
+                                    }
+                                }
+                            });
+
+                            var mainChartRowClickListener;
+                            if (mainChartRowClickListener) {
+                                google.visualization.events.removeListener(mainChartRowClickListener);
+                            }
+                            mainChart.execute();
+                            //breakdownChart.execute();
+                            /**
+                             * Each time the main chart is rendered, add an event listener to it so
+                             * that when the user clicks on a row, the line chart is updated with
+                             * the data from the browser in the clicked row.
+                             */
+                            mainChart.on('success', function (response) {
+
+                                var chart = response.chart;
+                                var dataTable = response.dataTable;
+
+                                // Store a reference to this listener so it can be cleaned up later.
+                                mainChartRowClickListener = google.visualization.events
+                                    .addListener(chart, 'select', function (event) {
+
+                                        // When you unselect a row, the "select" event still fires
+                                        // but the selection is empty. Ignore that case.
+                                        if (!chart.getSelection().length) return;
+
+                                        var row = chart.getSelection()[0].row;
+                                        var browser = dataTable.getValue(row, 0);
+                                        var options = {
+                                            query: {
+                                                filters: 'ga:browser==' + browser
+                                            },
+                                            chart: {
+                                                options: {
+                                                    title: browser
+                                                }
+                                            }
+                                        };
+
+                                        breakdownChart.set(options).execute();
+                                    });
+                            });
 
                         });
 
@@ -492,7 +590,7 @@
 
                         </div>
                         <div>
-                            <div class="dgDiv page-feature">
+                            <div class="page-feature">
                                 <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
 
                                 <div>
@@ -522,15 +620,19 @@
                     </div>
                     &nbsp;
 
-                        <div class="PageLastUpdatedPageFeature page-feature">
-                            <h2 class="sr-only">Last Updated</h2>
-                            <p>
-                                Page last updated: <time datetime="2017-10-26"> October 26 2017</time>
-                            </p>
-
-                        </div>
+                    <div class="PageLastUpdatedPageFeature page-feature">
+                        <h2 class="sr-only">Last Updated</h2>
+                        <p>
+                            Page last updated: <time datetime="2017-10-26"> October 26 2017</time>
+                        </p>
 
                     </div>
+
+                </div>
+
+
+
+
 
 
 

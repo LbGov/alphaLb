@@ -212,17 +212,32 @@ div.thumbnail .glyphicon-ok-circle{
         border-radius: 4px;
 }
 
+ .maincontainer_ga {
+    width:100%;
+    height: 100%;
+    border: 1px solid gray;
+  }
 
+  .leftcolumn_ga {
+    float:left;
+    display:inline-block;
+    width: 100px;
+    height: 100%;
+    border: 1px solid gray;
+  }
 
+  .contentwrapper_ga {
+    float:left;
+    display:inline-block;
+    width: -moz-calc(100% - 250px);
+    width: -webkit-calc(100% - 250px);
+    width: calc(100% - 250px);
+    height: 100%;
+    border: 1px solid gray;
+  }
+  
+  .divBorder_ga{
+    border: 1px solid gray;
+  }
 
-
-
-   
-   
-	
 </style>
-
-
-</head>
-
-<body>
