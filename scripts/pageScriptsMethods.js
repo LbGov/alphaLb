@@ -1,4 +1,4 @@
-
+﻿
 
 function copyURL() {
 
@@ -115,6 +115,58 @@ function copyURL() {
             document.getElementById(buttonId).disabled = false;
         }
     }
+
+    function uncheckSection(radioId1, radioId2, radioId3) {
+      
+        var radioButton = document.getElementById(radioId1);
+        radioButton.checked = false;
+        var radioButton = document.getElementById(radioId2);
+        radioButton.checked = false;
+        var radioButton = document.getElementById(radioId3);
+        radioButton.checked = false;
+      
+    }
+
+    function openWorkerChosenTransaction() {
+        if (document.getElementById('adjust_worker').checked == true)
+        {
+            var currentURL = window.location.href;
+            var processedURl = currentURL.split("=");
+            location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
+        }
+        
+    }
+
+    function openWorkerTransactionPage(NextPageID) {
+
+        var section;
+
+        if (document.getElementById('one').checked == true)
+        {
+            section = "1";
+        }
+
+       else if (document.getElementById('two').checked == true)
+        {
+            section = '2';
+        }
+       else if (document.getElementById('three').checked == true)
+        {
+            section = '3';
+        }
+       else if (document.getElementById('four').checked == true) {
+            section = '4';
+
+        }
+        else {
+            alert("يرجى إدخال الفئة");
+            NextPageID = "index_1.html";
+        }
+
+        window.location.href = NextPageID +"?section="+section;
+      
+    }
+
 
     function openNewPageOnRadioButtonClick(firstPageID, secondPageID, noRadioId) {
         if (noRadioId == null) {
