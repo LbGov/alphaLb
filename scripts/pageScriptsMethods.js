@@ -160,7 +160,7 @@ function copyURL() {
         }
         else {
             alert("يرجى إدخال الفئة");
-            NextPageID = "index_1.html";
+            NextPageID = "type_worker_transaction.html";
         }
 
         window.location.href = NextPageID +"?section="+section;
