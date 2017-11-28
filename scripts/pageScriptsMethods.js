@@ -134,6 +134,17 @@ function copyURL() {
             var processedURl = currentURL.split("=");
             location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
         }
+        if (document.getElementById('new_worker').checked == true) {
+            var currentURL = window.location.href;
+            var processedURl = currentURL.split("=");
+            location.href = "new-worker/index_" + processedURl[1] + ".html";
+        }
+        if (document.getElementById('renew_worker').checked == true) {
+            var currentURL = window.location.href;
+            var processedURl = currentURL.split("=");
+            location.href = "renew-worker/index_" + processedURl[1] + ".html";
+        }
+
         
     }
 
@@ -141,29 +152,27 @@ function copyURL() {
 
         var section;
 
-        if (document.getElementById('one').checked == true)
-        {
+        if (document.getElementById('one').checked == true) {
             section = "1";
+            window.location.href = NextPageID + "?section=" + section;
         }
 
-       else if (document.getElementById('two').checked == true)
-        {
+        else if (document.getElementById('two').checked == true) {
             section = '2';
+            window.location.href = NextPageID + "?section=" + section;
         }
-       else if (document.getElementById('three').checked == true)
-        {
+        else if (document.getElementById('three').checked == true) {
             section = '3';
+            window.location.href = NextPageID + "?section=" + section;
         }
-       else if (document.getElementById('four').checked == true) {
+        else if (document.getElementById('four').checked == true) {
             section = '4';
+            window.location.href = NextPageID + "?section=" + section;
 
         }
-        else {
-            alert("يرجى إدخال الفئة");
-            NextPageID = "type_worker.html";
-        }
-
-        window.location.href = NextPageID +"?section="+section;
+        else
+            alert("الرجاء إدخال فئة");
+   
       
     }
 
