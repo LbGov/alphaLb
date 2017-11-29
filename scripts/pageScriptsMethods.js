@@ -116,7 +116,7 @@ function copyURL() {
         }
     }
 
-    function uncheckSection(radioId1, radioId2, radioId3, radioId4) {
+    function uncheckSection(radioId1, radioId2, radioId3, radioId4, radioId5) {
       
         var radioButton = document.getElementById(radioId1);
         radioButton.checked = false;
@@ -126,8 +126,21 @@ function copyURL() {
         radioButton.checked = false;
         var radioButton = document.getElementById(radioId4);
         radioButton.checked = false;
+        var radioButton = document.getElementById(radioId5);
+        radioButton.checked = false;
       
     }
+
+
+    function openWorkerChosenTransaction3()
+    {
+    if (document.getElementById('work-permit1').checked == true) {
+        location.href = "work-permit/index_ar.html";
+    }
+    if (document.getElementById('work-residence').checked == true) {
+        location.href = "work-residence/index_ar.html";
+    }
+}
     function openWorkerChosenTransaction2()
     {
         var currentURL;
@@ -137,7 +150,11 @@ function copyURL() {
             processedURl = currentURL.split("=");
             location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
         }
-
+        if (document.getElementById('renew_worker').checked == true) {
+            currentURL = window.location.href;
+            processedURl = currentURL.split("=");
+            location.href = "renew-worker/category_4/index_" + processedURl[1] + ".html";
+        }
         if (document.getElementById('options-conditions').checked == true) {
             location.href = "options-conditions/index_ar.html";
         }
@@ -151,6 +168,7 @@ function copyURL() {
         if (document.getElementById('transfer-sponsorship').checked == true) {
             location.href = "transfer-sponsorship/index_ar.html";
         }
+      
 
     }
 
