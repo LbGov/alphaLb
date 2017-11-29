@@ -116,7 +116,7 @@ function copyURL() {
         }
     }
 
-    function uncheckSection(radioId1, radioId2, radioId3) {
+    function uncheckSection(radioId1, radioId2, radioId3, radioId4) {
       
         var radioButton = document.getElementById(radioId1);
         radioButton.checked = false;
@@ -124,27 +124,58 @@ function copyURL() {
         radioButton.checked = false;
         var radioButton = document.getElementById(radioId3);
         radioButton.checked = false;
+        var radioButton = document.getElementById(radioId4);
+        radioButton.checked = false;
       
+    }
+    function openWorkerChosenTransaction2()
+    {
+        var currentURL;
+        var processedURl;
+        if (document.getElementById('adjust_worker').checked == true) {
+            currentURL = window.location.href;
+            processedURl = currentURL.split("=");
+            location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
+        }
+
+        if (document.getElementById('options-conditions').checked == true) {
+            location.href = "options-conditions/index_ar.html";
+        }
+
+        if (document.getElementById('prior-approval').checked == true) {
+            location.href = "prior-approval/index_ar.html";
+        }
+        if (document.getElementById('work-permit').checked == true) {
+            location.href = "work-permit/index_ar.html";
+        }
+        if (document.getElementById('transfer-sponsorship').checked == true) {
+            location.href = "transfer-sponsorship/index_ar.html";
+        }
+
     }
 
     function openWorkerChosenTransaction() {
+        var currentURL;
+        var processedURl;
         if (document.getElementById('adjust_worker').checked == true)
         {
-            var currentURL = window.location.href;
-            var processedURl = currentURL.split("=");
+            currentURL = window.location.href;
+             processedURl = currentURL.split("=");
             location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
         }
         if (document.getElementById('new_worker').checked == true) {
-            var currentURL = window.location.href;
-            var processedURl = currentURL.split("=");
+            currentURL = window.location.href;
+            processedURl = currentURL.split("=");
             location.href = "new-worker/index_" + processedURl[1] + ".html";
         }
         if (document.getElementById('renew_worker').checked == true) {
-            var currentURL = window.location.href;
-            var processedURl = currentURL.split("=");
+            currentURL = window.location.href;
+            processedURl = currentURL.split("=");
             location.href = "renew-worker/index_" + processedURl[1] + ".html";
         }
 
+  
+     
         
     }
 
@@ -167,7 +198,8 @@ function copyURL() {
         }
         else if (document.getElementById('four').checked == true) {
             section = '4';
-            window.location.href = NextPageID + "?section=" + section;
+            NextPageID = "type_worker_domestic.html";
+            window.location.href = NextPageID + "?section=" + section;;
 
         }
         else
