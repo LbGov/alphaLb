@@ -185,29 +185,37 @@
                             <h3>المعاملات المتاحة:</h3>
 
                             <div class="odd valcant-find" style="background-color:#ddd; padding: 12px;">
-                                <input id="options-conditions" class=".english_version" type="radio" onclick="  uncheckSection('prior-approval', 'work-permit', 'transfer-sponsorship', 'adjust_worker')" />
-                                <label for="options-conditions">خيارات و شروط إستقدام العاملة الأجنبية </label>
+                                <input id="options-conditions" class=".english_version" type="radio" onclick="  uncheckSection('prior-approval', 'work-permit', 'transfer-sponsorship', 'adjust_worker', 'renew_worker')" />
+                                <label for="options-conditions"> إستقدام  </label>
                             </div>
                             &nbsp;
+                           
                             <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="prior-approval" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'work-permit', 'transfer-sponsorship', 'adjust_worker')" />
+                                <input id="renew_worker" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'adjust_worker', 'work-permit', 'transfer-sponsorship', 'prior-approval')" />
+                                <label for="renew_worker">تجديد</label>
+                            </div>
+                            &nbsp;
+                           
+                            <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
+                                <input id="adjust_worker" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'work-permit', 'transfer-sponsorship', 'prior-approval', 'renew_worker')" />
+                                <label for="adjust_worker">تسوية أوضاع </label>
+                            </div>
+                             &nbsp;
+                            <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
+                                <input id="prior-approval" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'work-permit', 'transfer-sponsorship', 'adjust_worker', 'renew_worker')" />
                                 <label for="prior-approval">الحصول عل الموافقة المسبقة من وزارة العمل </label>
                             </div>
                             &nbsp;
                             <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="work-permit" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'prior-approval', 'transfer-sponsorship', 'adjust_worker')" />
+                                <input id="work-permit" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'prior-approval', 'transfer-sponsorship', 'adjust_worker', 'renew_worker')" />
                                 <label for="work-permit"> إجازة عمل و إقامة للعاملة</label>
                             </div>
                             &nbsp;
                             <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="transfer-sponsorship" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'work-permit', 'prior-approval', 'adjust_worker')" />
+                                <input id="transfer-sponsorship" class=".english_version" type="radio" onclick="  uncheckSection('options-conditions', 'work-permit', 'prior-approval', 'adjust_worker', 'renew_worker')" />
                                 <label for="transfer-sponsorship">إجراءات نقل الكفالة </label>
                             </div>
-                            &nbsp;
-                            <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="adjust_worker" class=".english_version" type="radio"  onclick="  uncheckSection('options-conditions', 'work-permit', 'transfer-sponsorship', 'prior-approval')" />
-                                <label for="adjust_worker">تسوية أوضاع </label>
-                            </div>
+                            
                         
                             <br />
 
