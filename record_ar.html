@@ -79,23 +79,26 @@
         }
 
         function httpGet() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    alert(xhr.response);
+            var client = new HttpClient();
+            client.get('http://93.185.92.53:8080/CivilRecord/rest/RecordService/Record/2017', function (response) {
+                alert(response);
+            });
+        }
+
+        var HttpClient = function () {
+            this.get = function (aUrl, aCallback) {
+                var anHttpRequest = new XMLHttpRequest();
+                anHttpRequest.onreadystatechange = function () {
+                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                        aCallback(anHttpRequest.responseText);
                 }
-            };
-            xhr.open('GET', 'http://localhost:8080/CivilRecord/rest/RecordService/Record/2', true);
-            xhr.send(null);
+                anHttpRequest.open("GET", aUrl, true);
+                anHttpRequest.send(null);
+            }
         }
-        function myFunction(xml)
-        {        
-            alert(xml);
-            var person = xmlDoc.getElementsByTagName("personal")[0];
-            var name = person[0].getElementsByTagName("name")[0].firstChild.data;
-            alert(name);
-          
-        }
+
+
+        
     </script>
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
