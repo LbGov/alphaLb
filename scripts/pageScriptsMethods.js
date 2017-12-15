@@ -137,39 +137,50 @@ function copyURL() {
     if (document.getElementById('work-permit1').checked == true) {
         location.href = "work-permit/index_ar.html";
     }
-    if (document.getElementById('work-residence').checked == true) {
+    else if (document.getElementById('work-residence').checked == true) {
         location.href = "work-residence/index_ar.html";
     }
-}
+    }
+
+    function openWorkerChosenTransaction4() {
+        if (document.getElementById('options-conditions').checked == true) {
+            location.href = "options-conditions/index_ar.html";
+        }
+        else if (document.getElementById('prior-approval').checked == true) {
+            location.href = "prior-approval/index_ar.html";
+        }
+        else if (document.getElementById('work-permit').checked == true) {
+            location.href = "work-permit/index_ar.html";
+        }
+    }
+
+    function openWorkerChosenTransaction5() {
+        if (document.getElementById('status').checked == true) {
+            location.href = "status/index_ar.html";
+        }
+        else if (document.getElementById('transfer-sponsorship').checked == true) {
+            location.href = "transfer-sponsorship/index_ar.html";
+        }
+    }
+
+
     function openWorkerChosenTransaction2()
     {
         var currentURL;
         var processedURl;
+        currentURL = window.location.href;
+        processedURl = currentURL.split("=");
+
         if (document.getElementById('adjust_worker').checked == true) {
-            currentURL = window.location.href;
-            processedURl = currentURL.split("=");
-            location.href = "worker_adjust_status/index_" + processedURl[1] + ".html";
+            location.href = "worker_adjust_status/category_4/index_" + processedURl[1] + ".html";
         }
-        if (document.getElementById('renew_worker').checked == true) {
-            currentURL = window.location.href;
-            processedURl = currentURL.split("=");
+        else if (document.getElementById('renew_worker').checked == true) {
             location.href = "renew-worker/category_4/index_" + processedURl[1] + ".html";
         }
-        if (document.getElementById('options-conditions').checked == true) {
-            location.href = "options-conditions/index_ar.html";
-        }
-
-        if (document.getElementById('prior-approval').checked == true) {
-            location.href = "prior-approval/index_ar.html";
-        }
-        if (document.getElementById('work-permit').checked == true) {
-            location.href = "work-permit/index_ar.html";
-        }
-        if (document.getElementById('transfer-sponsorship').checked == true) {
-            location.href = "transfer-sponsorship/index_ar.html";
+        else if (document.getElementById('new_worker_4').checked == true) {          
+            location.href = "new-worker/category_4/index_" + processedURl[1] + ".html";
         }
       
-
     }
 
     function openWorkerChosenTransaction() {
@@ -217,7 +228,7 @@ function copyURL() {
         else if (document.getElementById('four').checked == true) {
             section = '4';
             NextPageID = "type_worker_domestic.html";
-            window.location.href = NextPageID + "?section=" + section;;
+            window.location.href = NextPageID + "?section=" + section;
 
         }
         else
