@@ -1,5 +1,19 @@
 ﻿
 
+
+
+function stickyNavbar() {
+    var navbar = document.getElementById("pinNavbar");
+    var sticky = navbar.offsetTop;
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
+
+
+
 function copyURL() {
 
 	var currentURL = window.location.href;
