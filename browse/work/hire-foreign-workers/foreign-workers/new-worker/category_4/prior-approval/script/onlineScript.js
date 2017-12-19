@@ -101,7 +101,7 @@ function labor(response) {
         data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم طلب لدى وزارة العمل</li>";
     }
     else {
-        data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لد وزارة العمل</li>";
+        data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لدى وزارة العمل</li>";
     }
   
     document.getElementById("labor").innerHTML = data_labor;
