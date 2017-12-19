@@ -6,7 +6,7 @@ function login() {
     var url;
   
   
-    url = "http://localhost:8080/ForeignWorker/rest/API/Authenticate?username=" + document.getElementById("uname").value + "&password=" + document.getElementById("pass").value;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Authenticate?username=" + document.getElementById("uname").value + "&password=" + document.getElementById("pass").value;
       
   
 
@@ -46,7 +46,7 @@ function check() {
     var url;
 
 
-    url = "http://localhost:8080/ForeignWorker/rest/API/" + id_number;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
     client.get(url, function (response) {
 
         var data_labor = "";
@@ -63,19 +63,19 @@ function check() {
         else {
             data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل نسخة عن معلوماتك الشخصية </li>";
             document.getElementById("ID").innerHTML = data_labor;
-            url = "http://localhost:8080/ForeignWorker/rest/API/Labor/" + id_number;
+            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Labor/" + id_number;
             client.get(url, function (response) {
                
                 labor(response);
 
             });
-            url = "http://localhost:8080/ForeignWorker/rest/API/Finance/" + id_number;
+            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
             client.get(url, function (response) {
 
                 finance(response);
               
             });
-            url = "http://localhost:8080/ForeignWorker/rest/API/Justice/" + id_number;
+            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
             client.get(url, function (response) {
                 justice(response);
               
@@ -149,26 +149,26 @@ function all_data_load()
     var url;
   
 
-    url = "http://localhost:8080/ForeignWorker/rest/API/"+id_number;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
     client.get(url, function (response) {
 
         all_ID_data(response);
        
     });
 
-    url = "http://localhost:8080/ForeignWorker/rest/API/Labor/" + id_number;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Labor/" + id_number;
     client.get(url, function (response) {
 
         all_labor_data(response);
        
     });
-    url = "http://localhost:8080/ForeignWorker/rest/API/Finance/" + id_number;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
     client.get(url, function (response) {
 
         all_finance_data(response);
       //  alert(response);
     });
-    url = "http://localhost:8080/ForeignWorker/rest/API/Justice/" + id_number;
+    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
     client.get(url, function (response) {
         all_justice_data(response);
 
