@@ -76,15 +76,16 @@
     <link rel="stylesheet" type="text/css" href="themes/dia-theme/css/printbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/W3S.css" />
-    <link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/contactUsForm.css">
-    <script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script>
-    <link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' />
-    <link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' />
+    <link rel="stylesheet" type="text/css" href="themes/digital-gov-themes/contactUsForm.css?v=<?php echo filemtime('contactUsForm.css') ?>">
+    
+    <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
+    <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
+    <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
     <link rel="alternate" type="application/rss+xml" title="Recently updated pages on Gov.lb" href="home/rss" />
 </head>
 <body class="pagetype-home" style="background-color:white;">
     
-    <div id="pinNavbar">
+    <div id="pinNavbar" class="pinNavbar">
         <span>This is an Alfa version of the Gov.Lb project. Please help us improve it by filling our feedback form.</span>
         <a href="about/feedback/feedback.html">Click Here to Send Us a Feedback</a>
     </div>
