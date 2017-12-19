@@ -581,32 +581,8 @@
             </div>
         </div>
         &nbsp;
-        <div class="row" dir="rtl" align="right">
-            <div class="dgDiv_ar">
-                <a href="javascript:void(0)" onclick="showProblemForm() " style="color:darkslateblue"><b>هل هنالك مشكلة على الصفحة؟</b></a>
-                <div>
-                    <form name="problemForm" action="scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
-                        <div id="problemFormFields" style="display:none;" dir="rtl">
-                            &nbsp;
-                            <h2> ساعدنا على تحسين GOV.LB</h2>
-                            <label for="Form_FeedbackForm_Doing">ماذا كنت تفعل</label>
-                            <input type="text" name="doingAction" class="dg_input_form_ar" id="Form_FeedbackForm_Doing" required="required" />
-                            <label for="Form_FeedbackForm_Wrong">ماذا حصل</label>
-                            <input type="text" name="wrongAction" class="dg_input_form_ar" id="Form_FeedbackForm_Wrong" required="required" />
+        <div w3-include-html="wrong_ar.html"></div> 
 
-                            <input type="hidden" name="Referer" value="http://Gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
-                            &nbsp;
-                            <div>
-                                <input type="submit" name="action_doProcessProblem" value="إرسال" />
-                            </div>
-
-
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
         &nbsp;
             <div align="right" class="footer" aria-label="Footer" role="contentinfo">
                 <div class="container">
@@ -786,6 +762,11 @@
             </div>
 
     <script type="text/javascript" src="assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
+       
+         <script src="w3.js"></script>
+        <script>
+            w3.includeHTML();
+        </script>
 
 </body>
 </html>
