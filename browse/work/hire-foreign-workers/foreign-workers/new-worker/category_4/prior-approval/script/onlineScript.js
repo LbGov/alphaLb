@@ -188,9 +188,9 @@ function all_ID_data(response)
 {
     var data = response.split("User_Id>");
    
-    var id_data = "<table><tr><td> &nbsp; الإسم: " + data[1].split('first_name>')[1].split('<')[0] + " </td><tr><td> إسم الأب :&nbsp;" + data[1].split('father_name>')[1].split('<')[0] + "</td></tr><tr><td> الشهرة:&nbsp;" + data[1].split('last_name>')[1].split('<')[0] + "</td></tr>";
+    var id_data = "<table><tr><td>&nbsp; الإسم: " + data[1].split('first_name>')[1].split('<')[0] + " </td><tr><td>&nbsp; إسم الأب :&nbsp;" + data[1].split('father_name>')[1].split('<')[0] + "</td></tr><tr><td>&nbsp; الشهرة:&nbsp;" + data[1].split('last_name>')[1].split('<')[0] + "</td></tr>";
     id_data = id_data + "<tr><td>&nbsp;إسم الأم و شهرتها :&nbsp;" + data[1].split('mother_name>')[1].split('<')[0] + " " + data[1].split('mother_last_name>')[1].split('<')[0] + "&nbsp;&nbsp;</td></tr>";
-    id_data = id_data + "<tr><td>&nbsp;محل الولادة :&nbsp;" + data[1].split('place_birth>')[1].split('<')[0] + "</td></tr><tr><td> تاريخ الولادة:&nbsp; " + data[1].split('date_birth>')[1].split('<')[0] + " </td></tr>";
+    id_data = id_data + "<tr><td>&nbsp;محل الولادة :&nbsp;" + data[1].split('place_birth>')[1].split('<')[0] + "</td></tr><tr><td>&nbsp; تاريخ الولادة:&nbsp; " + data[1].split('date_birth>')[1].split('<')[0] + " </td></tr>";
     id_data = id_data + "<tr><td>&nbsp;رقم السجل :&nbsp;" + data[1].split('number_enrollement>')[1].split('<')[0] + " </td></tr><tr><td> &nbsp;المحلة أو القرية :&nbsp; " + data[1].split('village>')[1].split('<')[0] + "</td></tr>";
     id_data = id_data + "<tr><td>&nbsp;المحافظة :&nbsp;" + data[1].split('governorate>')[1].split('<')[0] + "  </td></tr><tr><td> &nbsp;القضاء :&nbsp; " + data[1].split('kaddaa>')[1].split('<')[0] + " </td></tr> <tr></tr><tr><td> &nbsp;فئة الدم :&nbsp; " + data[1].split('blood_type>')[1].split('<')[0] + "</td></tr><tr><td> &nbsp;رقم الهوية :&nbsp; " + data[1].split('id>')[1].split('<')[0] + "</td></tr>";
     id_data = id_data + "<tr><td>&nbsp;الجنس :&nbsp;" + data[1].split('sex>')[1].split('<')[0] + " </td><td> &nbsp;تاريخ الإصدار :&nbsp; " + data[1].split('release_date>')[1].split('<')[0] + "</td></tr><tr><td> &nbsp;الوضع العائلي :&nbsp; " + data[1].split('marital_status>')[1].split('<')[0] + "</td><td> &nbsp;فئة الدم :&nbsp; " + data[1].split('blood_type>')[1].split('<')[0] + "</td></tr></table></br>";

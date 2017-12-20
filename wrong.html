@@ -1,0 +1,28 @@
+ 
+        <div class="row">
+            <div class="dgDiv">
+                &nbsp;&nbsp; <a href="javascript:void(0)" onclick="showProblemForm()" style="color:darkslateblue"><b>Is There Something Wrong With This Page?</b></a>
+                <div>
+                    <form name="problemForm" action="scripts/problemForm.php" method="POST" onsubmit='return validateProblemForm()'>
+                        <div id="problemFormFields" style="display:none;">
+                            &nbsp;
+                            <h2>Help us improve Gov.lb</h2>
+
+                            <label for="Form_FeedbackForm_Doing">What were you doing</label>
+                            <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
+                            <label for="Form_FeedbackForm_Wrong">What went wrong</label>
+                            <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
+
+                            <input type="hidden" name="Referer" value="http://Gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />
+                            &nbsp;
+                            <div>
+                                <input type="submit" name="action_doProcessProblem" value="Submit" />
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
