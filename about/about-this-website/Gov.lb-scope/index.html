@@ -482,31 +482,10 @@
 
 
                         </div>
-                        <div class="dgDiv page-feature">
-                            <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
+                        &nbsp;
+                        <div w3-include-html="../../../wrong.html"></div>
+                        &nbsp;
 
-                            <div>
-                                <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
-                                    <div id="problemFormFields" style="display:none;">
-                                        &nbsp;
-                                        <h2>Help us improve GOV.LB</h2>
-
-                                        <label for="Form_FeedbackForm_Doing">What were you doing</label>
-                                        <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
-                                        <label for="Form_FeedbackForm_Wrong">What went wrong</label>
-                                        <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
-
-                                        <input type="hidden" name="Referer" value="http://Gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
-                                        <div>
-                                            <input type="submit" name="action_doProcessProblem" value="Submit" />
-                                        </div>
-
-
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
                       
 
                         <div class="PageLastUpdatedPageFeature page-feature">
@@ -701,7 +680,10 @@
     <script type="text/javascript" src="../../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
     <script type="text/javascript" src="../../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
     <script type="text/javascript" src="../../../scripts/pageScriptsMethods.js"></script>
-</body>
+    <script src="../../../scripts/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script></body>
 
 <!-- Mirrored from www.Gov.lb/browse/education/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:39:38 GMT -->
 </html>
