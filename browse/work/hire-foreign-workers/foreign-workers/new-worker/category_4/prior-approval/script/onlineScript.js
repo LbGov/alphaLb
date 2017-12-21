@@ -1,4 +1,6 @@
 ﻿
+
+
 function login() {
 
    
@@ -38,13 +40,14 @@ function to_transaction(id_number)
 }
 
 function check() {
+
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
     document.getElementById("iduser").value = id_number;
     var client = new HttpClient();
     var url;
-
+  
 
     url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
     client.get(url, function (response) {
@@ -69,13 +72,20 @@ function check() {
                 labor(response, id_number);
 
             });
-            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
-            client.get(url, function (response,id_number) {
-               
-                finance(response, id_number);
+            url ="http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
+          
+
+            
+         
+            client.get(url , function (response,id_number) {
+              
+             
+               finance(response, id_number); 
               
             });
+
             url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
+
             client.get(url, function (response) {
                 justice(response, id_number);
               
@@ -112,6 +122,7 @@ function finance(response, id_number) {
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
+
     var data_labor = "<ul style='font-family:Tahoma'>";
     if (response.split("id>")[1].split("</")[0] == "0") {
         document.getElementById("error_message").style.display = "block";
@@ -152,7 +163,6 @@ function all_data_load()
      var client = new HttpClient();
     var url;
   
-
     url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
     client.get(url, function (response) {
 
@@ -166,6 +176,7 @@ function all_data_load()
         all_labor_data(response);
        
     });
+   
     url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
     client.get(url, function (response) {
 
@@ -181,9 +192,7 @@ function all_data_load()
     
     document.getElementById("passport_image").src = processedURl[2];
 
-
 }
-
 
 
 
@@ -250,6 +259,7 @@ var HttpClient = function () {
         anHttpRequest.send(null);
     }
 }
+
 function insert_finance_status()
 {
    
@@ -263,14 +273,9 @@ function insert_finance_status()
 
     client.get("http://93.185.92.53:8080/ForeignWorker/rest/API/InsertFinance?id=" + id_number + "&&salary=" + salary + "&&date_start=" + date_start, function (response) {
        
-
-    });
-    setTimeout(function () { document.location.href = "../check_transaction.html?"+id_number;   document.getElementById('salary').value=" "; document.getElementById('date_start_work').value = " ";}, 500);
-
-     
-       
-        
-
+    
+    });   
+setTimeout(function () {  document.location.href = "../check_transaction.html?"+id_number;}, 500);
 }
 
 
