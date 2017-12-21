@@ -66,18 +66,18 @@ function check() {
             url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Labor/" + id_number;
             client.get(url, function (response) {
                
-                labor(response);
+                labor(response, id_number);
 
             });
             url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
-            client.get(url, function (response) {
-
-                finance(response);
+            client.get(url, function (response,id_number) {
+               
+                finance(response, id_number);
               
             });
             url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
             client.get(url, function (response) {
-                justice(response);
+                justice(response, id_number);
               
             });
 
@@ -89,16 +89,17 @@ function check() {
 
 }
 
-function labor(response) {
+function labor(response, id_number) {
     var data_labor = "";
     
-    if (response.split("id>")[1].split("</")[0] == "0") {
+    if (response.split("id>")[1].split("</")[0] == "0")
+    {
         document.getElementById("error_message").style.display = "block";
         document.getElementById("submit").disabled = true;
         document.getElementById("fileToUpload").disabled = true;
         document.getElementById("submit").style.opacity = " 0.75";
         document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم طلب لدى وزارة العمل</li>";
+        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم طلب لدى وزارة العمل &nbsp; <a href='missing_paper/labor.html" + id_number + "'style='font-size:0.9rem'>قم بتقديمه إلكترونباً</a> </li>";
     }
     else {
         data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لدى وزارة العمل</li>";
@@ -107,7 +108,10 @@ function labor(response) {
     document.getElementById("labor").innerHTML = data_labor;
 }
 
-function finance(response) {
+function finance(response, id_number) {
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
     var data_labor = "<ul style='font-family:Tahoma'>";
     if (response.split("id>")[1].split("</")[0] == "0") {
         document.getElementById("error_message").style.display = "block";
@@ -115,7 +119,7 @@ function finance(response) {
         document.getElementById("fileToUpload").disabled = true;
         document.getElementById("submit").style.opacity = " 0.75";
         document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;ليس لديك راتب مسجل في وزارة المالية</li></ul>";
+        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;ليس لديك راتب مسجل في وزارة المالية &nbsp; <a href='missing_paper/finance.html?" + id_number + "'style='font-size:0.9rem'>قم بتسجيله إلكترونباً</a></li></ul>";
     }
     else {
         data_labor = "<i class='fa fa-check'style='color:green;font-size:1.5rem'>&nbsp; تمّ تحميل إفادة براتبك</li></ul>";
@@ -123,7 +127,7 @@ function finance(response) {
     
     document.getElementById("finance").innerHTML = data_labor;
 }
-function justice(response) {
+function justice(response, id_number) {
     var data_labor = "";
     if (response.split("id>")[1].split("</")[0] == "0") {
         document.getElementById("error_message").style.display = "block";
@@ -131,7 +135,7 @@ function justice(response) {
         document.getElementById("fileToUpload").disabled = true;
         document.getElementById("submit").style.opacity = " 0.75";
         document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم تعهد لدى كاتب العدل</li>";
+        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم تعهد لدى كاتب العدل &nbsp; <a href='missing_paper/justice.html?" + id_number + "'style='font-size:0.9rem'>قم بتقديمه إلكترونباً</a></li>";
     }
     else {
         data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'> &nbsp;تمّ تحميل التعهد لدى كاتب العدل  </li>";
@@ -246,5 +250,28 @@ var HttpClient = function () {
         anHttpRequest.send(null);
     }
 }
+function insert_finance_status()
+{
+   
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+    var salary=document.getElementById('salary').value;
+    var date_start=document.getElementById('date_start_work').value; 
+    var client = new HttpClient();
+  
+
+    client.get("http://93.185.92.53:8080/ForeignWorker/rest/API/InsertFinance?id=" + id_number + "&&salary=" + salary + "&&date_start=" + date_start, function (response) {
+       
+
+    });
+    setTimeout(function () { document.location.href = "../check_transaction.html?"+id_number;   document.getElementById('salary').value=" "; document.getElementById('date_start_work').value = " ";}, 500);
+
+     
+       
+        
+
+}
+
 
 
