@@ -69,19 +69,19 @@
 </head>
 
 <body class="pagetype-hub" data-pagetype="HubPage">
-
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color: #019E45; height: 100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
                 <div align="right" style="height:70px; ">
-
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../../themes/tree.png" />
+
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -90,26 +90,26 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form ">
+                <div role="search" class="header-search-form header-left">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
-                                       value=" بحث"
-                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" onclick="this.form.q.value=''" style="direction:rtl;" />
+                                       value=""
+                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
                                         <tr>
-                                            <td align="right">
-                                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <td style="float:right;">
+
                                                 بحث
                                             </td>
                                         </tr>
                                     </table>
                                 </label>
-                                <button type="submit" style="color:#ffffff;" class="submit btn btn-orange square-corners"
+                                <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
                                         aria-label="Search Gov.lb">
                                     <span class="glyphicon glyphicon-search"
                                           aria-hidden="true"></span>
@@ -121,7 +121,6 @@
             </div>
         </div>
     </div>
-   
    
     <div class="content " role="main">
 
@@ -168,23 +167,18 @@
             <div class="col-md-7 col-md-offset-1">
                 <div class="title-row" align="right">
 
-                    <div class="hidden-md hidden-lg">
-                        <a href="/about/">
-                            <h2 class="parent imitate-h4">حول</h2>
-                        </a>
-                    </div>
-
+                  
                     <h1 id="feedbackpage-title" tabindex="-1">للتواصل</h1>
 
 
                     <div class="hidden-md hidden-lg">
                         <div class="mobile-book-nav row">
                             <div class="book-mobile-menu accordion-list">
-                                <nav class="accordion-item">
+                                <nav class="accordion-item" aria-labelledby="SubHubNavigationHeadingMobile">
                                     <details>
                                         <summary class="accordion-item-button accordion-trigger">
-                                            <span class="accordion-title">See the rest of this guide</span>
-                                            <span class="accordion-open" style="display: inline;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            <span class="accordion-title">انظر لبقية هذا الدليل</span>
+                                            <span class="accordion-open" style="display: inline;"><i class="fa fa-plus" style="text-align:left" aria-hidden="true"></i></span>
                                             <span class="accordion-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                         </summary>
                                         <div class="accordion-content right-bar">
@@ -192,30 +186,17 @@
 
 
 
-                                                <h2 class="imitate-h4"><a href="/about/">About</a></h2>
+                                                <h2 class="imitate-h4"><a href="/about/">حول</a></h2>
                                                 <ul class="pages"></ul>
 
 
 
                                                 <div class="bookpage-current">
-                                                    <i class="fa fa-chevron-left"></i>
-                                                    <li class="current">للتواصل</li>
 
+                                                    للتواصل
+                                                    <i class="fa fa-chevron-left"></i>
 
                                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                                             </nav>
 
                                         </div>
@@ -627,7 +608,7 @@
         </div>
     </div>
     <script type="text/javascript" src="../../scripts/pageScriptsMethods.js"></script>
-
+    <script type="text/javascript" src="../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
 </body>
 </html>
 

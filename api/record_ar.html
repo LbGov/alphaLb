@@ -72,23 +72,52 @@
         * {
             font-family: Tahoma;
         }
+        @media screen and (min-width: 0px) and (max-width: 990px) {
+            .desktop_table {
+                display: none;
+            }
+
+            .mobile_table {
+                display: block;
+            }
+            .judgment {
+                top: 800px;
+                right: 140px;
+            }
+            .modal-content {
+               
+                left: 60px;
+              
+            }
+            .position1 {
+                left:20px
+            }
+            .position2 {
+                left:180px;
+            }
+            .position3 {
+                left: 300px;
+            }
+        }
+
     </style>
   
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color: #019E45; height: 100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
                 <div align="right" style="height:70px; ">
-
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../themes/tree.png" />
+
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -97,23 +126,26 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form ">
+                <div role="search" class="header-search-form header-left">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
                                        value=""
-                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;"/>
+                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
-                                    <tr><td align="right">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                                         بحث
-                                        </td></tr>
+                                        <tr>
+                                            <td style="float:right;">
+
+                                                بحث
+                                            </td>
+                                        </tr>
                                     </table>
                                 </label>
-                                <button type="submit" style="color:#ffffff;" class="submit btn btn-orange square-corners"
+                                <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
                                         aria-label="Search Gov.lb">
                                     <span class="glyphicon glyphicon-search"
                                           aria-hidden="true"></span>
@@ -181,7 +213,7 @@
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <div class="modal-content animate modal"  id="alert_login" align="left" >
+            <div class="modal-content animate modal"  id="alert_login" >
                 <div style="padding-top:40px; position: relative;">
                     <span onclick="document.getElementById('alert_login').style.display='none'" class="close" title="Close Modal">&times;</span>
 
@@ -222,69 +254,169 @@
                     <br />
                 
                     <form name="record">
+                        <div class="desktop_table">
+                            <table dir="rtl">
+                                <tr>
+                                    <td>
+                                        الإسم
+                                    </td>
+                                    <td>
+                                        :
+                                        <input id="first-name" type="text" style="position: absolute;width:200px; border-color: darkseagreen; direction: rtl; " value="" />&nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                        الشهرة
+                                    </td>
+                                    <td>
+                                        :
+                                        <input id="last-name" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                    </td>
 
-                        <table dir="rtl">
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                        إسم الأب
+                                    </td>
+                                    <td>
+                                        <br />:
+                                        <input id="father-name" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
+                                    </td>
+                                    <td>
+                                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                        إسم الأم
+                                    </td>
+                                    <td>
+                                        <br />:
+                                        <input id="mother-name" type="text" style=" position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                        تاريخ و محل الولادة
+                                    </td>
+                                    <td>
+                                        <br />:
+                                        <input id="date-place-birth" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                    </td>
+                                    <td>
+                                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                        الجنس
+                                    </td>
+                                    <td>
+                                        <br />:
+                                        <input id="sex" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                        رقم و مكان القيد
+                                    </td>
+                                    <td>
+                                        <br />:
+                                        <input id="number-place-enrollement" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                    </td>
+                                    <td>
+                                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                        الجنسية
+                                    </td>
+                                    <td>
+                                        <br />
+                                        :
+                                        <input id="nationality" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div class ="mobile_table" >
+                        <table dir="rtl" >
                             <tr>
                                 <td>
                                     الإسم
                                 </td>
-                                <td>
-                               :
-                                   <input id="first-name" type="text" style="position: absolute;width:200px; border-color: darkseagreen; direction: rtl; " value=""/>&nbsp;
+                                <td><br /> 
+                                    :
+                                    <input id="first-name1" type="text" style="position: absolute;width:200px; border-color: darkseagreen; direction: rtl; " value="" />&nbsp;
                                 </td>
-                                <td>   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                                   الشهرة </td>
-                                <td>:
-                                    <input id="last-name" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; " >&nbsp;
-                                </td>
-                              
                             </tr>
-                            <tr>
+                             <tr>
+                                <td>
+                                    <br /> الشهرة 
+                                </td>
                                 <td><br />
+                                    :
+                                    <input id="last-name1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <br />
                                     إسم الأب
                                 </td>
-                                <td><br />:
-                              <input id="father-name" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
-                                </td>
-                                <td><br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
-                                    إسم الأم
-                                   </td>
-                                <td><br />:
-                                    <input id="mother-name" type="text" style=" position: absolute; width: 200px; border-color: darkseagreen; direction: rtl" >&nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><br />
-                                    تاريخ و محل الولادة
-                                    </td>
-                                <td><br />:
-                                    <input id="date-place-birth" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
-                                </td>
-                                <td><br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
-                                    الجنس
-                                    </td>
-                                <td><br />:
-                                    <input id="sex" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                <td>
+                                    <br />:
+                                    <input id="father-name1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <br />
-                                 رقم و مكان القيد
+                                     إسم الأم
                                 </td>
-                                <td><br />:
-                                    <input id="number-place-enrollement" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
-                                   </td>
                                 <td>
-                                    <br /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+                                    <br />:
+                                    <input id="mother-name1" type="text" style=" position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br />
+                                    تاريخ و محل الولادة
+                                </td>
+                                <td>
+                                    <br />:
+                                    <input id="date-place-birth1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br />
+                                    الجنس
+                                </td>
+                                <td>
+                                    <br />:
+                                    <input id="sex1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br />
+                                    رقم و مكان القيد
+                                </td>
+                                <td>
+                                    <br />:
+                                    <input id="number-place-enrollement1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br /> 
                                     الجنسية
-                                </td><td><br />
-                                   :
-                                    <input id="nationality" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
+                                </td>
+                                <td>
+                                    <br />
+                                    :
+                                    <input id="nationality1" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl; ">&nbsp;
                                 </td>
                             </tr>
 
-                        </table>
+                        </table></div>
                         <br /><br /><br />
                         <div style="background-color:#f8f5f5; border-color: black; ">
                             <br />
@@ -308,14 +440,14 @@
                              </tr>
                           <tr>
                               
-                                  <span id="judgment"  style="position: absolute; right: 240px; top: 470px; color: red; width: 50%; font-size: 400%; transform: rotate(-15deg); opacity: 0.7;">
-                                    
-                                  </span>
+                              <span id="judgment" class="judgment">
+                                 
+                              </span>
                       
                           </tr>
                          </table>
-                            <div id="list" dir="ltr">
-                          
+                            <div  id="list" dir="ltr">
+                              
                            </div>
                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                          </div>
@@ -509,7 +641,7 @@
             </div>
         </div>
     </div>
-   
+    <script type="text/javascript" src="../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
     <script type="text/javascript" src="../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
     <script type="text/javascript" src="../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
    <script type="text/javascript" src="../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>

@@ -1637,15 +1637,13 @@ Math.trunc = Math.trunc || function (x) { return x < 0 ? Math.ceil(x) : Math.flo
 
 $(document).ready(function () {
     $(document).on("click", ".mobile-search-toggle", function (e) {
+
+        
         var headerSearch = $('#header-search'); var searchToggle = $('.mobile-search-toggle'); var homepage = $('.content').hasClass('home-content'); if (searchToggle.hasClass('active')) { searchToggle.attr('aria-label', 'Show search'); } else { searchToggle.attr('aria-label', 'Hide search'); }
-        if (homepage) {
-            if ($('.feature-image').hasClass('show-search')) { $('.feature-image').removeClass('show-search'); searchToggle.removeClass('active'); } else { $('.feature-image').addClass('show-search'); searchToggle.addClass('active'); }
-            if (headerSearch.hasClass('active')) { headerSearch.removeClass('active'); } else { headerSearch.addClass('active'); }
-        }
-        else {
+       
             if ($('.banner-link').hasClass('show-search')) { $('.banner-link').removeClass('show-search'); searchToggle.removeClass('active'); } else { $('.banner-link').addClass('show-search'); searchToggle.addClass('active'); }
             if (headerSearch.hasClass('active')) { headerSearch.removeClass('active'); $('.banner-link').removeClass('show-search'); } else { headerSearch.addClass('active'); $('.banner-link').addClass('show-search'); }
-        }
+      
         e.preventDefault();
     }); var mainSearchTerm = $('#searchterm2').val(); $('#searchterm').val(mainSearchTerm); if ($('.header-search-form #searchterm').val()) { $('.header-search-form .search-label').addClass('entered'); } else { $('.header-search-form .search-label').removeClass('entered'); }
     $(document).on("blur", "#searchterm", function (e) {

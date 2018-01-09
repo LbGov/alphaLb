@@ -68,23 +68,30 @@
 </head>
 <body class="pagetype-process" data-pagetype="ProcessPage">
 
-    <div class="header home-header navbar" style="background-color:#019E45; height:140px;">
+    <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
             <div class="header-item row">
-                <div class="print-logo col-lg-8 col-xs-7" style="display:none;">
+                <div class="print-logo col-lg-8 col-xs-7"></div>
+                <div style="height:70px; ">
+                    <img src="../../../themes/tree.png" /><span style="color:white; font-size:20px;"> Lebanese Government </span>
                 </div>
-                <div>
-                    <img src="../../../themes/tree.png" /> <span style="color:white; font-size:20px;"> Lebanese Government </span>
+                <div class="mobile-search">
+                    <button type="button"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
+                            aria-label="Show search"
+                            aria-controls="header-search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form header-right home-page">
+                <div role="search" class="header-search-form header-right">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
-                            <span style="color:white; font-size:20px;"> Gov.lb is your guide to Government services</span>
 
-                            <div class="search-controls" style="padding-top:10px;">
+                            <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
                                        value=""
                                        type="search" autocapitalize="off" autocomplete="off" autocorrect="off" />
@@ -100,21 +107,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-image" style="display:none;">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <h1 class="feature-text">
-                        Gov.lb is your guide to finding and using government services.
-                    </h1>
-
                 </div>
             </div>
         </div>

@@ -7,8 +7,8 @@ data=data+'</div></div>  <a href="javascript:void(0)" onclick="showProblemForm()
 
 data=data+'<form name="problemForm" action="scripts/problemForm.php" method="POST" onsubmit="return validateProblemForm();"><div id="problemFormFields" style="display:none;">&nbsp;<h2>Help us improve Gov.lb</h2>';
 
-data=data+'<label for="Form_FeedbackForm_Doing">What were you doing</label><input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" /><label for="Form_FeedbackForm_Wrong">What went wrong</label><input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />';
-data=data+'<input type="hidden" name="Referer" value="http://Gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />&nbsp;<div><input type="submit" name="action_doProcessProblem" value="Submit" />';
+data = data + '<label for="Form_FeedbackForm_Doing">What were you doing</label><br><input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" style="width: 30em;" /><br><label for="Form_FeedbackForm_Wrong">What went wrong</label><br><input type="text" name="wrongAction" style="width: 30em;" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" /><br>';
+data = data + '<input type="hidden" name="Referer" value="http://Gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />&nbsp;<div><input type="submit"  style="  width: 10em;  " name="action_doProcessProblem" value="Submit" />';
     
 data=data+'</div></div></form></div></div></div><br />';  
             

@@ -78,7 +78,7 @@
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
@@ -87,9 +87,10 @@
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../../../../themes/tree.png" />
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -98,7 +99,7 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form header-left">
+                <div role="search" class="header-search-form ">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
@@ -107,11 +108,11 @@
                                        value=""
                                        type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
                                         <tr>
-                                            <td align="right">
-                                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <td style="float:right;">
+
                                                 بحث
                                             </td>
                                         </tr>
@@ -177,16 +178,18 @@
         <div class="container page-content" id="toplink" dir="rtl">
             <div class="row">
 
-                <div class="col-md-7 col-md-offset-1 ga-content-container main-content" tabindex="-1" style="right:-300px">
+                <div class="container  page-content class-HubPage" id="toplink" align="right">
                     <div class="title-row">
                         <h1>معاملات العمال الأجانب </h1>
                         <br />
-                        <p><h3>
-    يصنف العمال الأجانب الذين يعملون في مؤسسات وطنية أو أجنبية الى فئات أولى، ثانية، ثالثة، او رابعة  وذلك بحسب الوظيفة و الراتب المحدد لهم 
-                               <a href="http://www.dawlati.gov.lb/eservices-detail/-/asset_publisher/0iNQGuDWXGZd/content/lab1-03?redirect=http%3A%2F%2Fwww.dawlati.gov.lb%2Feservices%3Fp_p_id%3Dgovernmenttransactionportlet_WAR_dawlatigovernmenttransactionportlet_INSTANCE_K1FITuCcb29t%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-3%26p_p_col_count%3D2" target="_blank"> فئات العمال الأجانب</a> 
-                     </h3></p> 
+                        <p>
+                            <h3>
+                                يصنف العمال الأجانب الذين يعملون في مؤسسات وطنية أو أجنبية الى فئات أولى، ثانية، ثالثة، او رابعة  وذلك بحسب الوظيفة و الراتب المحدد لهم
+                                <a href="http://www.dawlati.gov.lb/eservices-detail/-/asset_publisher/0iNQGuDWXGZd/content/lab1-03?redirect=http%3A%2F%2Fwww.dawlati.gov.lb%2Feservices%3Fp_p_id%3Dgovernmenttransactionportlet_WAR_dawlatigovernmenttransactionportlet_INSTANCE_K1FITuCcb29t%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-3%26p_p_col_count%3D2" target="_blank"> فئات العمال الأجانب</a>
+                            </h3>
+                        </p>
                         &nbsp;
-                        <div id="Type_Worker">
+                        <div id="Type_Worker" style="width:600px">
                             <h3>فئة العامل \ة الأجنبي\ة:</h3>
 
                             <div class="odd valcant-find" style="background-color:#ddd; padding: 12px;">
@@ -209,7 +212,7 @@
                                 <label for="four">فئة رابعة (عامل\ة في الخدمة المنزلية)</label>
                             </div>
 
-                        
+
                             <br />
 
                         </div>
@@ -235,10 +238,6 @@
             </div>
 
 
-
-            <div class="block-hidden hidden ">
-
-            </div>
 
         </div>
     </div>

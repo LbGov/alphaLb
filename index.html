@@ -84,13 +84,13 @@
     <link rel="alternate" type="application/rss+xml" title="Recently updated pages on Gov.lb" href="home/rss" />
 </head>
 <body class="pagetype-home" style="background-color:white;">
-    
+
     <div id="pinNavbar" class="pinNavbar">
         <span>This is an Alfa version of the Gov.Lb project. Please help us improve it by filling our feedback form.</span>
         <a href="about/feedback/feedback.html">Click Here to Send Us a Feedback</a>
     </div>
-   
-     <!--Start of Tawk.to Script-->
+
+    <!--Start of Tawk.to Script-->
     <!--
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -105,43 +105,59 @@
     </script>
         -->
     <!--End of Tawk.to Script-->
-    
-     
-    <div class="header home-header navbar" style="background-color:#019E45; height:140px">
+
+
+    <div class="header navbar home-header " role="banner" style="background-color:#019E45;height:130px">
         <div class="container">
             <div class="header-item row">
-                <div class="print-logo col-lg-8 col-xs-7" style="display:none;">
+                <div class="print-logo col-lg-8 col-xs-7"></div>
+                <div style="height:70px; ">
+                    <img src="themes/tree.png" /><span style="color:white; font-size:20px;"> Lebanese Government </span>
                 </div>
-                <div>
-                    <img src="themes/tree.png" /> <span style="color:white; font-size:20px;"> Lebanese Government </span>
+                <div class="mobile-search">
+                    <button type="button"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
+                            aria-label="Show search"
+                            aria-controls="header-search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
-            <div id="header-search"
-                 class="header-search row mobile-hide">
-                <div role="search" class="header-search-form header-right home-page">
-                    <form id="search-form" action="https://www.portal.Gov.lb/search" class="form-inline pull-right">
+            <div id="header-search" class="header-search row mobile-hide">
+                <div role="search" class="header-search-form header-right home-page" >
+                    <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
-                            <span style="color:white; font-size:20px;"> Gov.lb is your guide to Government services</span>
 
-                            <div class="search-controls" style="padding-top:10px;">
+                            <span style="color:white; font-size:20px;" class="header-search"> Gov.lb is your guide to Government services</span>
+                        <br />
+                              <div class="search-controls">
+
                                 <input name="q" class="form-control square-corners" id="searchterm"
-                                       value=""
+                                      
                                        type="search" autocapitalize="off" autocomplete="off" autocorrect="off" />
-                                <label for="searchterm" class="search-label entered">
-                                    Search
-                                    Gov.lb
-                                </label>
-                                <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
-                                        aria-label="Search Gov.lb">
-                                    <span class="glyphicon glyphicon-search"
-                                          aria-hidden="true"></span>
-                                </button>
+
+                                  <label for="searchterm" class="search-label entered" style=" top:40px">
+                                      <table border='0' >
+                                          <tr>
+                                              <td >
+
+                                                  Search Gov.lb
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </label>
+                           
+                                  <button type="reset" style="color:#ffffff;top:40px" class="submit btn btn-orange square-corners  "
+                                          aria-label="Search Gov.lb">
+                                      <span class="glyphicon glyphicon-search"
+                                            aria-hidden="true"></span>
+                                  </button>  
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-
             <div class="w3-show-inline-block w3-display-bottomright">
                 <div class="w3-bar">
                     <button class="w3-button w3-red w3-small w3-ripple w3-border-black w3-padding-small" onclick="setLanguage('en')">EN</button>
@@ -152,22 +168,17 @@
         </div>
     </div>
 
+    <div class="content " role="main">
 
-    <div class="content home-content" role="main">
 
 
-        <div class="feature-image" style="display:none;">
+
+
+        <div class="banner-link breadcrumbs ">
             <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h1 class="feature-text">
-                            Gov.lb is your guide to finding and using government services.
-                        </h1>
-
-                    </div>
-                </div>
+                <nav class="nav-breadcrumbs inline-details" aria-label="Breadcrumbs">
+                    
+                </nav>
             </div>
         </div>
 
@@ -482,7 +493,7 @@
                             </div>
 
 
-                            <div class="nl-component col-sm-4" >
+                            <div class="nl-component col-sm-4">
                                 <div class="info-section">
                                     <a href="api/record_ar.html" title="Administrative News | Lebanon">
                                         <div class="inner">
@@ -507,8 +518,8 @@
     </div>
 
     &nbsp;
-    <div id="wrong" ></div> 
- 
+    <div id="wrong"></div>
+
 
     &nbsp;
 
@@ -525,7 +536,7 @@
 
 
                             <li>
-                                <a href="about/about-us/contact-us/index.html" >Contact us</a>
+                                <a href="about/about-us/contact-us/index.html">Contact us</a>
                             </li>
 
 
@@ -679,7 +690,7 @@
 
 
     <script src="quick-feedback/script.js"></script>
-    <script type="text/javascript" src="assets/_combinedfiles/requirementsd279.js?m=15008461901"></script>
+    <script type="text/javascript" src="assets/_combinedfiles/requirementsd279.js?m=15008461903"></script>
 
     <!--<script>window.onscroll = function () { stickyNavbar() };</script>-->
 

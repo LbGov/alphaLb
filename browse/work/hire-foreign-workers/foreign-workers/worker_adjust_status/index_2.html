@@ -73,7 +73,7 @@
 </head>
 <body class="pagetype-process" data-pagetype="ProcessPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
@@ -82,9 +82,10 @@
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../../../../../themes/tree.png" />
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -102,11 +103,11 @@
                                        value=""
                                        type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
                                         <tr>
-                                            <td align="right">
-                                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <td style="float:right;">
+
                                                 بحث
                                             </td>
                                         </tr>
@@ -124,6 +125,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="feature-image" style="display:none;">
         <div class="container">
@@ -187,56 +189,80 @@
 
         <div class="container page-content" id="toplink">
             <div class="row">
-                <div class="hidden-sm hidden-xs" align="right">
-                    <div class="col-md-3 sidenav" style="float:right">
+             
+                <div class="col-md-3 sidenav" style="float:right" dir="rtl">
 
 
-                        <div class="skip-link">
-                            <a id="skip-nav" href="">تخطي إلى المحتوى الرئيسي</a>
-                        </div>
-                        <div class="block-left ">
+                    <div class="skip-link">
+                        <a id="skip-nav" href="">تخطي إلى المحتوى الرئيسي</a>
+                    </div>
+                    <div class="block-left ">
 
-                            <div class="SubHubNavigationPageFeature page-feature">
-                                <nav class="hidden-xs hidden-sm" aria-labelledby="SubHubNavigationHeading">
-                                    <div class="sub-hub">
-                                        <h2 id="SubHubNavigationHeading" class="imitate-h4 sub-hub-title">
-
-                                            <span class="accordion-title" style="font-family:Tahoma;"> تسوية أوضاع</span>
-                                        </h2>
-                                    </div>
-                                    <ul class="sub-hub-children">
-
-
-                                        <li>
-                                            <span class="selected" style="font-family:Tahoma"> الخط الساخن لوزارة العمل   1740  </span>
-                                        </li>
-
-
-
+                        <div class="SubHubNavigationPageFeature page-feature">
+                            <div class="hidden-md hidden-lg" dir="rtl">
+                                <div class="accordion-list">
+                                    <nav class="accordion-item" aria-labelledby="SubHubNavigationHeadingMobile">
+                                        <details>
+                                            <summary class="accordion-item-button accordion-trigger">
+                                                <h2 id="SubHubNavigationHeadingMobile" class="accordion-title imitate-h4 sub-hub-title">
+                                                    <span class="accordion-title">تسوية أوضاع  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    <span class="accordion-open" style="display: inline;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                    <span class="accordion-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                </h2>
+                                            </summary>
+                                            <div class="accordion-content right-bar">
+                                                <ul class="sub-hub-children">
 
 
 
-                                        <li>
-                                            <a href="http://www.labor.gov.lb/_layouts/MOL_Application/ContactUs.aspx?lang=ar" target="_blank">
-                                                عنوان وزارة العمل
-                                            </a>
-                                        </li>
+                                                    <li>
+                                                        <span class="selected" style="font-family:Tahoma"> الخط الساخن لوزارة العمل  1740  </span>
+                                                    </li>
 
-                                    </ul>
-                                </nav>
+                                                    <li>
+                                                        <a href="http://www.labor.gov.lb/_layouts/MOL_Application/ContactUs.aspx?lang=ar" target="_blank">
+                                                            عنوان وزارة العمل
+                                                        </a>
+                                                    </li>
+
+
+
+                                                </ul>
+                                            </div>
+                                        </details>
+                                    </nav>
+                                </div>
                             </div>
+                            <nav class="hidden-xs hidden-sm" aria-labelledby="SubHubNavigationHeading">
+                                <div class="sub-hub">
+                                    <h2 id="SubHubNavigationHeading" class="imitate-h4 sub-hub-title">
+
+                                        <span class="accordion-title" style="font-family:Tahoma;" dir="rtl">  تسوية أوضاع</span>
+                                    </h2>
+                                </div>
+                                <ul class="sub-hub-children">
+
+
+                                    <li>
+                                        <span class="selected" style="font-family:Tahoma"> الخط الساخن لوزارة العمل   1740  </span>
+                                    </li>
+
+                                    <li>
+                                        <a href="http://www.labor.gov.lb/_layouts/MOL_Application/ContactUs.aspx?lang=ar" target="_blank">
+                                            عنوان وزارة العمل
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 <div class="col-md-7 col-md-offset-1 ga-content-container main-content show-step-numbers" tabindex="-1" dir="rtl">
                     <div class="title-row">
                         <h1 style="font-family:Tahoma;">تسوية أوضاع</h1>
-
-
-
-
-
 
                     </div>
 

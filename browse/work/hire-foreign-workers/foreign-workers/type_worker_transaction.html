@@ -76,7 +76,7 @@
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
@@ -85,9 +85,10 @@
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../../../../themes/tree.png" />
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -96,7 +97,7 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form header-left">
+                <div role="search" class="header-search-form ">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
@@ -105,11 +106,11 @@
                                        value=""
                                        type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
                                         <tr>
-                                            <td align="right">
-                                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <td style="float:right;">
+
                                                 بحث
                                             </td>
                                         </tr>
@@ -178,12 +179,12 @@
         <div class="container page-content" id="toplink" dir="rtl">
             <div class="row">
 
-                <div class="col-md-7 col-md-offset-1 ga-content-container main-content" tabindex="-1" style="right:-300px">
+                <div class="container  page-content class-HubPage" id="toplink" align="right">
                     <div class="title-row">
                         <h1>معاملات العمال الأجانب </h1>
                         &nbsp;
                         &nbsp;
-                        <div id="Worker_Transaction">
+                        <div id="Worker_Transaction" style="width:600px">
                             <h3>إختر نوع المعاملة المطلوبة:</h3>
 
                             <div class="odd valcant-find" style="background-color:#ddd; padding: 12px;">
@@ -192,17 +193,17 @@
                             </div>
                             &nbsp;
                             <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="renew_worker" class=".english_version" type="radio"  onclick="  uncheckSection('new_worker', 'adjust_worker', null, null, null)" />
+                                <input id="renew_worker" class=".english_version" type="radio" onclick="  uncheckSection('new_worker', 'adjust_worker', null, null, null)" />
                                 <label for="renew_worker">تجديد</label>
                             </div>
                             &nbsp;
                             <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
-                                <input id="adjust_worker" class=".english_version" type="radio"  onclick=" uncheckSection('new_worker', 'renew_worker', null, null, null)" />
+                                <input id="adjust_worker" class=".english_version" type="radio" onclick=" uncheckSection('new_worker', 'renew_worker', null, null, null)" />
                                 <label for="adjust_worker">تسوية أوضاع</label>
                             </div>
                             &nbsp;
 
-                        
+
                             <br />
 
                         </div>

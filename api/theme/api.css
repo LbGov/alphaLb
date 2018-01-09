@@ -68,7 +68,27 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       
     }
+ .desktop_table{
+       
+            display:block;
+  }
 
+  .mobile_table{
+       
+            display:none;
+  }
+
+  .judgment{
+      position: absolute; 
+      right: 240px;
+       top: 470px; 
+       color: red; 
+       width: 50%; 
+       font-size: 400%; 
+       transform: rotate(-15deg); 
+       opacity: 0.7;
+
+  }
     /* Modal Content/Box */
     .modal-content {
         top: 100px;
@@ -87,6 +107,15 @@
         color: #000;
         font-size: 35px;
         font-weight: bold;
+    }
+    .position1{
+        position:absolute;left:40px;
+    }
+     .position2{
+         position:absolute;left:317px;
+    }
+      .position3{
+          position:absolute;left:550px;
     }
 
         .close:hover,
@@ -131,6 +160,8 @@
         .cancelbtn {
             width: 100%;
         }
+
+
     }
 
 	</style>

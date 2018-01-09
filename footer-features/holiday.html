@@ -68,13 +68,43 @@
     <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
     <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
     <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
+<style>
+    .mobile-hide {
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 1200px) {
+
+        .mobile-hide {
+            display: none;
+        }
+
+        .floating-button {
+            display: none;
+        }
+
+        .btn-cal {
+            display: none;
+        }
+
+        .position_table {
+            position: relative;
+            left: -250px;
+        }
+
+        .desktop_position {
+            position: relative;
+            left:210px;
+        }
+    }
+
+    </style >
+
 
 
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage" onload="today()" >
 
-
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
@@ -93,10 +123,10 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form header-right ">
+                <div role="search" class="header-search-form header-right">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
-
+                           
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
                                        value=""
@@ -105,7 +135,7 @@
                                     Search
                                     Gov.lb
                                 </label>
-                                <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
+                                <button type="reset" style="color: #ffffff; top: 17px;" class="submit btn btn-orange square-corners"
                                         aria-label="Search Gov.lb">
                                     <span class="glyphicon glyphicon-search"
                                           aria-hidden="true"></span>
@@ -163,7 +193,7 @@
             </div>
         </noscript>
 
-        <div class='transition' id="description" style="float: right; position: relative; top:159px; left: 560px;">
+        <div class='transition mobile-hide' id="description" style="float: right; position: relative; top:131px; left: 315px;">
 
             <table class="table-fill">
                 <thead>
@@ -244,7 +274,7 @@
                 </tbody>
             </table>
         </div>
-        <button class="transition btn-cal" id="cal" style="position: absolute; top: 230px; left: 370px; " value="1" onclick="showCall('1')">Calendar</button>
+        <button class="transition btn-cal" id="cal" style="position: absolute; top: 240px; left: 370px; " value="1" onclick="showCall('1')">Calendar</button>
     
         <div id="calendar" class="call" style="position: absolute; left: -390px; top: 160px; ">
             <div class="calendar-wrapper" style="background-color: #ebebeb; ">
@@ -260,126 +290,128 @@
         </div>
     
         <div id="title" class="transition table-title">
-            <h3 style=" float:left;">Holidays</h3>
+            <h3 style=" float:left;">Holidays &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 
         </div>
-        
-        <table class="transition table-fill" id="tbl" style="position:relative;left:250px;top:28px;">
+     
+        <div class="position_table">
+            <table class="transition table-fill " id="tbl" >
 
-            <thead>
-                <tr class="style1">
-                    <th class="style1 text-left">
-                        Date
+                <thead>
+                    <tr class="style1">
+                        <th class="style1 text-left">
+                            Date
 
-                    </th>
-                    <th class="style1 text-left">
-                        Feast or anniversary
-                        <div id="floating-button" class="transition floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" value="1" onclick="showDesc()" style="top:14.5px;left:575px">
-                            <p class="plus">+</p>
-                            <img class="edit">
-                        </div>
+                        </th>
+                        <th class="style1 text-left">
+                            Feast or anniversary
+                            <div id="floating-button" class="transition floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" value="1" onclick="showDesc()" style="top:14.5px;left:575px">
+                                <p class="plus">+</p>
+                                <img class="edit">
+                            </div>
 
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="table-hover">
-                <tr class="style1 " onclick="showDay(1, 1, 'new year');popup('New Year')">
-                    <td class="style1 text-left">01/01/2017</td>
-                    <td class="style1 text-left">New Year</td>
-                </tr>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr class="style1 " onclick="showDay(1, 1, 'new year');popup('New Year')">
+                        <td class="style1 text-left">01/01/2018</td>
+                        <td class="style1 text-left">New Year</td>
+                    </tr>
 
-                <tr class="style1" onclick="showDay(6, 1, 'Chrismtas - Armenian Orthodox'); popup('Chrismtas - Armenian Orthodox')">
-                    <td class="style1 text-left">06/01/2017</td>
-                    <td class="style1 text-left">Christmas - Armenian Orthodox</td>
-                </tr>
-                <tr class="style1" onclick="showDay(9, 2, 'Saint Maron'); popup('Saint Maron')">
-                    <td class="style1 text-left">09/02/2017</td>
-                    <td class="style1 text-left">Saint Maron's</td>
-                </tr>
-                <tr class="style1" onclick="showDay(25, 3, 'Annunciation'); popup('Annunciation')">
-                    <td class="style1 text-left">25/03/2017</td>
-                    <td class="style1 text-left">Annunciation</td>
-                </tr>
-                <tr class="style1" onclick="showDay(14, 4, 'Good Friday - W'); popup('Good Friday - W')">
-                    <td class="style1 text-left">14/04/2017</td>
-                    <td class="style1 text-left">Good Friday - Western Calendar</td>
-                </tr>
-                <tr class="style1" onclick="showDay(16, 4, 'Easter - W'); popup('Easter - W ')">
-                    <td class="style1 text-left">16/04/2017</td>
-                    <td class="style1 text-left">Easter- Western Calendar</td>
-                </tr>
-                <tr class="style1" onclick="showDay(14, 4, 'Good Friday - O'); popup('Good Friday - O')">
-                    <td class="style1 text-left">14/04/2017</td>
-                    <td class="style1 text-left">Good Friday - Oriental Calendar</td>
-                </tr>
-                <tr class="style1" onclick='showDay(16, 4, "Easter - O"); popup("Easter - O")'>
-                    <td class="style1 text-left">16/04/2017</td>
-                    <td class="style1 text-left">Easter - Oriental Calendar</td>
-                </tr>
-                <tr class="style1" onclick='showDay(1, 5, "Worker Day"); popup("Worker Day")'>
-                    <td class="style1 text-left">01/05/2017</td>
-                    <td class="style1 text-left">Worker's Day</td>
-                </tr>
-                <tr class="style1" onclick="showDay(7, 5, 'Martyrs Day'); popup('Martyrs Day')">
-                    <td class="style1 text-left">07/05/2017</td>
-                    <td class="style1 text-left">Martyr's Day</td>
-                </tr>
-                <tr class="style1" onclick="showDay(14, 5, 'Resistance and Liberation Day'); popup('Resistance and Liberation Day')">
-                    <td class="style1 text-left">14/05/2017</td>
-                    <td class="style1 text-left">Resistance and Liberation Day</td>
-                </tr>
-                <tr class="style1" onclick="showDay(25, 6, 'Eid Al Fitr'); popup('Eid Al Fitr')">
-                    <td class="style1 text-left">25/06/2017</td>
-                    <td class="style1 text-left">Eid Al Fitr</td>
-                </tr>
-                <tr class="style1" onclick="showDay(15, 8, 'Assumption'); popup('Assumption')">
-                    <td class="style1 text-left">15/08/2017</td>
-                    <td class="style1 text-left">Feast of the Assumption</td>
-                </tr>
-                <tr class="style1" onclick="showDay(1, 9, 'al-Adha'); popup('Al-Adha')">
-                    <td class="style1 text-left">01/09/2017</td>
-                    <td class="style1 text-left">Eid al-Adha</td>
-                </tr>
-                <tr class="style1" onclick="showDay(21, 9, 'Islamic New Year'); popup('Islamic New Year')">
-                    <td class="style1 text-left">21/09/2017</td>
-                    <td class="style1 text-left">Islamic New Year</td>
-                </tr>
-                <tr class="style1" onclick="showDay(1, 10, 'Ashura'); popup('Ashura')">
-                    <td class="style1 text-left">01/10/2017</td>
-                    <td class="style1 text-left">Ashura</td>
-                </tr>
-                <tr class="style1" onclick="showDay(22, 11, 'Independence'); popup('Independence')">
-                    <td class="style1 text-left">22/11/2017</td>
-                    <td class="style1 text-left">Independence Day</td>
-                </tr>
-                <tr class="style1" onclick="showDay(30, 11, 'The Prophet' + 's Birthday'); popup('The Prophet' +'' +' s Birthday')">
-                    <td class="style1 text-left">30/11/2017</td>
-                    <td class="style1 text-left">The Prophet's Birthday</td>
-                </tr>
+                    <tr class="style1" onclick="showDay(6, 1, 'Chrismtas - Armenian Orthodox'); popup('Chrismtas - Armenian Orthodox')">
+                        <td class="style1 text-left">06/01/2018</td>
+                        <td class="style1 text-left">Christmas - Armenian Orthodox</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(9, 2, 'Saint Maron'); popup('Saint Maron')">
+                        <td class="style1 text-left">09/02/2018</td>
+                        <td class="style1 text-left">Saint Maron's</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(25, 3, 'Annunciation'); popup('Annunciation')">
+                        <td class="style1 text-left">25/03/2018</td>
+                        <td class="style1 text-left">Annunciation</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(14, 4, 'Good Friday - W'); popup('Good Friday - W')">
+                        <td class="style1 text-left">14/04/2018</td>
+                        <td class="style1 text-left">Good Friday - Western Calendar</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(16, 4, 'Easter - W'); popup('Easter - W ')">
+                        <td class="style1 text-left">16/04/2018</td>
+                        <td class="style1 text-left">Easter- Western Calendar</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(14, 4, 'Good Friday - O'); popup('Good Friday - O')">
+                        <td class="style1 text-left">14/04/2017</td>
+                        <td class="style1 text-left">Good Friday - Oriental Calendar</td>
+                    </tr>
+                    <tr class="style1" onclick='showDay(16, 4, "Easter - O"); popup("Easter - O")'>
+                        <td class="style1 text-left">16/04/2018</td>
+                        <td class="style1 text-left">Easter - Oriental Calendar</td>
+                    </tr>
+                    <tr class="style1" onclick='showDay(1, 5, "Worker Day"); popup("Worker Day")'>
+                        <td class="style1 text-left">01/05/2017</td>
+                        <td class="style1 text-left">Worker's Day</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(7, 5, 'Martyrs Day'); popup('Martyrs Day')">
+                        <td class="style1 text-left">07/05/2018</td>
+                        <td class="style1 text-left">Martyr's Day</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(14, 5, 'Resistance and Liberation Day'); popup('Resistance and Liberation Day')">
+                        <td class="style1 text-left">14/05/2018</td>
+                        <td class="style1 text-left">Resistance and Liberation Day</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(25, 6, 'Eid Al Fitr'); popup('Eid Al Fitr')">
+                        <td class="style1 text-left">25/06/2018</td>
+                        <td class="style1 text-left">Eid Al Fitr</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(15, 8, 'Assumption'); popup('Assumption')">
+                        <td class="style1 text-left">15/08/2018</td>
+                        <td class="style1 text-left">Feast of the Assumption</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(1, 9, 'al-Adha'); popup('Al-Adha')">
+                        <td class="style1 text-left">01/09/2018</td>
+                        <td class="style1 text-left">Eid al-Adha</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(21, 9, 'Islamic New Year'); popup('Islamic New Year')">
+                        <td class="style1 text-left">21/09/2017</td>
+                        <td class="style1 text-left">Islamic New Year</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(1, 10, 'Ashura'); popup('Ashura')">
+                        <td class="style1 text-left">01/10/2018</td>
+                        <td class="style1 text-left">Ashura</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(22, 11, 'Independence'); popup('Independence')">
+                        <td class="style1 text-left">22/11/2018</td>
+                        <td class="style1 text-left">Independence Day</td>
+                    </tr>
+                    <tr class="style1" onclick="showDay(30, 11, 'The Prophet' + 's Birthday'); popup('The Prophet' +'' +' s Birthday')">
+                        <td class="style1 text-left">30/11/2018</td>
+                        <td class="style1 text-left">The Prophet's Birthday</td>
+                    </tr>
 
-                <tr class="style1" onclick="showDay(25, 12, 'Christmas'); popup('Christmas')">
-                    <td class="style1 text-left">25/12/2017</td>
-                    <td class="style1 text-left">Christmas</td>
-                </tr>
+                    <tr class="style1" onclick="showDay(25, 12, 'Christmas'); popup('Christmas')">
+                        <td class="style1 text-left">25/12/2018</td>
+                        <td class="style1 text-left">Christmas</td>
+                    </tr>
 
-            </tbody>
-        </table>
-        <br /><br />
-        &nbsp;
-        <div style="position:relative;left:455px">
-            <div id="wrong" style="font-family:Tahoma"></div>
+                </tbody>
+            </table>
+
+            <br /><br />
+           
+            <div class="desktop_position">
+                <div id="wrong" style="font-family:Tahoma"></div>
 
 
-            <div class="PageLastUpdatedPageFeature page-feature" style="position:relative;left:55px">
-                <h2 class="sr-only">Last Updated</h2>
-                <p style="font-family:Tahoma">
-                    Page last updated: <time datetime="2017-12-26"> 2017-December-26</time>
-                </p>
+                <div class="PageLastUpdatedPageFeature page-feature" style="position:relative;left:55px">
+                    <h2 class="sr-only">Last Updated</h2>
+                    <p style="font-family:Tahoma">
+                        Page last updated: <time datetime="2017-12-26"> 2017-December-26</time>
+                    </p>
 
+                </div>
             </div>
+
         </div>
-      
-      
        
         </div>
 
