@@ -1,10 +1,16 @@
 <?php
 $target_dir = "uploads/";
+
+$directoryName =  date("Y-m-d");
+//Check if the directory already exists.
+if(!is_dir($target_dir.'/'.$directoryName)){
+    //Directory does not exist, so lets create it.
+    mkdir($target_dir.'/'.$directoryName, 0755);
+}
+$target_dir=$target_dir.'/'.$directoryName.'/';
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
