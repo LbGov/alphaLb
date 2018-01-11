@@ -71,7 +71,7 @@
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color: #019E45; height: 100px;">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
@@ -207,56 +207,13 @@
 
                 <div class="block-bottom ">
 
-                    <div class="PrintPageFeature page-feature">
-
-                        <div class="print-container">
-
-                            <h2 class="sr-only">Print</h2>
-
-                            <button type="button" class="btn-link" id="print-page-button">
-                                <i class="fa fa-print" aria-hidden="true"></i>
-
-                                <span>Print</span>
-
-                            </button>
-                            <noscript><div class="callout-alert">Sorry, this button doesn't work without Javascript. Try pressing Control + P on your keyboard to print, or use your browser's print option.</div></noscript>
-                        </div>
-                        &nbsp;
-                        <div>
-                            <div class="dgDiv page-feature">
-                                <a href="javascript:void(0)" onclick="showProblemForm()" style="color:#1A4D80">Is There Something Wrong With This Page?</a>
-
-                                <div>
-                                    <form name="problemForm" action="../../../scripts/problemForm.php" method="POST" onsubmit='return validate ()'>
-                                        <div id="problemFormFields" style="display:none;">
-                                            &nbsp;
-                                            <h2>Help us improve GOV.LB</h2>
-
-                                            <label for="Form_FeedbackForm_Doing">What you were doing</label>
-                                            <input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" />
-                                            <label for="Form_FeedbackForm_Wrong">What went wrong</label>
-                                            <input type="text" name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" />
-
-                                            <input type="hidden" name="Referer" value="http://portal.gov.lb/" class="hidden" id="Form_FeedbackForm_Referer" />
-                                            &nbsp;
-                                            <div>
-                                                <input type="submit" name="action_doProcessProblem" value="Submit" />
-                                            </div>
-
-
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    &nbsp;
+                    
+                    <div id="wrong"></div>
 
                     <div class="PageLastUpdatedPageFeature page-feature">
                         <h2 class="sr-only">Last Updated</h2>
                         <p>
-                            Page last updated: <time datetime="2017-11-01"> November 01 2017</time>
+                            Page last updated: <time datetime="2017-10-30"> October 30 2017</time>
                         </p>
 
                     </div>
@@ -443,7 +400,7 @@
         </div>
     </div>
 
-
+    <script src="../../../../../../quick-feedback/script.js"></script>
     <script type="text/javascript" src="../../../../../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
     <script type="text/javascript" src="../../../../../../scripts/pageScriptsMethods.js?v=<?php echo filemtime('pageScriptsMethods.js') ?>"></script>
 </body>
