@@ -269,8 +269,19 @@ function insert_finance_status()
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
-    var salary=document.getElementById('salary').value;
-    var date_start=document.getElementById('date_start_work').value; 
+    var salary = document.getElementById('salary').value;
+    if (salary == "")
+    {
+        alert("الرجاء إدخال الراتب");
+        return true;
+    }
+    var date_start = document.getElementById('date_start_work').value;
+
+    if (date_start == "") {
+
+        alert("الرجاء إدخال تاريخ العمل");
+        return true;
+    }
     var client = new HttpClient();
   
 

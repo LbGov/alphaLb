@@ -77,18 +77,19 @@
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
-    <div class="header navbar" role="banner" style="background-color:#019E45;">
+    <div class="header navbar" role="banner" style="background-color: #019E45; height: 100px">
         <div class="container">
             <div class="header-item row">
                 <div class="print-logo col-lg-8 col-xs-7"></div>
                 <div align="right" style="height:70px; ">
-
                     <span style="color:white; font-size:20px; font-family:tahoma;"> الحكومة اللبنانية </span>
                     <img src="../../../../../../../../../themes/tree.png" />
+
                 </div>
-                <div class="mobile-search">
+                <div class="mobile-search" style="left:10px;">
                     <button type="button"
-                            class="submit btn btn-black square-corners mobile-search-toggle"
+                            class="submit btn btn-black square-corners mobile-search-toggle
+							"
                             aria-label="Show search"
                             aria-controls="header-search">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -97,23 +98,26 @@
             </div>
             <div id="header-search"
                  class="header-search row mobile-hide">
-                <div role="search" class="header-search-form ">
+                <div role="search" class="header-search-form header-left">
                     <form id="search-form" action="https://www.Gov.lb/search" class="form-inline pull-right">
                         <div class="form-group">
 
                             <div class="search-controls">
                                 <input name="q" class="form-control square-corners" id="searchterm"
                                        value=""
-                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;"/>
+                                       type="search" autocapitalize="off" autocomplete="off" autocorrect="off" style="direction:rtl;" />
 
-                                <label for="searchterm" class="search-label entered" style="float:right;">
+                                <label for="searchterm" class="search-label entered" style="right:60px;">
                                     <table border='0' dir=" rtl" align="right">
-                                    <tr><td align="right">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                                         بحث
-                                        </td></tr>
+                                        <tr>
+                                            <td style="float:right;">
+
+                                                بحث
+                                            </td>
+                                        </tr>
                                     </table>
                                 </label>
-                                <button type="submit" style="color:#ffffff;" class="submit btn btn-orange square-corners"
+                                <button type="reset" style="color:#ffffff;" class="submit btn btn-orange square-corners"
                                         aria-label="Search Gov.lb">
                                     <span class="glyphicon glyphicon-search"
                                           aria-hidden="true"></span>
@@ -125,6 +129,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="content " role="main">
 
@@ -234,7 +239,7 @@
                                     </td>
                                     <td>
                                         <br />:
-                                        <input id="date_start_work" type="text" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
+                                        <input id="date_start_work" type="date" style="position: absolute; width: 200px; border-color: darkseagreen; direction: rtl">&nbsp;
                                     </td>
                                     <br />
                                 </tr>
@@ -470,11 +475,9 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="../../../../../../../../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
-        <script type="text/javascript" src="../../../../../../../../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
-        <script type="text/javascript" src="../../../../../../../../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
+     
         <script type="text/javascript" src="../../../../../../../../../scripts/pageScriptsMethods.js"></script>
-
+    <script type="text/javascript" src="../../../../../../../../../assets/_combinedfiles/requirementsd279.js"></script>
         <script type="text/javascript" src="../../script/onlineScript.js"></script>
     <script src="../../../../../../../../../quick-feedback/script_ar.js"></script>
         <script>
