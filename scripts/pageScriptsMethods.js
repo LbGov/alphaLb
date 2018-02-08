@@ -288,4 +288,25 @@ function copyURL() {
         attachId.setAttribute("type", "file");
         document.body.appendChild(x);
     }
-   
+   /*
+    function to_transaction(id_number) {
+        document.location.href = "check_transaction.html?" + id_number;
+    }
+
+    function openWorkerChosenTransaction2() {
+        var currentURL;
+        var processedURl;
+        currentURL = window.location.href;
+        processedURl = currentURL.split("=");
+
+        if (document.getElementById('adjust_worker').checked == true) {
+            location.href = "worker_adjust_status/category_4/index_" + processedURl[1] + ".html";
+        }
+        else if (document.getElementById('renew_worker').checked == true) {
+            location.href = "renew-worker/category_4/index_" + processedURl[1] + ".html";
+        }
+        else if (document.getElementById('new_worker_4').checked == true) {
+            location.href = "new-worker/category_4/index_" + processedURl[1] + ".html";
+        }
+
+    } */
