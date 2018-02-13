@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
     <meta charset="utf-8" />
-    <title>  تأكيد المعلومات| الحكومةاللبنانية</title>
+    <title>  الحصول على تأشيرة الدخول إلكترونياً| الحكومةاللبنانية</title>
 
     <meta name="description" content="We’re here to make it easier for you to find and use government information and services online.">
 
@@ -63,14 +63,13 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../../../themes/dia-theme/css/printbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="../../../../../../../../themes/dia-theme/thirdparty/font-awesome-4.3.0/css/font-awesome.minbaab.css?m=1500846094" />
     <link rel="stylesheet" type="text/css" href="../theme/online.css" />
-    
     <style>
         * {
             font-family: Tahoma;
         }
     </style>
 </head>
-<body class="pagetype-process" data-pagetype="ProcessPage" onload="all_data_load()">
+<body class="pagetype-process" data-pagetype="ProcessPage">
 
     <div class="header navbar" role="banner" style="background-color:#019E45;height:100px">
         <div class="container">
@@ -125,10 +124,11 @@
         </div>
     </div>
 
+
     <div class="content " role="main">
 
 
-        <div class="banner-link breadcrumbs ">
+       <div class="banner-link breadcrumbs ">
             <div class="container" dir="rtl">
                 <nav class="nav-breadcrumbs inline-details" aria-label="Breadcrumbs">
                     <ol>
@@ -145,8 +145,7 @@
                         </li>
 
 
-                        <li>
-                            تأكيد المعلومات
+                        <li>  الحصول على تأشيرة الدخول إلكترونياً
                         </li>
 
 
@@ -168,7 +167,7 @@
                 </div>
             </div>
         </noscript>
-
+		
         <div class="container page-content" id="toplink">
             <div class="row">
                 <div class="hidden-sm hidden-xs" align="right">
@@ -185,7 +184,7 @@
                                     <div class="sub-hub">
                                         <h2 id="SubHubNavigationHeading" class="imitate-h4 sub-hub-title">
 
-                                            <span class="accordion-title" style="font-family:Tahoma;">تحميل المعلومات اللازمة</span>
+                                            <span class="accordion-title" style="font-family:Tahoma;">الحصول على تأشيرة الدخول إلكترونياً</span>
                                         </h2>
                                     </div>
                                     <ul class="sub-hub-children">
@@ -198,7 +197,6 @@
                                         <li>
                                             <a href="http://www.general-security.gov.lb/ar/posts/39">عناوين مراكز الأمن العام</a>
                                         </li>
-
                                     </ul>
                                 </nav>
                             </div>
@@ -208,49 +206,36 @@
 
                 <div class="col-md-7 col-md-offset-1 ga-content-container main-content show-step-numbers" tabindex="-1" dir="rtl">
                     <div class="title-row">
-                        <h1 style="font-family:Tahoma;">تأكيد المعلومات </h1>
+                        <h1 style="font-family:Tahoma;">الحصول على تأشيرة الدخول إلكترونياً</h1>
+
+
                     </div>
+                   
+                    <div id="expiry_date">
+                        <div id="Type_Worker" style="width:600px">
+                            <h3 style="font-family:Tahoma;">هل جواز سفر العاملة صالح لأكثر من 18 شهر ؟</h3>
 
-                    <div style="background-color:#f8f5f5; border-color: black;">
-                        &nbsp;
-                        <h2>
-                            &nbsp;الجمهورية اللبنانية<br />&nbsp;&nbsp;
-                            وزارة الداخلية
-                        </h2>
+                            <div class="odd valcant-find" style="background-color:#ddd; padding: 12px;">
+                                <input id="yes" class=".english_version" type="radio" onclick="  uncheck_yes_no('no')" />
+                                <label for="yes">نعم </label>
+                            </div>
+                            &nbsp;
 
-                        <div id="ID">
+                            <div class="even valreport-problem" style="background-color:#ddd; padding: 12px">
+                                <input id="no" class=".english_version" type="radio" onclick=" uncheck_yes_no('yes')" />
+                                <label for="no">كلا</label><div id="error_message" style="color: red; display: none;"><b>لا يمكنك إتمام المعاملة </b></div>
+                            </div>
+                            
+                            <br />
 
                         </div>
-
-
+                       
+                        <input type="button" id="continue"class="login" onclick="to_prior_approval()" value="التالي">
+                      
                     </div>
-                    <br />
-
-                    <div style="background-color:#f8f5f5; border-color: black;">
-                        &nbsp;
-                        <h2>
-                            &nbsp;&nbsp;
-                            وزارة العمل
-                        </h2>
-                        <div id="labor">
-
-                        </div>
-
-
-                    </div>
-                    <br />
                   
 
-                    <div style="background-color:#f8f5f5; border-color: black;">
-                        &nbsp;
-                        <h2>
-                            &nbsp;&nbsp;
-                            صورة عن  جواز السفر
-                        </h2>
-                        <img id="passport_image" src="" class="img-responsive" />
-                        <br />
 
-                    </div><br /><input type="button" class="login" onclick="payment()" value="دفع الرسوم">
                 </div>
 
 
@@ -284,9 +269,9 @@
 
                 </div>
             </div>
-        </div>
-    </div>
-
+         </div>
+       </div>
+        
 
     <div align="right" class="footer" aria-label="Footer" role="contentinfo">
         <div class="container">
@@ -368,6 +353,7 @@
 
 
                         </ul>
+
                     </div>
                 </div>
 
@@ -419,7 +405,7 @@
                 <div class="col-md-4" style="float:right;">
                     <div class="to-top-link">
                         <p>
-                            <a href="validity.html#toplink">
+                            <a href="id_number.html#toplink">
                                 <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>العودة للأعلى
                             </a>
                         </p>
@@ -455,6 +441,7 @@
 
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -468,6 +455,7 @@
     <script type="text/javascript" src="../script/onlineScript.js"></script>
     <script src="../../../../../../../../quick-feedback/script_ar.js"></script>
    
+
 </body>
 
 <!-- Mirrored from www.govt.nz/about/about-us/about-govt-nz/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2017 10:41:13 GMT -->

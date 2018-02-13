@@ -1,6 +1,5 @@
 ﻿
-
-
+/*-------------------------------->authenticate via api <-------------------------------------------*/
 function login() {
 
    
@@ -8,7 +7,7 @@ function login() {
     var url;
   
   
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Authenticate?username=" + document.getElementById("uname").value + "&password=" + document.getElementById("pass").value;
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/Authenticate?username=" + document.getElementById("uname").value + "&password=" + document.getElementById("pass").value;
       
   
 
@@ -23,10 +22,13 @@ function login() {
 
 function authenticate(response)
 {
-    var data = response.split("authenticate>");
+    var data = response.split("authenticated>");
     var authentication = data[1].split("<")[0];
     if (authentication == "true")
-        document.location.href = "online-application/id_number.html";
+    {
+        var id_number = response.split("userId>")[1].split("<")[0];
+        document.location.href = "online-application/expiry_date.html?" + id_number;
+    }
     else
     {
         alert("incorrect login");
@@ -36,164 +38,99 @@ function authenticate(response)
 
 }
 
-function to_transaction(id_number)
+/*->to transaction page to check all documents <-*/
+function to_transaction(prior_approval_id)
 {
-    document.location.href = "check_transaction.html?" + id_number;
-}
-
-/*-----------------------------------function to check the missinf paper----------------------------------------------------*/
-function check() {
-
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
+    document.location.href = "check_transaction.html?"+id_number+ "?"+ prior_approval_id;
+}
+
+/*----------------------------------->function to check the missing paper<----------------------------------------------------*/
+function check() {
+ alert(prior_approval_id);
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+  var id_number = processedURl[1];
+    var prior_approval_id = processedURl[2];
     document.getElementById("iduser").value = id_number;
+    document.getElementById("id-p-a").value = prior_approval_id;
     var client = new HttpClient();
     var url;
   
 
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
-    client.get(url, function (response) {
 
-        var personal_data = "";
-        if (response.split("id>")[1].split("</")[0] == "0") {
-            personal_data = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;رقم الهوية غير صحيح </li>";
-            document.getElementById("ID").innerHTML = personal_data;
-            document.getElementById("submit").disabled = true;
-            document.getElementById("fileToUpload").disabled = true;
-            document.getElementById("submit").style.opacity = " 0.75";
-            document.getElementById("fileToUpload").style.opacity = " 0.75";
+    url = " http://192.168.137.3:8080/National_Id/rest/API/" + id_number;
+client.get(url, function (response) {
 
-            return true;
-        }
-        else {
-            personal_data = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل نسخة عن معلوماتك الشخصية </li>";
-            document.getElementById("ID").innerHTML = personal_data;
-            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Labor/" + id_number;
-            client.get(url, function (response) {
-               
-                labor(response, id_number);
-
-            });
-            url ="http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
-          
-
-            
+    var personal_data = "";
+        
          
-            client.get(url , function (response,id_number) {
-              
-             
-               finance(response, id_number); 
-              
-            });
-
-            url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
-
-            client.get(url, function (response) {
-                justice(response, id_number);
-              
-            });
-
-        }
-
+    personal_data = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل نسخة عن معلوماتك الشخصية </li>";
+    document.getElementById("ID").innerHTML = personal_data;
+    url = "http://192.168.137.4:8080/PriorApproval/rest/API/Labor/" + prior_approval_id;
+    client.get(url, function (response) {
+        alert("verification online response   :" + response);
+        labor(response, prior_approval_id);
 
     });
-
-
+            
+});
+          
 }
 
-function labor(response, id_number) {
+
+
+
+function labor(response,prior_approval_id) {
     var data_labor = "";
     
-    if (response.split("id>")[1].split("</")[0] == "0")
-    {
+    if (response.split("barcode>")[1].split("</")[0] == "prior_approval_id") {
+             
+        data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لدى وزارة العمل</li>";
+
+
+      }
+    else {
         document.getElementById("error_message").style.display = "block";
         document.getElementById("submit").disabled = true;
         document.getElementById("fileToUpload").disabled = true;
         document.getElementById("submit").style.opacity = " 0.75";
         document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم طلب لدى وزارة العمل &nbsp; <a href='missing_paper/labor.html" + id_number + "'style='font-size:0.9rem'>قم بتقديمه إلكترونباً</a> </li>";
-    }
-    else {
-        data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لدى وزارة العمل</li>";
+        data_labor = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم طلب لدى وزارة العمل &nbsp; </li>";
+    
     }
   
     document.getElementById("labor").innerHTML = data_labor;
 }
 
-function finance(response, id_number) {
-    var currentURL = window.location.href;
-    var processedURl = currentURL.split("?");
-    var id_number = processedURl[1];
-
-    var data_finance = "<ul style='font-family:Tahoma'>";
-    if (response.split("id>")[1].split("</")[0] == "0") {
-        document.getElementById("error_message").style.display = "block";
-        document.getElementById("submit").disabled = true;
-        document.getElementById("fileToUpload").disabled = true;
-        document.getElementById("submit").style.opacity = " 0.75";
-        document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_finance = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;ليس لديك راتب مسجل في وزارة المالية &nbsp; <a href='missing_paper/finance.html?" + id_number + "'style='font-size:0.9rem'>قم بتسجيله إلكترونباً</a></li></ul>";
-    }
-    else {
-        data_finance = "<i class='fa fa-check'style='color:green;font-size:1.5rem'>&nbsp; تمّ تحميل إفادة براتبك</li></ul>";
-    }
-    
-    document.getElementById("finance").innerHTML = data_finance;
-}
-function justice(response, id_number) {
-    var data_justice = "";
-    if (response.split("id>")[1].split("</")[0] == "0") {
-        document.getElementById("error_message").style.display = "block";
-        document.getElementById("submit").disabled = true;
-        document.getElementById("fileToUpload").disabled = true;
-        document.getElementById("submit").style.opacity = " 0.75";
-        document.getElementById("fileToUpload").style.opacity = " 0.75";
-        data_justice = "<li class='fa fa-close' style='color:red;font-size:1.5rem'>&nbsp;الرجاء تقديم تعهد لدى كاتب العدل &nbsp; <a href='missing_paper/justice.html?" + id_number + "'style='font-size:0.9rem'>قم بتقديمه إلكترونباً</a></li>";
-    }
-    else {
-        data_justice = "<i class='fa fa-check' style='color:green;font-size:1.5rem'> &nbsp;تمّ تحميل التعهد لدى كاتب العدل  </li>";
-    }
-    document.getElementById("justice").innerHTML = data_justice;
-}
-
-
+/*----------------------------------------------->load all citizen data via api<-----------------------------------------*/
 function all_data_load()
 {
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
+    var prior_approval_id = processedURl[2];
      var client = new HttpClient();
     var url;
   
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/" + id_number;
+    url = "http://192.168.137.3:8080/National_Id/rest/API/" + id_number;
     client.get(url, function (response) {
 
         all_ID_data(response);
        
     });
 
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Labor/" + id_number;
+    url = "http://192.168.137.4:8080/PriorApproval/rest/API/Labor/" + prior_approval_id;
     client.get(url, function (response) {
 
         all_labor_data(response);
        
     });
    
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Finance/" + id_number;
-    client.get(url, function (response) {
-
-        all_finance_data(response);
-      //  alert(response);
-    });
-    url = "http://93.185.92.53:8080/ForeignWorker/rest/API/Justice/" + id_number;
-    client.get(url, function (response) {
-        all_justice_data(response);
-
-      
-    });
-    
-    document.getElementById("passport_image").src = processedURl[2];
+   
+    document.getElementById("passport_image").src = processedURl[3];
 
 }
 
@@ -220,27 +157,12 @@ function all_labor_data(response)
 {
     var data = response.split("Labor_Record>");
 
-    id_data = "&nbsp; رقم االطلب &nbsp;:&nbsp;" + data[1].split('application_number>')[1].split('<')[0] + "</br>";
-    id_data = id_data + "&nbsp; تاريخ تقديم الطلب &nbsp;:&nbsp;" + data[1].split('application_date>')[1].split('<')[0] + "</br>&nbsp; النتيجة &nbsp;:&nbsp;" + data[1].split('result>')[1].split('<')[0] + "</br></br>";
+    id_data = "&nbsp; رقم االطلب &nbsp;:&nbsp;" + data[1].split('barcode>')[1].split('<')[0] + "</br>";
+    id_data = id_data + "&nbsp; تاريخ تقديم الطلب &nbsp;:&nbsp;" + data[1].split('registration_date>')[1].split('<')[0] + "</br>&nbsp; النتيجة &nbsp;:&nbsp;" + data[1].split('status>')[1].split('<')[0] + "</br></br>";
     document.getElementById("labor").innerHTML = id_data;
 }
 
-function all_justice_data(response)
-{
-    var data = response.split("Justice_Record>");
 
-    id_data = "&nbsp; رقم التعهد &nbsp;:&nbsp;" + data[1].split('commitment_number>')[1].split('<')[0] + "</br>";
-    id_data = id_data + "&nbsp; تاريخ  التعهد &nbsp;:&nbsp;" + data[1].split('commitment_date>')[1].split('<')[0] + "</br></br>";
-    document.getElementById("justice").innerHTML = id_data;
-}
-
-function all_finance_data(response)
-{
-    var data = response.split("Financial_Status>");
-    id_data = "&nbsp; الراتب &nbsp;:&nbsp;" + data[1].split('salary>')[1].split('<')[0] + "</br>";
-    id_data = id_data + "&nbsp; تاريخ بدء العمل &nbsp;:&nbsp;" + data[1].split('date_start_work>')[1].split('<')[0] + "</br></br>";
-    document.getElementById("finance").innerHTML = id_data;
-}
 
 function payment()
 {
@@ -250,7 +172,7 @@ function payment()
     document.location.href = "payment.html?" + id_number ;
 }
 
-
+/*------------------------------>get the ai response<--------------------------------------------------*/
 var HttpClient = function () {
     this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -263,34 +185,166 @@ var HttpClient = function () {
     }
 }
 
-function insert_finance_status()
+
+
+function to_prior_approval()
 {
-   
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
     var id_number = processedURl[1];
-    var salary = document.getElementById('salary').value;
-    if (salary == "")
-    {
-        alert("الرجاء إدخال الراتب");
-        return true;
-    }
-    var date_start = document.getElementById('date_start_work').value;
+    document.location.href = "prior_approval.html?"+id_number ;
+}
 
-    if (date_start == "") {
-
-        alert("الرجاء إدخال تاريخ العمل");
-        return true;
-    }
-    var client = new HttpClient();
-  
-
-    client.get("http://93.185.92.53:8080/ForeignWorker/rest/API/InsertFinance?id=" + id_number + "&&salary=" + salary + "&&date_start=" + date_start, function (response) {
-       
-    
-    });   
-setTimeout(function () {  document.location.href = "../check_transaction.html?"+id_number;}, 500);
+function to_id_number()
+{
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+    document.location.href = "id_number.html?" + id_number;
 }
 
 
+function to_validity()
+{
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+    var prior_approval_id = processedURl[2];
+    var passport_img=processedURl[3];
+    document.location.href = "validity.html?" + id_number + "?" + prior_approval_id + "?" + passport_img;
+}
 
+function uncheck_yes_no(radioId1) {
+
+
+    var radioButton = document.getElementById(radioId1);
+    if (radioButton.id== "yes")
+    {
+         document.getElementById("error_message").style.display ="block";
+        document.getElementById("continue").disabled = true;
+      
+        document.getElementById("continue").style.opacity = " 0.75";
+       
+    }
+    if (radioButton.id == "no") {
+        document.getElementById("error_message").style.display = "none";
+        document.getElementById("continue").disabled = false;
+        document.getElementById("continue").style.opacity = "1";
+       
+    }
+    radioButton.checked = false;
+
+  
+}
+
+
+/*-------------------------------->Fill application<-----------------------------------------------*/
+function to_request(machine)
+{
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+    var prior_approval_id = processedURl[2];
+    var passport_img = processedURl[3];
+
+
+    /*prior data*/
+    document.getElementById("id_number").value = id_number;
+    document.getElementById("id_prior_approval").value = prior_approval_id;
+    document.getElementById("pass_img").value = passport_img;
+   
+    if (machine == 'desktop')
+        document.getElementById('all-data').style.display = 'block';
+    else
+        document.getElementById('all-data-mobile').style.display = 'block';
+   
+    document.getElementById('justice').style.display = 'none';
+    document.getElementById('justice-mobile').style.display = 'none';
+    
+    document.getElementById("label-cause").innerHTML = document.getElementById("cause").value;
+    document.getElementById("label-time").innerHTML = document.getElementById("time").value;
+    document.getElementById("label-number_prior_approval").innerHTML = document.getElementById("number_prior_approval").value;
+
+    if (document.getElementsByName("radio")[0].checked) {
+        document.getElementById("label-residence").innerHTML = "نعم";
+    }
+    else {
+        document.getElementById("label-residence").innerHTML = "كلا";
+
+    }
+   document.getElementById("label-fileToUpload").innerHTML=document.getElementById("fileToUpload").value;
+
+
+
+    /*employer data*/
+    document.getElementById("label-entreprise").innerHTML = document.getElementById("entreprise").value;
+    document.getElementById("label-employer-name").innerHTML = document.getElementById("employer-name").value;
+    document.getElementById("label-employer-last-name").innerHTML = document.getElementById("employer-last-name").value;
+    document.getElementById("label-employer-father-name").innerHTML = document.getElementById("employer-father-name").value;
+    document.getElementById("label-employer-mother-name").innerHTML = document.getElementById("employer-mother-name").value;
+    document.getElementById("label-employer-nationality").innerHTML = document.getElementById("employer-nationality").value;
+    document.getElementById("label-employer-date-bith").innerHTML = document.getElementById("employer-date-bith").value;
+    document.getElementById("label-employer-place-bith").innerHTML = document.getElementById("employer-place-bith").value;
+    document.getElementById("label-job-w-h").innerHTML = document.getElementById("job-w-h").value;
+    document.getElementById("label-province").innerHTML = document.getElementById("province").value;
+    document.getElementById("label-city").innerHTML = document.getElementById("city").value;
+    document.getElementById("label-street").innerHTML = document.getElementById("street").value;
+    document.getElementById("label-building").innerHTML = document.getElementById("building").value;
+    document.getElementById("label-phone").innerHTML = document.getElementById("phone").value;
+    document.getElementById("label-e-mail").innerHTML = document.getElementById("e-mail").value;
+
+    /*worker data*/
+
+    document.getElementById("label-worker-name").innerHTML = document.getElementById("worker-name").value;
+    document.getElementById("label-worker-last-name").innerHTML = document.getElementById("worker-last-name").value;
+    document.getElementById("label-worker-father-name").innerHTML = document.getElementById("worker-father-name").value;
+    document.getElementById("label-worker-mother-name").innerHTML = document.getElementById("worker-mother-name").value;
+    document.getElementById("label-worker-date-birth").innerHTML = document.getElementById("worker-date-birth").value;
+    document.getElementById("label-worker-place-birth").innerHTML = document.getElementById("worker-place-birth").value;
+
+    document.getElementById("label-current-nationality").innerHTML = document.getElementById("current-nationality").value;
+    document.getElementById("label-original-nationality").innerHTML = document.getElementById("original-nationality").value;
+
+    if (document.getElementsByName("gender")[0].checked) {
+        document.getElementById("label-gender").innerHTML = "ذكر";
+    }
+    else document.getElementById("label-gender").innerHTML = "أنثى";
+
+    document.getElementById("label-worker-job").innerHTML = document.getElementById("worker-job").value;
+    document.getElementById("label-relationship").innerHTML = document.getElementById("relationship").value;
+
+    if (document.getElementsByName("passport")[0].checked) {
+       
+        document.getElementsByName("label-passport")[0].checked = true;
+    }
+    else
+        if (document.getElementsByName("passport")[1].checked)
+        {
+          
+            document.getElementsByName("label-passport")[1].checked = true;
+        }
+        else
+            if (document.getElementsByName("passport")[2].checked) {
+               
+              
+                document.getElementsByName("label-passport")[2].checked = true;
+            }
+
+    document.getElementById("label-passport-number").innerHTML = document.getElementById("passport-number").value;
+
+    document.getElementById("label-expiration-date").innerHTML = document.getElementById("expiration-date").value;
+    document.getElementById("label-name-age").innerHTML = document.getElementById("name-age").value;
+
+
+    /*justice writer data*/
+    document.getElementById("label-first-last-name").innerHTML = document.getElementById("first-last-name").value;
+    document.getElementById("label-department").innerHTML = document.getElementById("department").value;
+    document.getElementById("label-casa").innerHTML = document.getElementById("casa").value;
+
+    document.getElementById("label-j-city").innerHTML = document.getElementById("j-city").value;
+    document.getElementById("label-commitment-num").innerHTML = document.getElementById("commitment-num").value;
+    document.getElementById("label-date").innerHTML = document.getElementById("date").value;
+  
+
+ 
+}

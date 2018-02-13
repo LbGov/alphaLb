@@ -1,7 +1,6 @@
 <style>
 
 
-
      .input_class{
       
         padding: 12px 20px;
@@ -133,6 +132,15 @@
         .cancelbtn {
             width: 100%;
         }
+    }
+    .next{
+        position:absolute;
+        left:-65px;
+
+    }
+    .previous{
+     position:absolute;
+     right:210px;
     }
 
 	</style>
