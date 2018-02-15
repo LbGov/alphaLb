@@ -309,7 +309,7 @@
                                             <td>
 
 
-                                                <input id="cause" name="cause" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
+                                                <input id="cause-mobile" name="cause-mobile" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
                                             </td>
 
                                         </tr>
@@ -321,7 +321,7 @@
                                             <td>
 
 
-                                                <input id="time" name="time" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
+                                                <input id="time-mobile" name="time-mobile" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
                                             </td>
 
                                         </tr>
@@ -333,7 +333,7 @@
                                             <td>
 
 
-                                                <input id="number_prior_approval" name="number_prior_approval" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
+                                                <input id="number_prior_approval-mobile" name="number_prior_approval-mobile" type="text" style="position: absolute; width: 150px; border-color: darkseagreen; direction: rtl; ">
                                             </td>
 
                                         </tr>
@@ -344,20 +344,20 @@
                                             </td>
                                             <td style="width:600px">
                                                 <br />
-                                                &nbsp;نعم <input type="radio" name="radio" value="yes" onclick="document.getElementById('fileToUpload').disabled = false; document.getElementById('fileToUpload').style.opacity = ' 1';">&nbsp; &nbsp; &nbsp;
-                                                كلا <input type="radio" name="radio" value="no" onclick=" document.getElementById('fileToUpload').disabled = true; document.getElementById('fileToUpload').style.opacity = ' 0.75';">
+                                                &nbsp;نعم <input type="radio" name="radio-mobile" value="yes" onclick="document.getElementById('fileToUpload-mobile').disabled = false; document.getElementById('fileToUpload-mobile').style.opacity = ' 1';">&nbsp; &nbsp; &nbsp;
+                                                كلا <input type="radio" name="radio-mobile" value="no" onclick=" document.getElementById('fileToUpload-mobile').disabled = true; document.getElementById('fileToUpload-mobile').style.opacity = ' 0.75';">
 
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><br /><input type="file" name="fileToUpload" id="fileToUpload" style="position:absolute;left:-100px"></td>
+                                            <td><br /><input type="file" name="fileToUpload-mobile" id="fileToUpload-mobile" style="position:absolute;left:-100px"></td>
                                         </tr>
 
 
                                     </table>
-                                    <br />  <br /> &nbsp;  &nbsp;  <input type="button" id="next" class="login next" style="left:30px" onclick="document.getElementById('prior-data-mobile').style.display = 'none'; alert(document.getElementById('cause').value); document.getElementById('employer-mobile').style.display = 'block';" value="التالي" />
+                                    <br />  <br /> &nbsp;  &nbsp;  <input type="button" id="next" class="login next" style="left:30px" onclick="document.getElementById('prior-data-mobile').style.display = 'none'; document.getElementById('employer-mobile').style.display = 'block';" value="التالي" />
                                 </div>
                                 &nbsp;
                                 <div id="employer" class="desktop_table" style="border: 1px; width: 790px;display:none">
@@ -541,7 +541,7 @@
                                                 <td>
 
 
-                                                    <input id="entreprise" name="entreprise" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="entreprise-mobile" name="entreprise-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -555,7 +555,7 @@
                                                 <td style="width:200px;">
 
 
-                                                    <input id="employer-name" name="employer-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-name-mobile" name="employer-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                               </tr>
                                             <tr>
@@ -564,7 +564,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;الشهرة
                                                 </td>
                                                 <td>
-                                                    <input id="employer-last-name" name="employer-last-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-last-name-mobile" name="employer-last-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -575,7 +575,7 @@
                                                 <td>
 
 
-                                                    <input id="employer-father-name" name="employer-father-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-father-name-mobile" name="employer-father-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -589,7 +589,7 @@
                                                 <td style="width:200px;">
 
 
-                                                    <input id="employer-mother-name" name="employer-mother-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-mother-name-mobile" name="employer-mother-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                                 </tr>
                                             <tr>
@@ -598,7 +598,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;الجنسية
                                                 </td>
                                                 <td>
-                                                    <input id="employer-nationality" name="employer-nationalite" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-nationality-mobile" name="employer-nationalite-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -609,7 +609,7 @@
                                                 <td>
 
 
-                                                    <input id="employer-date-bith" name="employer-date-bith" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-date-bith-mobile" name="employer-date-bith-mobile" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -618,7 +618,7 @@
                                                     <br /> &nbsp; &nbsp; &nbsp;مكان الولادة
                                                 </td>
                                                 <td>
-                                                    <input id="employer-place-bith" name="employer-place-bith" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="employer-place-bith-mobile" name="employer-place-bith-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -633,7 +633,7 @@
                                                 <td style="width:200px;">
 
 
-                                                    <input id="job-w-h" name="job" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="job-w-h-mobile" name="job" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                              </tr>
                                             <tr>
@@ -642,7 +642,7 @@
                                                     <br /> &nbsp; &nbsp; &nbsp; قضاء
                                                 </td>
                                                 <td>
-                                                    <input id="province" name="province" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="province-mobile" name="province-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
 
@@ -653,7 +653,7 @@
                                                 </td>
                                                 <td>
 
-                                                    <input id="city" name="city" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="city-mobile" name="city-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                              </tr>
                                             <tr>
@@ -663,7 +663,7 @@
                                                 </td>
                                                 <td>
 
-                                                    <input id="street" name="street" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="street-mobile" name="street-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
 
@@ -675,7 +675,7 @@
                                                 <td>
 
 
-                                                    <input id="building" name="building" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="building-mobile" name="building-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                                 </tr>
                                             <tr>
@@ -685,7 +685,7 @@
                                                 </td>
                                                 <td>
 
-                                                    <input id="phone" name="phone" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="phone-mobile" name="phone-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -696,7 +696,7 @@
                                                 <td>
 
 
-                                                    <input id="e-mail" name="e-mail" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="e-mail-mobile" name="e-mail-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -899,7 +899,7 @@
                                                 <td style="width:200px;">
 
 
-                                                    <input id="worker-name" name="worker-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-name-mobile" name="worker-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                              </tr>
                                             <tr>
@@ -908,7 +908,7 @@
                                                     <br /> &nbsp; &nbsp; &nbsp;الشهرة
                                                 </td>
                                                 <td>
-                                                    <input id="worker-last-name" name="worker-last-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-last-name-mobile" name="worker-last-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -919,7 +919,7 @@
                                                 <td style="width:200px;">
 
 
-                                                    <input id="worker-father-name" name="worker-father-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-father-name-mobile" name="worker-father-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -928,7 +928,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;إسم الام
                                                 </td>
                                                 <td>
-                                                    <input id="worker-mother-name" name="worker-mother-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-mother-name-mobile" name="worker-mother-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -941,7 +941,7 @@
                                                 <td>
 
 
-                                                    <input id="worker-date-birth" name="worker-date-birth" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-date-birth-mobile" name="worker-date-birth-mobile" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -950,7 +950,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;  مكان الولادة
                                                 </td>
                                                 <td>
-                                                    <input id="worker-place-birth" name="worker-place-birth" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-place-birth-mobile" name="worker-place-birth-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -962,7 +962,7 @@
                                                 <td>
 
 
-                                                    <input id="current-nationality" name="current-nationality" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="current-nationality-mobile" name="current-nationality-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -971,7 +971,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;الجنسية الأصلية
                                                 </td>
                                                 <td>
-                                                    <input id="original-nationality" name="original-nationality" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="original-nationality-mobile" name="original-nationality-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -982,8 +982,8 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    &nbsp;ذكر <input type="radio" name="gender" value="male">&nbsp; &nbsp; &nbsp;
-                                                    أنثى <input type="radio" name="gender" value="female">
+                                                    &nbsp;ذكر <input type="radio" name="gender-mobile" value="male">&nbsp; &nbsp; &nbsp;
+                                                    أنثى <input type="radio" name="gender-mobile" value="female">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -992,7 +992,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;المهنة
                                                 </td>
                                                 <td>
-                                                    <input id="worker-job" name="worker-job" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="worker-job-mobile" name="worker-job-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1004,7 +1004,7 @@
                                                 <td>
 
 
-                                                    <input id="relationship" name="relationship" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="relationship-mobile" name="relationship-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1013,14 +1013,14 @@
                                                 <td>
 
                                                     <br />&nbsp; &nbsp; &nbsp;
-                                                    <input name="passport" id="passport" type="radio">
+                                                    <input name="passport-mobile" id="passport-mobile" type="radio">
 
                                                     جواز سفر
                                                 </td>
 
                                                 <td>
                                                     <br />
-                                                    <input name="passport" id="travel-document" type="radio" /> وثيقة سفر&nbsp; &nbsp; &nbsp;<input name="passport" id="other" type="radio">مختلف
+                                                    <input name="passport-mobile" id="travel-document-mobile" type="radio" /> وثيقة سفر&nbsp; &nbsp; &nbsp;<input name="passport-mobile" id="other-mobile" type="radio">مختلف
                                                 </td>
                                                 
 
@@ -1033,7 +1033,7 @@
                                                 <td>
 
 
-                                                    <input id="passport-number" name="passport-number" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="passport-number-mobile" name="passport-number-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1043,7 +1043,7 @@
                                                     <br />&nbsp; &nbsp; &nbsp;    تاريخ الصلاحية  
                                                 </td>
                                                 <td>
-                                                    <input id="expiration-date" name="expiration-date" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="expiration-date-mobile" name="expiration-date-mobile" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1056,7 +1056,7 @@
                                                 <td>
 
 
-                                                    <input id="name-age" name="name-age" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="name-age-mobile" name="name-age-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1166,7 +1166,7 @@
                                                 <td style="width: 190px;">
 
 
-                                                    <input id="first-last-name" name="first-last-name" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="first-last-name-mobile" name="first-last-name-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1178,7 +1178,7 @@
                                                 </td>
                                                 <td style="width: 190px">
 
-                                                    <input id="department" name="department" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="department-mobile" name="department-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
  
 
                                                 </td>
@@ -1190,7 +1190,7 @@
                                                    
                                                 </td>
                                                 <td>
-                                                    <input id="casa" name="casa" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl;">
+                                                    <input id="casa-mobile" name="casa-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl;">
 
 
                                                 </td>
@@ -1203,7 +1203,7 @@
                                                      </td>
 
                                                 <td>
-                                                    <input id="j-city" name="j-city" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl;">
+                                                    <input id="j-city-mobile" name="j-city-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl;">
 
                                                 </td>
 
@@ -1217,7 +1217,7 @@
                                                 <td>
 
 
-                                                    <input id="commitment-num" name="commitment-num" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="commitment-num-mobile" name="commitment-num-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1226,14 +1226,14 @@
                                                     <br />&nbsp; &nbsp; &nbsp; تاريخه
                                                 </td>
                                                 <td>
-                                                    <input id="date" name="date" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="date-mobile" name="date-mobile" type="date" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
                                         </table>
                                         <br />
                                         &nbsp;
-                                        <input type="button" id="next" style="left:30px" class="login next" onclick="to_request('mobile')" value="التالي" />
+                                        <input type="button" id="next" style="left:30px" class="login next" onclick="alert(document.getElementById('cause-mobile').value); to_request('mobile')" value="التالي" />
                                         <input type="button" id="previous" style="left:250px" class="login previous" onclick="document.getElementById('worker-mobile').style.display = 'block'; document.getElementById('justice-mobile').style.display = 'none';" value="السابق" />
 
                                     </fieldset>
@@ -1698,7 +1698,7 @@
                                                 </td>
                                                 <td style="width:170px;">
 
-                                                    <br />تاريخه
+                                                    <br />تاريخه:
                                                 </td>
                                                 <td>
                                                     <br />
@@ -1711,16 +1711,16 @@
 
                                     </fieldset>
                                     <br />
-                                    <input type="hidden" name="id_number" id="id_number" />
-                                    <input type="hidden" name="id_prior_approval" id="id_prior_approval" />
-                                    <input type="hidden" name="pass_img" id="pass_img" />
-
-                                    <input type="submit" style="background-color:#4caf4f;position:absolute;left:-100px;height:55px" value="تأكيد" />
+                                  
+                                    <input type="submit" name="desktop" style="background-color:#4caf4f;position:absolute;left:-100px;height:55px" value="تأكيد" />
                                     <input type="button" id="previous" class="login previous" style="right:50px;width:180px" onclick="document.getElementById('all-data').style.display = 'none'; document.getElementById('justice').style.display = 'block';" value="السابق" />
 
 
 
                                 </div>
+                                <input type="hidden" name="id_number" id="id_number" />
+                                <input type="hidden" name="id_prior_approval" id="id_prior_approval" />
+                                <input type="hidden" name="pass_img" id="pass_img" />
 
 
                                 <div id="all-data-mobile" class="mobile_table" style="transition: all 1s ;display:none;">
@@ -1734,7 +1734,7 @@
                                             </td>
                                             <td>
 
-                                                <br /> <label id="label-cause"></label>
+                                                <br /> <label id="label-cause-mobile"></label>
                                             </td>
 
                                         </tr>
@@ -1745,7 +1745,7 @@
                                             </td>
                                             <td>
                                                 <br />
-                                                <label id="label-time"></label>
+                                                <label id="label-time-mobile"></label>
                                             </td>
 
                                         </tr>
@@ -1757,7 +1757,7 @@
                                             <td>
 
                                                 <br />
-                                                <label id="label-number_prior_approval"></label>
+                                                <label id="label-number_prior_approval-mobile"></label>
                                             </td>
 
                                         </tr>
@@ -1768,13 +1768,13 @@
                                             </td>
                                             <td style="width:200px">
                                                 <br />
-                                                &nbsp;<label id="label-residence"></label>
+                                                &nbsp;<label id="label-residence-mobile"></label>
                                             </td>
                                          </tr>
                                         <tr>
                                             <td>
                                                 <br />
-                                                &nbsp; <label id="label-fileToUpload"></label>
+                                                &nbsp; <label id="label-fileToUpload-mobile"></label>
                                             </td>
 
                                         </tr>
@@ -1792,7 +1792,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-entreprise"></label>
+                                                    <label id="label-entreprise-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -1806,7 +1806,7 @@
                                                 <td style="width:200px;">
                                                     <br />
 
-                                                    <label id="label-employer-name"></label>
+                                                    <label id="label-employer-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1816,7 +1816,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-employer-last-name"></label>
+                                                    <label id="label-employer-last-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1827,7 +1827,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-employer-father-name"></label>
+                                                    <label id="label-employer-father-name-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -1840,7 +1840,7 @@
                                                 </td>
                                                 <td style="width:200px;">
                                                     <br />
-                                                    <label id="label-employer-mother-name"></label>
+                                                    <label id="label-employer-mother-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1850,7 +1850,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-employer-nationality"></label>
+                                                    <label id="label-employer-nationality-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1861,7 +1861,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-employer-date-bith"></label>
+                                                    <label id="label-employer-date-bith-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1871,7 +1871,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-employer-place-bith"></label>
+                                                    <label id="label-employer-place-bith-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -1886,7 +1886,7 @@
                                                 <td style="width:200px;">
 
                                                     <br />
-                                                    <label id="label-job-w-h"></label>
+                                                    <label id="label-job-w-h-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1896,7 +1896,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-province"></label>
+                                                    <label id="label-province-mobile"></label>
                                                 </td>
                                             </tr>
 
@@ -1907,7 +1907,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-city"></label>
+                                                    <label id="label-city-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1919,7 +1919,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-street"></label>
+                                                    <label id="label-street-mobile"></label>
                                                 </td>
                                             </tr>
 
@@ -1931,7 +1931,7 @@
                                                 <td>
                                                     <br />
 
-                                                    <label id="label-building"></label>
+                                                    <label id="label-building-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1943,7 +1943,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-phone"></label>
+                                                    <label id="label-phone-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1954,7 +1954,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-e-mail"></label>
+                                                    <label id="label-e-mail-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -1976,7 +1976,7 @@
                                                 <td style="width:200px;">
 
                                                     <br />
-                                                    <label id="label-worker-name"></label>
+                                                    <label id="label-worker-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1986,7 +1986,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-worker-last-name"></label>
+                                                    <label id="label-worker-last-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1997,7 +1997,7 @@
                                                 <td style="width:200px;">
 
                                                     <br />
-                                                    <label id="label-worker-father-name"></label>
+                                                    <label id="label-worker-father-name-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -2008,7 +2008,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-worker-mother-name"></label>
+                                                    <label id="label-worker-mother-name-mobile"></label>
 
                                             </tr>
 
@@ -2020,7 +2020,7 @@
                                                 <td>
                                                     <br />
 
-                                                    <label id="label-worker-date-birth"></label>
+                                                    <label id="label-worker-date-birth-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -2030,7 +2030,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-worker-place-birth"></label>
+                                                    <label id="label-worker-place-birth-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2042,7 +2042,7 @@
                                                 <td>
                                                     <br />
 
-                                                    <label id="label-current-nationality"></label>
+                                                    <label id="label-current-nationality-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -2052,7 +2052,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-original-nationality"></label>
+                                                    <label id="label-original-nationality-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2064,7 +2064,7 @@
                                                 <td>
                                                     <br />
 
-                                                    <label id="label-gender"></label>
+                                                    <label id="label-gender-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -2074,7 +2074,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-worker-job"></label>
+                                                    <label id="label-worker-job-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2086,7 +2086,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-relationship"></label>
+                                                    <label id="label-relationship-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2095,15 +2095,15 @@
                                                 <td>
 
                                                     <br />&nbsp; &nbsp; &nbsp;
-                                                    <input name="label-passport" id="label-passport" type="radio" disabled>
+                                                    <input name="label-passport-mobile" id="label-passport-mobile" type="radio" disabled>
 
                                                     جواز سفر
                                                 </td>
 
                                                 <td>
                                                     <br />
-                                                    <input name="label-passport" id="label-travel-document" type="radio" disabled /> وثيقة سفر
-                                                    &nbsp; &nbsp; &nbsp;   <input name="label-passport" id="label-other" type="radio" disabled>مختلف
+                                                    <input name="label-passport-mobile" id="label-travel-document-mobile" type="radio" disabled /> وثيقة سفر
+                                                    &nbsp; &nbsp; &nbsp;   <input name="label-passport-mobile" id="label-other-mobile" type="radio" disabled>مختلف
                                                 </td>
 
                                             </tr>
@@ -2115,7 +2115,7 @@
                                                 <td>
                                                     <br />
 
-                                                    <label id="label-passport-number"></label>
+                                                    <label id="label-passport-number-mobile"></label>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -2125,7 +2125,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-expiration-date"></label>
+                                                    <label id="label-expiration-date-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2138,7 +2138,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-name-age"></label>
+                                                    <label id="label-name-age-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2162,7 +2162,7 @@
                                                 <td style="width:200px;">
 
                                                     <br />
-                                                    <label id="label-first-last-name"></label>
+                                                    <label id="label-first-last-name-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2174,7 +2174,7 @@
                                                 <td style="width:220px">
 
                                                     <br />
-                                                    <label id="label-department"></label>
+                                                    <label id="label-department-mobile"></label>
                                                    
 
                                                 </td>
@@ -2185,7 +2185,7 @@
 
                                                 </td>
                                                 <td>
-                                                    <br /><label id="label-casa"></label>
+                                                    <br /><label id="label-casa-mobile"></label>
                                                    
                                                 </td>
                                             </tr>
@@ -2196,7 +2196,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-j-city"></label>
+                                                    <label id="label-j-city-mobile"></label>
                                                 </td>
 
 
@@ -2211,7 +2211,7 @@
                                                 <td>
 
                                                     <br />
-                                                    <label id="label-commitment-num"></label>
+                                                    <label id="label-commitment-num-mobile"></label>
                                                 </td>
                                            </tr>
                                             <tr>
@@ -2221,7 +2221,7 @@
                                                 </td>
                                                 <td>
                                                     <br />
-                                                    <label id="label-date"></label>
+                                                    <label id="label-date-mobile"></label>
                                                 </td>
 
                                             </tr>
@@ -2230,11 +2230,8 @@
 
                                     </fieldset>
                                     <br />
-                                    <input type="hidden" name="id_number" id="id_number" />
-                                    <input type="hidden" name="id_prior_approval" id="id_prior_approval" />
-                                    <input type="hidden" name="pass_img" id="pass_img" />
-
-                                    <input type="submit" style="background-color:#4caf4f;position:absolute;left:30px;height:55px;width:50px" value="تأكيد" />
+                                   
+                                    <input type="submit" name="mobile" style="background-color:#4caf4f;position:absolute;left:30px;height:55px;width:50px" value="تأكيد" />
                                     <input type="button" id="previous" class="login previous" style="left:250px" onclick="document.getElementById('all-data-mobile').style.display = 'none'; document.getElementById('justice-mobile').style.display = 'block';" value="السابق" />
 
 

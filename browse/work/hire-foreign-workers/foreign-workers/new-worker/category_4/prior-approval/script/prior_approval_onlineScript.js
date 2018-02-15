@@ -254,97 +254,189 @@ function to_request(machine)
     document.getElementById("pass_img").value = passport_img;
    
     if (machine == 'desktop')
+    {
+
+          document.getElementById('justice').style.display = 'none';
         document.getElementById('all-data').style.display = 'block';
-    else
-        document.getElementById('all-data-mobile').style.display = 'block';
-   
-    document.getElementById('justice').style.display = 'none';
-    document.getElementById('justice-mobile').style.display = 'none';
-    
-    document.getElementById("label-cause").innerHTML = document.getElementById("cause").value;
-    document.getElementById("label-time").innerHTML = document.getElementById("time").value;
-    document.getElementById("label-number_prior_approval").innerHTML = document.getElementById("number_prior_approval").value;
 
-    if (document.getElementsByName("radio")[0].checked) {
-        document.getElementById("label-residence").innerHTML = "نعم";
-    }
-    else {
-        document.getElementById("label-residence").innerHTML = "كلا";
+        document.getElementById("label-cause").innerHTML = document.getElementById("cause").value;
+        document.getElementById("label-time").innerHTML = document.getElementById("time").value;
+        document.getElementById("label-number_prior_approval").innerHTML = document.getElementById("number_prior_approval").value;
 
-    }
-   document.getElementById("label-fileToUpload").innerHTML=document.getElementById("fileToUpload").value;
+        if (document.getElementsByName("radio")[0].checked) {
+            document.getElementById("label-residence").innerHTML = "نعم";
+        }
+        else {
+            document.getElementById("label-residence").innerHTML = "كلا";
+
+        }
+        document.getElementById("label-fileToUpload").innerHTML = document.getElementById("fileToUpload").value;
 
 
 
-    /*employer data*/
-    document.getElementById("label-entreprise").innerHTML = document.getElementById("entreprise").value;
-    document.getElementById("label-employer-name").innerHTML = document.getElementById("employer-name").value;
-    document.getElementById("label-employer-last-name").innerHTML = document.getElementById("employer-last-name").value;
-    document.getElementById("label-employer-father-name").innerHTML = document.getElementById("employer-father-name").value;
-    document.getElementById("label-employer-mother-name").innerHTML = document.getElementById("employer-mother-name").value;
-    document.getElementById("label-employer-nationality").innerHTML = document.getElementById("employer-nationality").value;
-    document.getElementById("label-employer-date-bith").innerHTML = document.getElementById("employer-date-bith").value;
-    document.getElementById("label-employer-place-bith").innerHTML = document.getElementById("employer-place-bith").value;
-    document.getElementById("label-job-w-h").innerHTML = document.getElementById("job-w-h").value;
-    document.getElementById("label-province").innerHTML = document.getElementById("province").value;
-    document.getElementById("label-city").innerHTML = document.getElementById("city").value;
-    document.getElementById("label-street").innerHTML = document.getElementById("street").value;
-    document.getElementById("label-building").innerHTML = document.getElementById("building").value;
-    document.getElementById("label-phone").innerHTML = document.getElementById("phone").value;
-    document.getElementById("label-e-mail").innerHTML = document.getElementById("e-mail").value;
+        /*employer data*/
+        document.getElementById("label-entreprise").innerHTML = document.getElementById("entreprise").value;
+        document.getElementById("label-employer-name").innerHTML = document.getElementById("employer-name").value;
+        document.getElementById("label-employer-last-name").innerHTML = document.getElementById("employer-last-name").value;
+        document.getElementById("label-employer-father-name").innerHTML = document.getElementById("employer-father-name").value;
+        document.getElementById("label-employer-mother-name").innerHTML = document.getElementById("employer-mother-name").value;
+        document.getElementById("label-employer-nationality").innerHTML = document.getElementById("employer-nationality").value;
+        document.getElementById("label-employer-date-bith").innerHTML = document.getElementById("employer-date-bith").value;
+        document.getElementById("label-employer-place-bith").innerHTML = document.getElementById("employer-place-bith").value;
+        document.getElementById("label-job-w-h").innerHTML = document.getElementById("job-w-h").value;
+        document.getElementById("label-province").innerHTML = document.getElementById("province").value;
+        document.getElementById("label-city").innerHTML = document.getElementById("city").value;
+        document.getElementById("label-street").innerHTML = document.getElementById("street").value;
+        document.getElementById("label-building").innerHTML = document.getElementById("building").value;
+        document.getElementById("label-phone").innerHTML = document.getElementById("phone").value;
+        document.getElementById("label-e-mail").innerHTML = document.getElementById("e-mail").value;
 
-    /*worker data*/
+        /*worker data*/
 
-    document.getElementById("label-worker-name").innerHTML = document.getElementById("worker-name").value;
-    document.getElementById("label-worker-last-name").innerHTML = document.getElementById("worker-last-name").value;
-    document.getElementById("label-worker-father-name").innerHTML = document.getElementById("worker-father-name").value;
-    document.getElementById("label-worker-mother-name").innerHTML = document.getElementById("worker-mother-name").value;
-    document.getElementById("label-worker-date-birth").innerHTML = document.getElementById("worker-date-birth").value;
-    document.getElementById("label-worker-place-birth").innerHTML = document.getElementById("worker-place-birth").value;
+        document.getElementById("label-worker-name").innerHTML = document.getElementById("worker-name").value;
+        document.getElementById("label-worker-last-name").innerHTML = document.getElementById("worker-last-name").value;
+        document.getElementById("label-worker-father-name").innerHTML = document.getElementById("worker-father-name").value;
+        document.getElementById("label-worker-mother-name").innerHTML = document.getElementById("worker-mother-name").value;
+        document.getElementById("label-worker-date-birth").innerHTML = document.getElementById("worker-date-birth").value;
+        document.getElementById("label-worker-place-birth").innerHTML = document.getElementById("worker-place-birth").value;
 
-    document.getElementById("label-current-nationality").innerHTML = document.getElementById("current-nationality").value;
-    document.getElementById("label-original-nationality").innerHTML = document.getElementById("original-nationality").value;
+        document.getElementById("label-current-nationality").innerHTML = document.getElementById("current-nationality").value;
+        document.getElementById("label-original-nationality").innerHTML = document.getElementById("original-nationality").value;
 
-    if (document.getElementsByName("gender")[0].checked) {
-        document.getElementById("label-gender").innerHTML = "ذكر";
-    }
-    else document.getElementById("label-gender").innerHTML = "أنثى";
+        if (document.getElementsByName("gender")[0].checked) {
+            document.getElementById("label-gender").innerHTML = "ذكر";
+        }
+        else document.getElementById("label-gender").innerHTML = "أنثى";
 
-    document.getElementById("label-worker-job").innerHTML = document.getElementById("worker-job").value;
-    document.getElementById("label-relationship").innerHTML = document.getElementById("relationship").value;
+        document.getElementById("label-worker-job").innerHTML = document.getElementById("worker-job").value;
+        document.getElementById("label-relationship").innerHTML = document.getElementById("relationship").value;
 
-    if (document.getElementsByName("passport")[0].checked) {
-       
-        document.getElementsByName("label-passport")[0].checked = true;
-    }
-    else
-        if (document.getElementsByName("passport")[1].checked)
-        {
-          
-            document.getElementsByName("label-passport")[1].checked = true;
+        if (document.getElementsByName("passport")[0].checked) {
+
+            document.getElementsByName("label-passport")[0].checked = true;
         }
         else
-            if (document.getElementsByName("passport")[2].checked) {
-               
-              
-                document.getElementsByName("label-passport")[2].checked = true;
+            if (document.getElementsByName("passport")[1].checked) {
+
+                document.getElementsByName("label-passport")[1].checked = true;
             }
-
-    document.getElementById("label-passport-number").innerHTML = document.getElementById("passport-number").value;
-
-    document.getElementById("label-expiration-date").innerHTML = document.getElementById("expiration-date").value;
-    document.getElementById("label-name-age").innerHTML = document.getElementById("name-age").value;
+            else
+                if (document.getElementsByName("passport")[2].checked) {
 
 
-    /*justice writer data*/
-    document.getElementById("label-first-last-name").innerHTML = document.getElementById("first-last-name").value;
-    document.getElementById("label-department").innerHTML = document.getElementById("department").value;
-    document.getElementById("label-casa").innerHTML = document.getElementById("casa").value;
+                    document.getElementsByName("label-passport")[2].checked = true;
+                }
 
-    document.getElementById("label-j-city").innerHTML = document.getElementById("j-city").value;
-    document.getElementById("label-commitment-num").innerHTML = document.getElementById("commitment-num").value;
-    document.getElementById("label-date").innerHTML = document.getElementById("date").value;
-  
+        document.getElementById("label-passport-number").innerHTML = document.getElementById("passport-number").value;
 
+        document.getElementById("label-expiration-date").innerHTML = document.getElementById("expiration-date").value;
+        document.getElementById("label-name-age").innerHTML = document.getElementById("name-age").value;
+
+
+        /*justice writer data*/
+        document.getElementById("label-first-last-name").innerHTML = document.getElementById("first-last-name").value;
+        document.getElementById("label-department").innerHTML = document.getElementById("department").value;
+        document.getElementById("label-casa").innerHTML = document.getElementById("casa").value;
+
+        document.getElementById("label-j-city").innerHTML = document.getElementById("j-city").value;
+        document.getElementById("label-commitment-num").innerHTML = document.getElementById("commitment-num").value;
+        document.getElementById("label-date").innerHTML = document.getElementById("date").value;
+
+
+    }
+    else
+    {
+      
+        document.getElementById('all-data-mobile').style.display = 'block';
+
+        document.getElementById('justice-mobile').style.display = 'none';
+
+
+        document.getElementById("label-cause-mobile").innerHTML = document.getElementById("cause-mobile").value;
+        document.getElementById("label-time-mobile").innerHTML = document.getElementById("time-mobile").value;
+        document.getElementById("label-number_prior_approval-mobile").innerHTML = document.getElementById("number_prior_approval-mobile").value;
+
+        if (document.getElementsByName("radio-mobile")[0].checked) {
+            document.getElementById("label-residence-mobile").innerHTML = "نعم";
+        }
+        else {
+            document.getElementById("label-residence-mobile").innerHTML = "كلا";
+
+        }
+        document.getElementById("label-fileToUpload-mobile").innerHTML = document.getElementById("fileToUpload-mobile").value;
+
+
+
+        /*employer data*/
+        document.getElementById("label-entreprise-mobile").innerHTML = document.getElementById("entreprise-mobile").value;
+        document.getElementById("label-employer-name-mobile").innerHTML = document.getElementById("employer-name-mobile").value;
+        document.getElementById("label-employer-last-name-mobile").innerHTML = document.getElementById("employer-last-name-mobile").value;
+        document.getElementById("label-employer-father-name-mobile").innerHTML = document.getElementById("employer-father-name-mobile").value;
+        document.getElementById("label-employer-mother-name-mobile").innerHTML = document.getElementById("employer-mother-name-mobile").value;
+        document.getElementById("label-employer-nationality-mobile").innerHTML = document.getElementById("employer-nationality-mobile").value;
+        document.getElementById("label-employer-date-bith-mobile").innerHTML = document.getElementById("employer-date-bith-mobile").value;
+        document.getElementById("label-employer-place-bith-mobile").innerHTML = document.getElementById("employer-place-bith-mobile").value;
+        document.getElementById("label-job-w-h-mobile").innerHTML = document.getElementById("job-w-h-mobile").value;
+        document.getElementById("label-province-mobile").innerHTML = document.getElementById("province-mobile").value;
+        document.getElementById("label-city-mobile").innerHTML = document.getElementById("city-mobile").value;
+        document.getElementById("label-street-mobile").innerHTML = document.getElementById("street-mobile").value;
+        document.getElementById("label-building-mobile").innerHTML = document.getElementById("building-mobile").value;
+        document.getElementById("label-phone-mobile").innerHTML = document.getElementById("phone-mobile").value;
+        document.getElementById("label-e-mail-mobile").innerHTML = document.getElementById("e-mail-mobile").value;
+
+        /*worker data*/
+        alert(document.getElementById("worker-name-mobile").value);
+        document.getElementById("label-worker-name-mobile").innerHTML = document.getElementById("worker-name-mobile").value;
+        document.getElementById("label-worker-last-name-mobile").innerHTML = document.getElementById("worker-last-name-mobile").value;
+        document.getElementById("label-worker-father-name-mobile").innerHTML = document.getElementById("worker-father-name-mobile").value;
+        document.getElementById("label-worker-mother-name-mobile").innerHTML = document.getElementById("worker-mother-name-mobile").value;
+        document.getElementById("label-worker-date-birth-mobile").innerHTML = document.getElementById("worker-date-birth-mobile").value;
+        document.getElementById("label-worker-place-birth-mobile").innerHTML = document.getElementById("worker-place-birth-mobile").value;
+
+        document.getElementById("label-current-nationality-mobile").innerHTML = document.getElementById("current-nationality-mobile").value;
+        document.getElementById("label-original-nationality-mobile").innerHTML = document.getElementById("original-nationality-mobile").value;
+
+        if (document.getElementsByName("gender-mobile")[0].checked) {
+            document.getElementById("label-gender-mobile").innerHTML = "ذكر";
+        }
+        else document.getElementById("label-gender-mobile").innerHTML = "أنثى";
+
+        document.getElementById("label-worker-job-mobile").innerHTML = document.getElementById("worker-job-mobile").value;
+        document.getElementById("label-relationship-mobile").innerHTML = document.getElementById("relationship-mobile").value;
+
+        if (document.getElementsByName("passport-mobile")[0].checked) {
+
+            document.getElementsByName("label-passport-mobile")[0].checked = true;
+        }
+        else
+            if (document.getElementsByName("passport-mobile")[1].checked) {
+
+                document.getElementsByName("label-passport-mobile")[1].checked = true;
+            }
+            else
+                if (document.getElementsByName("passport-mobile")[2].checked) {
+
+
+                    document.getElementsByName("label-passport-mobile")[2].checked = true;
+                }
+
+        document.getElementById("label-passport-number-mobile").innerHTML = document.getElementById("passport-number-mobile").value;
+
+        document.getElementById("label-expiration-date-mobile").innerHTML = document.getElementById("expiration-date-mobile").value;
+        document.getElementById("label-name-age-mobile").innerHTML = document.getElementById("name-age-mobile").value;
+
+
+        /*justice writer data*/
+        document.getElementById("label-first-last-name-mobile").innerHTML = document.getElementById("first-last-name-mobile").value;
+        document.getElementById("label-department-mobile").innerHTML = document.getElementById("department-mobile").value;
+        document.getElementById("label-casa-mobile").innerHTML = document.getElementById("casa-mobile").value;
+
+        document.getElementById("label-j-city-mobile").innerHTML = document.getElementById("j-city-mobile").value;
+        document.getElementById("label-commitment-num-mobile").innerHTML = document.getElementById("commitment-num-mobile").value;
+        document.getElementById("label-date-mobile").innerHTML = document.getElementById("date-mobile").value;
+
+    }
+   
+   
  
 }

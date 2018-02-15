@@ -1,5 +1,13 @@
 <?php
-if (isset($_FILES["fileToUpload"]))
+
+if (isset($_POST["mobile"]))
+{
+$file=$_FILES["fileToUpload-mobile"];
+}
+else
+$file=$_FILES["fileToUpload"];
+
+if (isset($file))
 {
 $target_dir = "uploads/permit-photo/";
 
@@ -14,7 +22,7 @@ if(!is_dir($target_dir.'/'.$directoryName))
 
 $target_dir=$target_dir.'/'.$directoryName.'/';
 
-  $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
+  $target_file = $target_dir.basename($file["name"]);
   $uploadOk = 1;
 
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -46,7 +54,7 @@ if (file_exists($target_file))
 
 
 if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    $check = getimagesize($file["tmp_name"]);
     if($check !== false) {
         echo  $check["mime"] ;
         $uploadOk = 1;
@@ -57,7 +65,7 @@ if(isset($_POST["submit"])) {
 }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($file["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -72,7 +80,7 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($file["tmp_name"], $target_file)) {
       header('Location:validity.html?'.$_POST['id_number'].'?'.$_POST['id_prior_approval'].'?'.$_POST['pass_img'].'?'.$target_file);
         
     } else {
