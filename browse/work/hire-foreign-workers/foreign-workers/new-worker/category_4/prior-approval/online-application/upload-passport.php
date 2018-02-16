@@ -12,6 +12,22 @@ if(!is_dir($target_dir.'/'.$directoryName))
 
 $target_dir=$target_dir.'/'.$directoryName.'/';
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+	$extension = pathinfo($target_file, PATHINFO_EXTENSION);
+			
+			// get file's name
+			$filename = pathinfo($target_file, PATHINFO_FILENAME);
+			
+			// add and combine the filename, iterator, extension
+      
+       $name=explode("-",$filename);
+       
+			$new_filename = $target_dir.  $name[0] . '-' . $_POST['iduser'] . '.' . $extension;
+      
+			// add file name to the end of the path to place it in the new directory; the while loop will check it again
+			$target_file =  $new_filename;
+
+
 $uploadOk = 1;
 
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
