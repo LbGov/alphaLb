@@ -49,7 +49,7 @@ function to_transaction(prior_approval_id)
 
 /*----------------------------------->function to check the missing paper<----------------------------------------------------*/
 function check() {
- alert(prior_approval_id);
+
     var currentURL = window.location.href;
     var processedURl = currentURL.split("?");
   var id_number = processedURl[1];
@@ -61,17 +61,17 @@ function check() {
   
 
 
-    url = " http://192.168.137.3:8080/National_Id/rest/API/" + id_number;
-client.get(url, function (response) {
+    url = " http://93.185.92.53:8080/Authentication_Server/rest/API/National_Id/" + id_number;
 
+    client.get(url, function (response) {
+    
     var personal_data = "";
-        
-         
     personal_data = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل نسخة عن معلوماتك الشخصية </li>";
     document.getElementById("ID").innerHTML = personal_data;
-    url = "http://192.168.137.4:8080/PriorApproval/rest/API/Labor/" + prior_approval_id;
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/Labor/" + prior_approval_id;
     client.get(url, function (response) {
-        alert("verification online response   :" + response);
+       
+   
         labor(response, prior_approval_id);
 
     });
@@ -85,8 +85,8 @@ client.get(url, function (response) {
 
 function labor(response,prior_approval_id) {
     var data_labor = "";
-    
-    if (response.split("barcode>")[1].split("</")[0] == "prior_approval_id") {
+   
+    if (response.split("barcode>")[1].split("</")[0] == prior_approval_id) {
              
         data_labor = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;تمّ تحميل طلبك لدى وزارة العمل</li>";
 
@@ -115,14 +115,14 @@ function all_data_load()
      var client = new HttpClient();
     var url;
   
-    url = "http://192.168.137.3:8080/National_Id/rest/API/" + id_number;
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/National_Id/" + id_number;
     client.get(url, function (response) {
 
         all_ID_data(response);
        
     });
 
-    url = "http://192.168.137.4:8080/PriorApproval/rest/API/Labor/" + prior_approval_id;
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/Labor/" + prior_approval_id;
     client.get(url, function (response) {
 
         all_labor_data(response);
@@ -172,7 +172,7 @@ function payment()
     document.location.href = "payment.html?" + id_number ;
 }
 
-/*------------------------------>get the ai response<--------------------------------------------------*/
+/*------------------------------>get the api response<--------------------------------------------------*/
 var HttpClient = function () {
     this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -247,7 +247,8 @@ function to_request(machine)
     var prior_approval_id = processedURl[2];
     var passport_img = processedURl[3];
 
-
+    document.getElementById('passport_validation').style.display = 'block';
+    all_data_load();
     /*prior data*/
     document.getElementById("id_number").value = id_number;
     document.getElementById("id_prior_approval").value = prior_approval_id;
@@ -257,7 +258,7 @@ function to_request(machine)
     {
 
           document.getElementById('justice').style.display = 'none';
-        document.getElementById('all-data').style.display = 'block';
+    
 
         document.getElementById("label-cause").innerHTML = document.getElementById("cause").value;
         document.getElementById("label-time").innerHTML = document.getElementById("time").value;
@@ -347,8 +348,7 @@ function to_request(machine)
     else
     {
       
-        document.getElementById('all-data-mobile').style.display = 'block';
-
+     
         document.getElementById('justice-mobile').style.display = 'none';
 
 
@@ -385,7 +385,7 @@ function to_request(machine)
         document.getElementById("label-e-mail-mobile").innerHTML = document.getElementById("e-mail-mobile").value;
 
         /*worker data*/
-        alert(document.getElementById("worker-name-mobile").value);
+       
         document.getElementById("label-worker-name-mobile").innerHTML = document.getElementById("worker-name-mobile").value;
         document.getElementById("label-worker-last-name-mobile").innerHTML = document.getElementById("worker-last-name-mobile").value;
         document.getElementById("label-worker-father-name-mobile").innerHTML = document.getElementById("worker-father-name-mobile").value;
@@ -439,4 +439,132 @@ function to_request(machine)
    
    
  
+}
+
+function insert(machine)
+{
+
+
+    if (machine == "desktop") {
+        var client = new HttpClient();
+        var url;
+        var travel = " ";
+        if (document.getElementsByName("passport")[0].checked) {
+
+            travel = "passport";
+        }
+        else
+            if (document.getElementsByName("passport")[1].checked) {
+
+                travel = "travel-document";
+            }
+            else
+                if (document.getElementsByName("passport")[2].checked) {
+
+
+                    travel = "other";
+                }
+        var gender = "";
+
+        if (document.getElementsByName("gender")[0].checked) {
+            gender = "male";
+        }
+        else gender = "female";
+
+
+        url = "http://93.185.92.53:8080/Authentication_Server/rest/API/VisaApplication?";
+
+        url = url + "notary_public_first=" + document.getElementById("first-last-name").value.split(" ")[0] + "&notary_public_last=" + document.getElementById("first-last-name").value.split(" ")[1] + "&notary_public_governorate=" + document.getElementById("department").value + "&notary_public_judiciary=" + document.getElementById("casa").value;
+        url = url + "&notary_public_town=" + document.getElementById("j-city").value + "&notary_public_pledge_id=" + document.getElementById("commitment-num").value + "&notary_public_pledge_date=" + document.getElementById("date").value + "&worker_passport_link=" + document.getElementById("pass_img").value;
+
+
+        url = url + "&sponsor_id=" + document.getElementById("id_number").value + "&request_reason=" + document.getElementById("cause").value + "&stay_duration=" + document.getElementById("time").value + "&pre_approval_id=" + document.getElementById("number_prior_approval").value;
+
+
+        url = url + "&previous_permit=" + document.getElementsByName("radio")[0].checked + "&previous_permit_link=" + document.getElementById("fileToUpload").value + "&sponsor_organization=" + document.getElementById("entreprise").value + "&sponsor_first=" + document.getElementById("employer-name").value + "&sponsor_last=" + document.getElementById("employer-last-name").value;
+
+
+        url = url + "&sponsor_father=" + document.getElementById("employer-father-name").value + "&sponsor_mother=" + document.getElementById("employer-mother-name").value + "&sponsor_nationality=" + document.getElementById("employer-nationality").value + "&sponsor_birthdate=" + document.getElementById("employer-date-bith").value + "&sponsor_birthplace=" + document.getElementById("employer-place-bith").value;
+
+
+        url = url + "&sponsor_profession=" + document.getElementById("job-w-h").value + "&sponsor_governorate=" + document.getElementById("province").value + "&sponsor_judiciary=" + +"&sponsor_town=" + document.getElementById("city").value + "&sponsor_street=" + document.getElementById("street").value;
+
+        url = url + "&sponsor_building=" + document.getElementById("building").value + "&sponsor_phone=" + document.getElementById("phone").value + "&sponsor_email=" + document.getElementById("e-mail").value + "&worker_first=" + document.getElementById("worker-name").value + "&worker_last=" + document.getElementById("worker-last-name").value;
+
+        url = url + "&worker_father=" + document.getElementById("worker-father-name").value + "&worker_mother=" + document.getElementById("worker-mother-name").value + "&worker_birthday=" + document.getElementById("worker-date-birth").value + "&worker_current_nationality=" + document.getElementById("current-nationality").value + "&worker_previous_nationality=" + document.getElementById("original-nationality").value;
+
+        url = url + "&worker_sex=" + gender + "&worker_profession=" + document.getElementById("worker-job").value + "&worker_to_sponsor_relationship=" + document.getElementById("relationship").value;
+
+        url = url + "&worker_travel_document_number=" + travel + "&worker_companion_name=" + document.getElementById("name-age").value.split("-")[0] + "&worker_companion_age=" + document.getElementById("name-age").value.split("-")[1];
+
+        client.get(url, function (response) {
+
+        });
+    }
+    else
+    {
+   
+       
+        var client = new HttpClient();
+        var url;
+        var travel = " ";
+        if (document.getElementsByName("passport-mobile")[0].checked) {
+
+            travel = "passport";
+        }
+        else
+            if (document.getElementsByName("passport-mobile")[1].checked) {
+
+                travel = "travel-document";
+            }
+            else
+                if (document.getElementsByName("passport-mobile")[2].checked) {
+
+
+                    travel = "other";
+                }
+        var gender = "";
+
+        if (document.getElementsByName("gender-mobile")[0].checked) {
+            gender = "male";
+        }
+        else gender = "female";
+
+
+        url = "http://93.185.92.53:8080/Authentication_Server/rest/API/VisaApplication?";
+
+        url = url + "notary_public_first=" + document.getElementById("first-last-name-mobile").value.split(" ")[0] + "&notary_public_last=" + document.getElementById("first-last-name-mobile").value.split(" ")[1] + "&notary_public_governorate=" + document.getElementById("department-mobile").value + "&notary_public_judiciary=" + document.getElementById("casa-mobile").value;
+        url = url + "&notary_public_town=" + document.getElementById("j-city-mobile").value + "&notary_public_pledge_id=" + document.getElementById("commitment-num-mobile").value + "&notary_public_pledge_date=" + document.getElementById("date-mobile").value + "&worker_passport_link=" + document.getElementById("pass_img").value;
+
+
+        url = url + "&sponsor_id=" + document.getElementById("id_number").value + "&request_reason=" + document.getElementById("cause-mobile").value + "&stay_duration=" + document.getElementById("time-mobile").value + "&pre_approval_id=" + document.getElementById("number_prior_approval-mobile").value;
+
+
+        url = url + "&previous_permit=" + document.getElementsByName("radio-mobile")[0].checked + "&previous_permit_link=" + document.getElementById("fileToUpload-mobile").value + "&sponsor_organization=" + document.getElementById("entreprise-mobile").value + "&sponsor_first=" + document.getElementById("employer-name-mobile").value + "&sponsor_last=" + document.getElementById("employer-last-name-mobile").value;
+
+
+        url = url + "&sponsor_father=" + document.getElementById("employer-father-name-mobile").value + "&sponsor_mother=" + document.getElementById("employer-mother-name-mobile").value + "&sponsor_nationality=" + document.getElementById("employer-nationality-mobile").value + "&sponsor_birthdate=" + document.getElementById("employer-date-bith-mobile").value + "&sponsor_birthplace=" + document.getElementById("employer-place-bith-mobile").value;
+
+      
+        url = url + "&sponsor_profession=" + document.getElementById("job-w-h-mobile").value + "&sponsor_governorate=" + document.getElementById("province-mobile").value + "&sponsor_judiciary=" + +"&sponsor_town=" + document.getElementById("city-mobile").value + "&sponsor_street=" + document.getElementById("street-mobile").value;
+
+        url = url + "&sponsor_building=" + document.getElementById("building-mobile").value + "&sponsor_phone=" + document.getElementById("phone-mobile").value + "&sponsor_email=" + document.getElementById("e-mail-mobile").value + "&worker_first=" + document.getElementById("worker-name-mobile").value + "&worker_last=" + document.getElementById("worker-last-name-mobile").value;
+ 
+        url = url + "&worker_father=" + document.getElementById("worker-father-name-mobile").value + "&worker_mother=" + document.getElementById("worker-mother-name-mobile").value + "&worker_birthday=" + document.getElementById("worker-date-birth-mobile").value + "&worker_current_nationality=" + document.getElementById("current-nationality-mobile").value + "&worker_previous_nationality=" + document.getElementById("original-nationality-mobile").value;
+
+        url = url + "&worker_sex=" + gender + "&worker_profession=" + document.getElementById("worker-job-mobile").value + "&worker_to_sponsor_relationship=" + document.getElementById("relationship-mobile").value;
+
+        url = url + "&worker_travel_document_number=" + travel + "&worker_companion_name=" + document.getElementById("name-age-mobile").value.split("-")[0] + "&worker_companion_age=" + document.getElementById("name-age-mobile").value.split("-")[1];
+
+        client.get(url, function (response) {
+            document.getElementById("validation2").style.display = "none";
+            document.getElementById("previous2").style.display = "none";
+            document.getElementById("pay2").style.display = "block";
+        });
+
+    }
+    document.getElementById("validation").style.display = "none";
+    document.getElementById("previous1").style.display = "none";
+    document.getElementById("pay").style.display = "block";
+
 }

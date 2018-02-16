@@ -86,6 +86,27 @@
                 display: none;
             }
         }
+
+
+        .payment_table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .payment_td {
+            border: 1px solid #dddddd;
+            direction: rtl;
+            text-align: right;
+            padding: 8px;
+        }
+        .payment_tr {
+            background-color: #dddddd;
+        }
+     
+        * {
+            font-family: Tahoma;
+        }
     </style>
 </head>
 <body class="pagetype-process" data-pagetype="ProcessPage">
@@ -871,7 +892,7 @@
                                                 <td>
 
 
-                                                    <input id="name-age" name="name-age" type="text" style="position: absolute; width: 540px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="name-age" name="name-age" type="text" placeholder="اللإسم - العمر" style="position: absolute; width: 540px; border-color: darkseagreen; direction: rtl; ">
                                                 </td>
 
                                             </tr>
@@ -1056,7 +1077,7 @@
                                                 <td>
 
 
-                                                    <input id="name-age-mobile" name="name-age-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; ">
+                                                    <input id="name-age-mobile" name="name-age-mobile" type="text" style="position: absolute; width: 170px; border-color: darkseagreen; direction: rtl; " placeholder="اللإسم - العمر">
                                                 </td>
 
                                             </tr>
@@ -1233,10 +1254,65 @@
                                         </table>
                                         <br />
                                         &nbsp;
-                                        <input type="button" id="next" style="left:30px" class="login next" onclick="alert(document.getElementById('cause-mobile').value); to_request('mobile')" value="التالي" />
+                                        <input type="button" id="next" style="left:30px" class="login next" onclick="to_request('mobile')" value="التالي" />
                                         <input type="button" id="previous" style="left:250px" class="login previous" onclick="document.getElementById('worker-mobile').style.display = 'block'; document.getElementById('justice-mobile').style.display = 'none';" value="السابق" />
 
                                     </fieldset>
+                                </div>
+                                <br /><br>
+                              <div id="payment">
+
+
+
+                              </div>
+
+                                <div id="passport_validation" style="display:none">
+                                    
+                                        &nbsp;
+                                        <h2>
+                                            &nbsp;الجمهورية اللبنانية<br />&nbsp;&nbsp;
+                                            وزارة الداخلية
+                                        </h2>
+
+                                        <div id="ID">
+                                          
+                                        </div>
+
+
+                                    
+                                    <br />
+
+                                    
+                                        &nbsp;
+                                        <h2>
+                                            &nbsp;&nbsp;
+                                            وزارة العمل
+                                        </h2>
+                                        <div id="labor">
+                                           
+                                        </div>
+
+
+                                   
+                                    <br />
+
+
+                                  
+                                        &nbsp;
+                                        <h2>
+                                            &nbsp;&nbsp;
+                                            صورة عن  جواز السفر
+                                        </h2>
+
+                                        <img id="passport_image" src="" class="img-responsive" />
+                                        <br />
+                                    <br />
+                                    <input type="button" id="next" class="login next desktop_table" onclick="document.getElementById('all-data').style.display = 'block'; document.getElementById('passport_validation').style.display = 'none';" value="تأكيد" />
+                                    <input type="button" id="previous" style="left:450px" class="login previous desktop_table" onclick="document.getElementById('justice').style.display = 'block'; document.getElementById('passport_validation').style.display = 'none';" value="السابق" />
+
+                                    <input type="button" id="next" style="left:30px" class="login next mobile_table" onclick="document.getElementById('all-data-mobile').style.display = 'block'; document.getElementById('passport_validation').style.display = 'none';" value="تأكيد" />
+                                    <input type="button" id="previous" style="left:250px" class="login previous mobile_table" onclick="document.getElementById('passport_validation').style.display = 'block'; document.getElementById('justice-mobile').style.display = 'block';" value="السابق" />
+
                                 </div>
 
                                 <div id="all-data"class="desktop_table" style="transition: all 1s ;display:none;">
@@ -1711,9 +1787,9 @@
 
                                     </fieldset>
                                     <br />
-                                  
-                                    <input type="submit" name="desktop" style="background-color:#4caf4f;position:absolute;left:-100px;height:55px" value="تأكيد" />
-                                    <input type="button" id="previous" class="login previous" style="right:50px;width:180px" onclick="document.getElementById('all-data').style.display = 'none'; document.getElementById('justice').style.display = 'block';" value="السابق" />
+                                    <input type="button" id="validation" class="login next" style ="width: 180px" onclick="insert('desktop')" value="تأكيد" />
+                                    <input type="submit" id="pay"  name="desktop" style=" position: absolute; left: 50px; height:60px;width:500px;display:none" value="دفع الرسوم" />
+                                    <input type="button" id="previous1" class="login previous" style="right:50px;width:180px" onclick="document.getElementById('all-data').style.display = 'none'; document.getElementById('passport_validation').style.display = 'block';" value="السابق" />
 
 
 
@@ -2230,15 +2306,16 @@
 
                                     </fieldset>
                                     <br />
-                                   
-                                    <input type="submit" name="mobile" style="background-color:#4caf4f;position:absolute;left:30px;height:55px;width:50px" value="تأكيد" />
-                                    <input type="button" id="previous" class="login previous" style="left:250px" onclick="document.getElementById('all-data-mobile').style.display = 'none'; document.getElementById('justice-mobile').style.display = 'block';" value="السابق" />
+                                    <input type="button" id="validation2" class="login next" onclick="insert('mobile')" name="mobile" style="background-color:#4caf4f;position:absolute;left:30px;height:55px;" value="التالي" />
+                                    <input type="submit" id="pay2" name="mobile" style="position:absolute;left:30px;height:60px;width:80px;display:none;" value="دفع الرسوم" />
+                                    <input type="button" id="previous2" class="login previous" style="left:250px" onclick="document.getElementById('all-data-mobile').style.display = 'none'; document.getElementById('passport_validation').style.display = 'block';" value="السابق" />
 
 
 
                                 </div>
 
                                 &nbsp;
+                          
                                 <br /><br /><br />
                             </form> 
                           </div>

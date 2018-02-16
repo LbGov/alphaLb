@@ -89,5 +89,5 @@ if ($uploadOk == 0) {
 }
 }
 
- header('Location:validity.html?'.$_POST['id_number'].'?'.$_POST['id_prior_approval'].'?'.$_POST['pass_img']);
+ header('Location:payment.html?'.$_POST['id_number'].'?'.$_POST['id_prior_approval'].'?'.$_POST['pass_img']);
 ?>
