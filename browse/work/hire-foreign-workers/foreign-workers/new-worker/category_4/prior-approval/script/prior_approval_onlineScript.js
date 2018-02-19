@@ -446,6 +446,12 @@ function insert(machine)
 
 
     if (machine == "desktop") {
+        var i = 0;
+        document.body.style = " background-color: rgb(0,0,0); ";
+        document.body.style = " background-color:rgba(192,192,192,0.1);opacity: 0.4;  ";
+        document.getElementById('loader').style = "opacity: 1;";
+       
+
         var client = new HttpClient();
         var url;
         var travel = " ";
@@ -498,6 +504,8 @@ function insert(machine)
         url = url + "&worker_travel_document_number=" + travel + "&worker_companion_name=" + document.getElementById("name-age").value.split("-")[0] + "&worker_companion_age=" + document.getElementById("name-age").value.split("-")[1];
 
         client.get(url, function (response) {
+            document.getElementById('loader').style.visibility = "hidden";
+            document.body.style = " background-color:white;opacity: 1; ";
 
         });
     }
