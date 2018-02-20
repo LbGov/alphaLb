@@ -1,6 +1,42 @@
-﻿
+﻿function login() {
+
+    var client = new HttpClientPost(null);
+    var url;
+
+   
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/Authenticate?username=" + document.getElementById("uname").value + "&password=" + document.getElementById("pass").value;
+
+
+
+    client.get(url, function (response) {
+
+
+        authenticate(response);
+    });
+
+
+}
+
+function authenticate(response) {
+    var data = response.split("authenticated>");
+    var authentication = data[1].split("<")[0];
+    if (authentication == "true") {
+        var id_number = response.split("userId>")[1].split("<")[0];
+        document.location.href = "apply-online/stolenPass.html?" + id_number;
+    }
+    else {
+        alert("incorrect login");
+        document.getElementById("uname").value = "";
+        document.getElementById("pass").value = "";
+    }
+
+}
+
 function httpPost() {
- 
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+
     var sex;
     if (document.getElementsByName('gender')[0].checked)
         sex = "male";
@@ -62,13 +98,17 @@ function httpPost() {
     var url = "http://93.185.92.53:8080/Authentication_Server/rest/API/PassportApplication";
     client.post(url, function (response) {
      
-        document.location.href = "Thankyou-Pass-No.html";
+        document.location.href = "document.html?" + id_number;
     });
 }
 
 
 function httpPost_mobile()
 {
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+
     var sex;
     if (document.getElementsByName('gender-mobile')[0].checked)
         sex = "male";
@@ -131,11 +171,38 @@ function httpPost_mobile()
     var url = "http://93.185.92.53:8080/Authentication_Server/rest/API/PassportApplication";
     client.post(url, function (response) {
 
-        document.location.href = "Thankyou-Pass-No.html";
+        document.location.href = "document.html?"+id_number;
     });
 }
 
+function check() {
 
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+   
+
+    var client = new HttpClientPost();
+    var url;
+
+
+
+    url = " http://93.185.92.53:8080/Authentication_Server/rest/API/National_Id/" + id_number;
+
+    client.get(url, function (response) {
+        if (response.split('id>')[1].split('</')[0] == "0")
+        {
+            document.getElementById("id_copy").innerHTML = "<li>copy of the identity card</li>";
+        }
+        else{
+        var personal_data = "";
+        personal_data = "<i class='fa fa-check' style='color:green;font-size:1.5rem'>&nbsp;A copy of your personal information has been uploaded </li>";
+        document.getElementById("ID").innerHTML = personal_data;
+     }
+
+    });
+
+}
 
 var HttpClientPost = function (xml) {
     this.post = function (aUrl, aCallback) {
@@ -147,4 +214,47 @@ var HttpClientPost = function (xml) {
         anHttpRequest.open("POST", aUrl, true);
         anHttpRequest.send(xml);
     }
+    this.get = function (aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function () {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+        anHttpRequest.open("GET", aUrl, true);
+        anHttpRequest.send(null);
+    }
+}
+function pass_authentication()
+{
+  
+    var pass_id = document.getElementById("Number_Pass").value;
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    var id_number = processedURl[1];
+
+
+    var client = new HttpClientPost();
+    var url;
+
+
+
+    url = "http://93.185.92.53:8080/Authentication_Server/rest/API/BiometricPassport/" + pass_id;
+
+    client.get(url, function (response) {
+        if (response.split('biometricPassportExists>')[1].split('</')[0] == "false") {
+            alert("Passport number incorrect");
+        }
+        else {
+            document.location.href = "recentPhoto.html?" + id_number;
+           
+        }
+
+    });
+
+
+}
+function save_id() {
+    var currentURL = window.location.href;
+    var processedURl = currentURL.split("?");
+    document.getElementById("id").value = processedURl[1];
 }

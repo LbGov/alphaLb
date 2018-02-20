@@ -253,25 +253,35 @@ function copyURL() {
 
 
     function openNewPageOnRadioButtonClick(firstPageID, secondPageID, noRadioId) {
+
+        var currentURL = window.location.href;
+        var processedURl = currentURL.split("?");
+        var id_number = processedURl[1];
+
         if (noRadioId == null) {
-            location.href = firstPageID;
+            location.href = firstPageID+"?"+id_number;
             }
         else {
             var radioButton = document.getElementById(noRadioId);
             if (radioButton.checked == true) {
-                location.href = secondPageID;
+                location.href = secondPageID + "?" + id_number;
             }
             else {
-                location.href = firstPageID;
+                location.href = firstPageID + "?" + id_number;
             }
         }
     }
    
     function openNewPage(pageID) {
-        location.href = pageID;
+        var currentURL = window.location.href;
+        var processedURl = currentURL.split("?");
+        var id_number = processedURl[1];
+
+        location.href = pageID + "?" + id_number;
         }
 
     function openNewPageWithValidation(pageID, validatedField) {
+
         var validatedField = document.getElementById(validatedField);
 
                 if (validatedField.value) {

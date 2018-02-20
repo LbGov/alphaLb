@@ -66,6 +66,139 @@
     <!--[if lt IE 9]><script type='text/javascript' src='themes/dia-theme/javascript/ie8modern.js'></script><![endif]-->
     <!--[if lt IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie8.css' /><![endif]-->
     <!--[if IE 9]><link rel='stylesheet' type='text/css' href='themes/dia-theme/css/ie-fonts.css' /><![endif]-->
+    <style>
+        .input_class {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        .login {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .container2 {
+            align-content: center;
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            align-content: center;
+            width: auto; /* Full width */
+            height: auto; /* Full height */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            top: 100px;
+            left: 500px;
+            background-color: #fefefe;
+            height: 330px;
+            border: 1px solid #888;
+            width: 300px; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s;
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0);
+            }
+
+            to {
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+
+       
+    </script>
 </head>
 <body class="pagetype-hub" data-pagetype="HubPage">
 
@@ -301,7 +434,23 @@
 
 
                 </div>
+                <div class="modal-content animate modal" id="alert_login" align="left">
+                    <div style="padding-top:40px; position: relative;">
+                        <span onclick="document.getElementById('alert_login').style.display='none'" class="close" title="Close Modal">&times;</span>
 
+                    </div>
+
+                    <div class="container2" style="width:300px;">
+                        <label><b>Username</b></label><br />
+                        <input type="text" placeholder="Enter Username" style=" direction:ltr;padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box;" id="uname" required>&nbsp;
+
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" style=" direction: ltr; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box;" id="pass" required>&nbsp;
+
+                        <input type="button" class="login" onclick="login()" value="login">&nbsp;
+
+                    </div>
+                </div>
                 <div class="col-md-7 col-md-offset-1 ga-content-container main-content" tabindex="-1">
                     <div class="title-row">
                         <h1>Apply for a new passport</h1>
@@ -327,7 +476,7 @@
                     <p>
                         <div class="" data-class="NLView" data-url="/browse/nz-passports-and-citizenship/passport-application/apply-for-a-new-adult-passport/">
                             <span class="nl-component " data-class="NLButton">
-                                <a class="nlbutton btn btn-blue" href="apply-online/stolenPass.html">Apply for a passport online</a>
+                                <button class="nlbutton btn btn-blue" onclick="document.getElementById('alert_login').style.display = 'block'" >Apply for a passport online</button>
                             </span>
                             <div style="clear:both"> </div>
                         </div>
@@ -340,7 +489,7 @@
 						</span>
 					</div>
 				</div> 
-                  
+                   
                     <details class="accordion-item inline-accordion expander-type-accordion">
                         <summary class="accordion-item-button accordion-trigger" data-ga-event="click" data-ga-category="In-page accordion" data-ga-action="&lt;/span&gt;If you need to travel urgently" data-ga-label="/browse/nz-passports-and-citizenship/passport-application/apply-for-a-new-adult-passport/">
                             <h2>
@@ -648,13 +797,10 @@
 
 
     <script type="text/javascript" src="../../../../assets/_combinedfiles/requirementsd279.js?m=1500846190"></script>
-    <script type="text/javascript" src="../../../../mysite/javascript/modal/jquery.modal.minbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../../../mysite/javascript/modal/govtnz-modalbaab.js?m=1500846094"></script>
-    <script type="text/javascript" src="../../../../googletracking/javascript/universal_analytics88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../../../googletracking/javascript/jquery.simulate88f1.js?m=1468185402"></script>
-    <script type="text/javascript" src="../../../../flyingfocus/javascript/flying-focus6665.js?m=1430378610"></script>
+
     <script type="text/javascript" src="../../../../scripts/pageScriptsMethods.js"></script>
     <script src="../../../../quick-feedback/script.js"></script>
+    <script type="text/javascript" src="passport-script/passport_script.js"></script>
     <script>
         w3.includeHTML();
     </script>
