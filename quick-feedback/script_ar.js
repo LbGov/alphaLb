@@ -10,7 +10,7 @@ data = data + '</div></div>  <a href="javascript:void(0)" onclick="showProblemFo
 data = data + '<form name="problemForm" action="scripts/problemForm.php" method="POST" onsubmit="return validateProblemForm();"><div id="problemFormFields" style="display:none;">&nbsp;<h2>ساعدنا على تحسين GOV.LB</h2>';
 
 data = data + '<label for="Form_FeedbackForm_Doing">ماذا كنت تفعل</label><br><input type="text" name="doingAction" class="dg-input-form" id="Form_FeedbackForm_Doing" required="required" style="width: 30em;"  /><br><label for="Form_FeedbackForm_Wrong">ماذا حصل</label><br><input type="text" style="  width: 30em;  "  name="wrongAction" class="dg-input-form" id="Form_FeedbackForm_Wrong" required="required" /><br>';
-data = data + '<input type="hidden" name="Referer" value="http://Gov.lb/dg/index.html" class="hidden" id="Form_FeedbackForm_Referer" />&nbsp;<div><input type="submit" name="action_doProcessProblem" style="  width: 10em;  "  value="إرسال" />';
+data = data + '<input type="hidden" name="Referer" value="http://portal.gov.lb/index.html" class="hidden" id="Form_FeedbackForm_Referer" />&nbsp;<div><input type="submit" name="action_doProcessProblem" style="  width: 10em;  "  value="إرسال" />';
 div.innerHTML = data;
 data = data + '</div></div></form></div></div></div><br />';
 

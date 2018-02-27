@@ -24,11 +24,11 @@ function copyURL() {
 	{ 
 	   if(processedURl[i]=="index_ar.html#")
 	   {  
-	       document.location.href = "http://portal.gov.lb/dg/about/feedback/feedback_ar.html? var=" + currentURL;
+	       document.location.href = "http://portal.gov.lb/about/feedback/feedback_ar.html? var=" + currentURL;
 		break;
 	   }
 		else{ 
-		document.location.href = "http://portal.gov.lb/dg/about/feedback/feedback.html? var=" + currentURL;
+		document.location.href = "http://portal.gov.lb/about/feedback/feedback.html? var=" + currentURL;
 		break;
 		}
 		i=i+1;
@@ -38,10 +38,10 @@ function copyURL() {
     function setLanguage(lang) {
         var langOutput = lang.localeCompare('en');
         if (langOutput == 0) {
-            window.location.href = "http://portal.gov.lb/dg/index.html";
+            window.location.href = "http://portal.gov.lb/index.html";
         }
         else {
-            window.location.href = "http://portal.gov.lb/dg/index_ar.html";
+            window.location.href = "http://portal.gov.lb/index_ar.html";
         }
     }
 
