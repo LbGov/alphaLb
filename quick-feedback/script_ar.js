@@ -5,7 +5,7 @@ var data = '  <div class="row" dir="rtl"  style="position:relative;right:20px;">
 data = data + '<button type="button" class="btn-link" id="print-page-button"><i class="fa fa-print" aria-hidden="true"></i>&nbsp<span>طباعة</span>';
 data = data + '</button><noscript><div class="callout-alert">Sorry, this button doesn’t work without Javascript. Try pressing Control + P on your keyboard to print, or use your browser’s print option.</div></noscript>';
 
-data = data + '</div></div>  <a href="javascript:void(0)" onclick="showProblemForm()" style="color:darkslateblue"><b>هل هنالك مشكلة على الصفحة؟</b></a><div>';
+data = data + '</div></div>  <a href="javascript:void(0)" onclick="showProblemForm()" style="color:darkslateblue"><b>هل تواجه مشكلة تتعلق بهذه الصفحة؟</b></a><div>';
 
 data = data + '<form name="problemForm" action="scripts/problemForm.php" method="POST" onsubmit="return validateProblemForm();"><div id="problemFormFields" style="display:none;">&nbsp;<h2>ساعدنا على تحسين GOV.LB</h2>';
 
